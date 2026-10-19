@@ -122,18 +122,30 @@ def building(img, rng, pal, campus=False):
     img.alpha_composite(soft_layer(w, h, b, 1.2))
 
 def interior(img, rng, pal):
+    """Classroom: board, window, rows of desks. Colours and layout vary with the seed."""
     w, h = img.size
+    wall = rng.choice([(236, 232, 222), (226, 236, 240), (240, 230, 214), (230, 238, 228)])
+    accent, second = rng.sample(pal[2:], 2)
     def room(d):
-        d.polygon([(0, h * .7), (w, h * .7), (w, h), (0, h)], fill=pal[3] + (255,))
-        d.rectangle([w * .08, h * .2, w * .38, h * .62], fill=(255, 255, 255, 230))
-        d.line([(w * .23, h * .2), (w * .23, h * .62)], fill=pal[2] + (180,), width=6)
-        d.rounded_rectangle([w * .48, h * .5, w * .92, h * .72], 26, fill=pal[2] + (255,))
-        d.rounded_rectangle([w * .5, h * .42, w * .9, h * .56], 22, fill=pal[2] + (230,))
-        d.ellipse([w * .6, h * .44, w * .7, h * .52], fill=pal[5] + (255,))
-        d.rectangle([w * .44, h * .1, w * .47, h * .3], fill=(40, 40, 40, 200))
-        d.ellipse([w * .41, h * .28, w * .5, h * .34], fill=(255, 230, 170, 255))
-    img.alpha_composite(soft_layer(w, h, room, 2))
-    img.alpha_composite(soft_layer(w, h, lambda d: d.polygon([(w * .08, h * .62), (w * .38, h * .62), (w * .6, h * .95), (w * .1, h * .95)], fill=(255, 255, 255, 60)), 20))
+        d.rectangle([0, 0, w, h * .62], fill=wall + (255,))
+        d.rectangle([0, h * .62, w, h], fill=tuple(int(c * .55) for c in second) + (255,))
+        bx = w * rng.uniform(.08, .3)
+        d.rectangle([bx, h * .12, bx + w * .42, h * .42], fill=(34, 64, 52, 255))
+        d.rectangle([bx, h * .42, bx + w * .42, h * .44], fill=(120, 90, 60, 255))
+        for i in range(rng.randint(3, 5)):
+            y = h * (.17 + i * .045); d.line([(bx + 30, y), (bx + w * rng.uniform(.18, .38), y)], fill=(235, 235, 225, 200), width=4)
+        wx = bx + w * .5 if bx < w * .25 else w * .08
+        d.rectangle([wx, h * .14, wx + w * .2, h * .46], fill=(200, 228, 245, 255))
+        d.line([(wx + w * .1, h * .14), (wx + w * .1, h * .46)], fill=wall + (255,), width=6)
+        for row in range(3):
+            y = h * (.66 + row * .1); n = 3 + row
+            for k in range(n):
+                cx = w * (k + .5) / n + rng.uniform(-10, 10); dw = w * .16 - row * 6
+                d.rectangle([cx - dw / 2, y, cx + dw / 2, y + h * .035], fill=accent + (255,))
+                d.rectangle([cx - dw / 2 + 8, y + h * .035, cx - dw / 2 + 14, y + h * .08], fill=(60, 50, 40, 255))
+                d.rectangle([cx + dw / 2 - 14, y + h * .035, cx + dw / 2 - 8, y + h * .08], fill=(60, 50, 40, 255))
+    img.alpha_composite(soft_layer(w, h, room, 1.2))
+    img.alpha_composite(soft_layer(w, h, lambda d: d.polygon([(wx_ := w * .1, h * .62), (w * .4, h * .62), (w * .6, h), (w * .05, h)], fill=(255, 255, 255, 40)), 24))
 
 def finish(img, rng, label=True):
     w, h = img.size
