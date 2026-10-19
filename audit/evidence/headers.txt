@@ -1,0 +1,13 @@
+HTTP/1.1 200 Connection Established
+
+HTTP/1.1 200 OK
+Date: Mon, 19 Oct 2026 17:20:30 GMT
+Server: Apache
+X-Powered-By: PHP/8.3.35
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Set-Cookie: PHPSESSID=muecboia1ebd5l6g09ltt902e3; path=/
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+

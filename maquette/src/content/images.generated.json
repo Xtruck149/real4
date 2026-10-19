@@ -1,0 +1,47 @@
+{
+ "actu-1.webp": {
+  "width": 1200,
+  "height": 900,
+  "blurDataURL": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADwAQCdASoMAAkAA4BaJZgCdAEO//pxUAAA/u13GHEBjLbSZYtRWwwIZ09AAA=="
+ },
+ "actu-2.webp": {
+  "width": 1200,
+  "height": 900,
+  "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAwAgCdASoMAAkAA4BaJbACdH8GJ/gbF+w+ngD+9T45IUP7nsiaZeNjTrg19KIypBTx9Ly4mMuxjXPCta0Zx58PmYNbBWly1v8JLZv+Ow7UAAAA"
+ },
+ "actu-3.webp": {
+  "width": 1200,
+  "height": 900,
+  "blurDataURL": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoMAAkAA4BaJZgCdAD0lFxckAD+7YMm0i6QM/sThniLQ9Nd/FzDcoqZsSDhI7AA"
+ },
+ "actu-4.webp": {
+  "width": 1200,
+  "height": 900,
+  "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAwAgCdASoMAAkAA4BaJbACdH8GJ/gbF+w+ngD+9T45IUP7nsiaZeNjTrg19KIypBTx9Ly4mMuxjXPCta0Zx58PmYNbBWly1v8JLZv+Ow7UAAAA"
+ },
+ "campus-abobo.webp": {
+  "width": 1200,
+  "height": 900,
+  "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAQCdASoMAAkAA4BaJbACdADa2nEAAP7nksJ93cp4ZaFFu8fhrTgP895GYorlahrIIBazxufGJY3X+n4cj/s/4a1BuBCfmsfgAA=="
+ },
+ "campus-yopougon.webp": {
+  "width": 1200,
+  "height": 900,
+  "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoMAAkAA4BaJbACdH8AF8VMVlAAAP7nGfOESp8UHi1kshDkcALW4aWsWhHleTb5oOLBP1lr/I/9zvTDuUVBXd0dbHzV8AAA"
+ },
+ "hero.webp": {
+  "width": 1600,
+  "height": 1200,
+  "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAABQAgCdASoMAAkAA4BaJbACdH8AFwRbD0yeyAAA/ueTR9zsDB6Ue7G19nrKckQ6VuIhMxUT5eyP/8j/3tjsB4Nm+wdMAAAA"
+ },
+ "junior-abobo.webp": {
+  "width": 1200,
+  "height": 900,
+  "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAwAgCdASoMAAkAA4BaJbACdH8GJ/gbF+w+ngD+9T45IUP7nsiaZeNjTrg19KIypBTx9Ly4mMuxjXPCta0Zx58PmYNbBWly1v8JLZv+Ow7UAAAA"
+ },
+ "junior-yopougon.webp": {
+  "width": 1200,
+  "height": 900,
+  "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAwAgCdASoMAAkAA4BaJbACdH8GJ/gbF+w+ngD+9T45IUP7nsiaZeNjTrg19KIypBTx9Ly4mMuxjXPCta0Zx58PmYNbBWly1v8JLZv+Ow7UAAAA"
+ }
+}

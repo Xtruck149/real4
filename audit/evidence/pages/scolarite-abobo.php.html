@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scolarité & Inscriptions 2026-2027 — Collège Anador Abobo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --violet: #7b2fa0;
+            --violet-dark: #5c1f7c;
+            --violet-soft: #f3e9f9;
+            --red: #d92b3f;
+            --red-soft: #fdecee;
+            --gold: #e8a20c;
+            --gold-soft: #fdf4e0;
+            --green: #0d9d72;
+            --green-soft: #e6f6f0;
+            --ink: #2a1b3d;
+            --border: #ece6f2;
+            --text-muted: #6b6178;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #faf8fc;
+            color: var(--ink);
+            line-height: 1.5;
+        }
+        .wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
+        a { color: inherit; }
+
+        .back-bar { max-width: 1060px; margin: 0 auto; padding: 18px 20px 0; }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--violet);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            background: linear-gradient(125deg, #5c1f7c, #7b2fa0, #9b4fc4);
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px 50px;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        .hero-lion-bg {
+            position: absolute;
+            right: 0;
+            bottom: -20px;
+            font-size: 14rem;
+            opacity: 0.08;
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+        }
+        .hero-content { position: relative; z-index: 1; }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.18);
+            padding: 7px 18px;
+            border-radius: 30px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .hero h1 { font-size: 2.4rem; margin: 0 0 10px; font-weight: 800; }
+        .hero h1 span { color: #ffd166; }
+        .hero p.sub {
+            max-width: 640px;
+            margin: 0 auto 16px;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.02rem;
+        }
+        .hero-devise {
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            margin-bottom: 26px;
+        }
+        .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 26px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.92rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .btn-white { background: #fff; color: var(--violet); }
+        .btn-outline-white { background: transparent; color: #fff; border-color: rgba(255,255,255,0.7); }
+        .btn-sim { background: #ffd166; color: #4a3400; }
+        .btn-sim:hover { background: #ffc93c; }
+
+        section.block { padding: 40px 0; }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+        .section-num {
+            width: 34px; height: 34px;
+            background: var(--violet);
+            color: #fff;
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+        .section-title h2 { font-size: 1.3rem; margin: 0; }
+
+        .card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 26px;
+            box-shadow: 0 4px 14px rgba(90,40,120,0.05);
+        }
+
+        /* Cartes tarifaires */
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+        .price-card { position: relative; }
+        .statut-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #eef2f7;
+            color: #475569;
+            border: 1px solid #d8e0ea;
+            font-weight: 700;
+            font-size: 0.66rem;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            padding: 4px 11px;
+            border-radius: 20px;
+        }
+        .price-card.tech .statut-badge {
+            background: var(--red-soft);
+            color: #b02a2a;
+            border-color: #f3c7c7;
+        }
+        .price-card-head {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+        .price-card:not(.affecte) .price-card-head { padding-right: 92px; }
+        .price-icon {
+            width: 46px; height: 46px;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem;
+        }
+        .price-icon.violet { background: var(--violet-soft); }
+        .price-icon.red { background: var(--red-soft); }
+        .price-card-head h3 { margin: 0; font-size: 1.05rem; }
+        .price-amount { font-size: 1.7rem; font-weight: 800; margin: 6px 0 4px; }
+        .price-note {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-bottom: 16px;
+            background: var(--violet-soft);
+            padding: 8px 12px;
+            border-radius: 10px;
+        }
+        .price-card.tech .price-note { background: var(--red-soft); }
+        .advantages { list-style: none; padding: 0; margin: 0; }
+        .advantages li {
+            display: flex;
+            gap: 10px;
+            padding: 8px 0;
+            border-top: 1px solid var(--border);
+            font-size: 0.87rem;
+        }
+        .advantages li:first-child { border-top: none; }
+        .check { color: var(--green); font-weight: 800; flex-shrink: 0; }
+
+        /* Carte Affectés (verte) */
+        .price-card.affecte {
+            background: linear-gradient(160deg, #f2fbf7, #e6f6f0);
+            border-color: #bfe9d7;
+        }
+        .affecte-badge {
+            display: inline-block;
+            background: var(--green);
+            color: #fff;
+            font-weight: 800;
+            font-size: 0.68rem;
+            letter-spacing: 0.5px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+        .affecte-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-top: 1px solid #bfe9d7;
+            font-size: 0.88rem;
+        }
+        .affecte-row:first-of-type { border-top: none; }
+        .affecte-row b { color: var(--green); font-size: 1rem; }
+
+        /* Frise versements */
+        .timeline-card { margin-bottom: 24px; overflow-x: auto; }
+        .timeline {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            min-width: 560px;
+            position: relative;
+            padding: 10px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 5%;
+            right: 5%;
+            height: 2px;
+            background: var(--border);
+            z-index: 0;
+        }
+        .timeline-step {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            text-align: center;
+        }
+        .timeline-dot {
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800;
+            font-size: 0.85rem;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .timeline-dot.red { background: var(--red); }
+        .timeline-dot.violet { background: var(--violet); }
+        .timeline-label { font-size: 0.78rem; font-weight: 600; color: var(--ink); }
+
+        @media (max-width: 720px) {
+            .timeline { min-width: 0; flex-wrap: wrap; gap: 16px 6px; }
+            .timeline::before { display: none; }
+            .timeline-step { flex: 0 0 30%; }
+        }
+
+        /* Tableaux scolarité */
+        .table-block { margin-bottom: 24px; }
+        .table-band {
+            padding: 12px 18px;
+            border-radius: 12px 12px 0 0;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+        .table-band.general { background: var(--violet-soft); color: var(--violet-dark); }
+        .table-band.technique { background: var(--red-soft); color: var(--red); }
+        .table-wrap {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 0 0 16px 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(90,40,120,0.05);
+        }
+        table.fees { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+        table.fees thead th {
+            background: var(--ink);
+            color: #fff;
+            padding: 12px 10px;
+            text-align: center;
+            font-weight: 700;
+        }
+        table.fees thead th span {
+            display: block;
+            font-weight: 400;
+            font-size: 0.68rem;
+            color: rgba(255,255,255,0.65);
+            margin-top: 2px;
+        }
+        table.fees thead th:first-child { text-align: left; }
+        table.fees tbody td { padding: 11px 10px; border-bottom: 1px solid var(--border); text-align: center; }
+        table.fees tbody td:first-child { text-align: left; font-weight: 600; }
+        table.fees tbody tr:nth-child(even) { background: #fbf9fc; }
+        table.fees tfoot td {
+            font-weight: 800;
+            padding: 12px 10px;
+            text-align: center;
+            border-top: 3px solid var(--violet);
+        }
+        .table-band.technique + .table-wrap table.fees tfoot td { border-top-color: var(--red); }
+        table.fees tfoot td:first-child { text-align: left; }
+        .table-band.general ~ .table-wrap table.fees tfoot td { background: var(--violet-soft); color: var(--violet-dark); }
+        .technique-table tfoot td { background: var(--red-soft); color: var(--red); }
+
+        .warning-box, .gold-box {
+            border-radius: 14px;
+            padding: 16px 20px;
+            font-size: 0.86rem;
+            margin-top: 14px;
+        }
+        .warning-box { background: var(--red-soft); border: 1px solid #f6c6cc; color: #8a1526; }
+        .gold-box { background: var(--gold-soft); border: 1px solid #f2dca3; color: #7a5400; }
+
+        /* Tenue & dossier */
+        .doc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+        .doc-list { list-style: none; padding: 0; margin: 14px 0 0; }
+        .doc-list li {
+            padding: 9px 0;
+            border-top: 1px solid var(--border);
+            font-size: 0.88rem;
+        }
+        .doc-list li:first-child { border-top: none; }
+        .doc-list.tenue li strong { color: var(--violet-dark); }
+
+        /* Atouts */
+        .atouts-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+        @media (max-width: 900px) { .atouts-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 520px) { .atouts-grid { grid-template-columns: 1fr; } }
+        .atout-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 12px 14px;
+            position: relative;
+        }
+        .atout-icon {
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            background: var(--violet-soft);
+            color: var(--violet);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.05rem;
+            flex-shrink: 0;
+        }
+        .atout-item span.label { font-size: 0.82rem; font-weight: 600; }
+        .atout-new {
+            position: absolute;
+            top: -8px;
+            right: -6px;
+            background: var(--red);
+            color: #fff;
+            font-size: 0.6rem;
+            font-weight: 800;
+            padding: 2px 8px;
+            border-radius: 20px;
+        }
+
+        /* Footer */
+        .footer-band {
+            background: linear-gradient(125deg, #5c1f7c, #7b2fa0);
+            color: #fff;
+            border-radius: 24px;
+            margin: 40px 0;
+            padding: 30px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .footer-left { display: flex; align-items: center; gap: 16px; }
+        .footer-lion {
+            width: 56px; height: 56px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.7rem;
+            flex-shrink: 0;
+        }
+        .footer-name { font-weight: 800; font-size: 1.05rem; margin-bottom: 4px; }
+        .footer-meta { font-size: 0.8rem; color: rgba(255,255,255,0.85); line-height: 1.6; }
+        .footer-code {
+            background: var(--gold);
+            color: #4a3400;
+            font-weight: 800;
+            font-size: 0.8rem;
+            padding: 8px 16px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 760px) {
+            .price-grid, .doc-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 1.8rem; }
+            table.fees { font-size: 0.75rem; }
+            table.fees thead th, table.fees tbody td, table.fees tfoot td { padding: 8px 6px; }
+            .footer-band { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="back-bar">
+        <a href="etablissement.php?e=college-abobo" class="back-link">&larr; Retour au Collège Anador Abobo</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <span class="hero-lion-bg">🦁</span>
+        <div class="wrap hero-content">
+            <span class="hero-badge">Collège Anador Abobo · Général / Technique · 2026-2027</span>
+            <h1>Scolarité &amp; <span>inscriptions</span></h1>
+            <p class="sub">Tout ce qu'il faut savoir pour inscrire votre enfant au Collège Anador Abobo : tarifs, échéancier, dossier et atouts de l'établissement.</p>
+            <p class="hero-devise">DISCIPLINE &middot; ÉMULATION &middot; RIGUEUR</p>
+            <div class="hero-actions">
+                <a href="#scolarite" class="btn btn-white">Voir la scolarité</a>
+                <a href="simulateur-frais.php" class="btn btn-sim">🧮 Combien vais-je payer ?</a>
+                <a href="#dossier" class="btn btn-outline-white">Dossier à fournir</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="wrap">
+
+        <!-- Cartes tarifaires -->
+        <section class="block" style="padding-top:0;">
+            <div class="price-grid">
+                <div class="card price-card">
+                    <span class="statut-badge">Non affecté</span>
+                    <div class="price-card-head">
+                        <div class="price-icon violet">🎓</div>
+                        <div><h3>Enseignement Général</h3></div>
+                    </div>
+                    <div class="price-amount">5 000 F <span style="font-size:0.95rem; font-weight:600; color:var(--text-muted);">+ 35 000 F annexes</span></div>
+                    <div class="price-note">À l'inscription : 1er versement + frais d'inscription + frais annexes</div>
+                    <ul class="advantages">
+                        <li><span class="check">✓</span> Kit Anador offert (1 sac, 1 tenue de sport, 2 macarons, 1 trousse)</li>
+                        <li><span class="check">✓</span> 12 photos, SMS aux parents, rame de papier, appel numérique</li>
+                        <li><span class="check">✓</span> Aide pédagogique numérique, bibliothèque, infirmerie</li>
+                    </ul>
+                </div>
+                <div class="card price-card tech">
+                    <span class="statut-badge">Non affecté</span>
+                    <div class="price-card-head">
+                        <div class="price-icon red">⚙️</div>
+                        <div><h3>Enseignement Technique</h3></div>
+                    </div>
+                    <div class="price-amount">5 000 F <span style="font-size:0.95rem; font-weight:600; color:var(--text-muted);">+ 40 000 F annexes</span></div>
+                    <div class="price-note">À l'inscription : 1er versement + frais d'inscription + frais annexes</div>
+                    <ul class="advantages">
+                        <li><span class="check">✓</span> Kit Anador, informatique, entrepreneuriat, activités artistiques et sportives</li>
+                        <li><span class="check">✓</span> Caméras de surveillance, visite médicale</li>
+                        <li><span class="check">✓</span> Examen blanc régional, DVS</li>
+                    </ul>
+                </div>
+                <div class="card price-card affecte">
+                    <span class="affecte-badge">Affecté</span>
+                    <div class="price-card-head" style="margin-top:2px;">
+                        <div class="price-icon" style="background:#d7f3e6;">🏛</div>
+                        <div><h3>Élèves affectés</h3></div>
+                    </div>
+                    <div class="affecte-row"><span>6ème · 5ème · 4ème · 3ème</span><b>75 000 F</b></div>
+                    <div class="affecte-row"><span>2nde · 1ère · Tle (Général)</span><b>80 000 F</b></div>
+                    <div class="affecte-row"><span>Technique G1 + G2</span><b>101 300 F</b></div>
+                    <div style="margin-top:12px; padding-top:12px; border-top:1px dashed #bfe9d7; font-size:0.78rem; color:#0d7a5a;">
+                        <div style="font-weight:700; margin-bottom:6px;">Détail du forfait Technique affecté</div>
+                        <div class="affecte-row" style="border-top:none; padding:5px 0;"><span>Forfait de base</span><span style="font-weight:600;">95 600 F</span></div>
+                        <div class="affecte-row" style="border-top:none; padding:5px 0;"><span>Cravate</span><span style="font-weight:600;">2 500 F</span></div>
+                        <div class="affecte-row" style="border-top:none; padding:5px 0;"><span>Inscription en ligne</span><span style="font-weight:600;">3 200 F</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- I. Échéancier de scolarité -->
+        <section class="block" id="scolarite">
+            <div class="section-title">
+                <div class="section-num">I</div>
+                <h2>Échéancier de scolarité</h2>
+            </div>
+
+            <div class="card timeline-card">
+                <div class="timeline">
+                    <div class="timeline-step">
+                        <div class="timeline-dot red">1</div>
+                        <span class="timeline-label">Inscription</span>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot violet">2</div>
+                        <span class="timeline-label">Fin octobre</span>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot violet">3</div>
+                        <span class="timeline-label">Fin novembre</span>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot violet">4</div>
+                        <span class="timeline-label">Fin décembre</span>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot violet">5</div>
+                        <span class="timeline-label">Fin janvier</span>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot violet">6</div>
+                        <span class="timeline-label">Fin février</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Général -->
+            <div class="table-block">
+                <div class="table-band general">Enseignement général — scolarité</div>
+                <div class="table-wrap">
+                    <table class="fees">
+                        <thead>
+                            <tr>
+                                <th>Niveau</th>
+                                <th>1er<span>Inscription</span></th>
+                                <th>2e<span>Fin oct.</span></th>
+                                <th>3e<span>Fin nov.</span></th>
+                                <th>4e<span>Fin déc.</span></th>
+                                <th>5e<span>Fin janv.</span></th>
+                                <th>6e<span>Fin févr.</span></th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>6ème – 3ème</td>
+                                <td>30 000 F</td><td>25 000 F</td><td>25 000 F</td>
+                                <td>20 000 F</td><td>20 000 F</td><td>20 000 F</td>
+                                <td><strong>140 000 F</strong></td>
+                            </tr>
+                            <tr>
+                                <td>2nde – 1ère – Tle</td>
+                                <td>35 000 F</td><td>35 000 F</td><td>25 000 F</td>
+                                <td>25 000 F</td><td>20 000 F</td><td>20 000 F</td>
+                                <td><strong>160 000 F</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Technique -->
+            <div class="table-block">
+                <div class="table-band technique">Enseignement technique — scolarité</div>
+                <div class="table-wrap">
+                    <table class="fees technique-table">
+                        <thead>
+                            <tr>
+                                <th>Niveau</th>
+                                <th>1er<span>Inscription</span></th>
+                                <th>2e<span>Fin oct.</span></th>
+                                <th>3e<span>Fin nov.</span></th>
+                                <th>4e<span>Fin déc.</span></th>
+                                <th>5e<span>Fin janv.</span></th>
+                                <th>6e<span>Fin févr.</span></th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2nde G1 – G2</td>
+                                <td>30 000 F</td><td>30 000 F</td><td>30 000 F</td>
+                                <td>25 000 F</td><td>25 000 F</td><td>20 000 F</td>
+                                <td><strong>160 000 F</strong></td>
+                            </tr>
+                            <tr>
+                                <td>1ère G1 – G2</td>
+                                <td>30 000 F</td><td>30 000 F</td><td>30 000 F</td>
+                                <td>25 000 F</td><td>25 000 F</td><td>20 000 F</td>
+                                <td><strong>160 000 F</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Tle G1 – G2</td>
+                                <td>30 000 F</td><td>30 000 F</td><td>30 000 F</td>
+                                <td>30 000 F</td><td>30 000 F</td><td>25 000 F</td>
+                                <td><strong>180 000 F</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Important :</strong> une scolarité entamée est entièrement due et non remboursable.
+            </div>
+            <div class="gold-box">
+                <strong>💳 Frais d'examen</strong> payés par les parents en ligne : BEPC 2 000 F &middot; BAC 5 000 F.
+            </div>
+        </section>
+
+        <!-- II. Tenue & Dossier -->
+        <section class="block" id="dossier">
+            <div class="section-title">
+                <div class="section-num">II</div>
+                <h2>Tenue &amp; dossier</h2>
+            </div>
+            <div class="doc-grid">
+                <div class="card">
+                    <h3 style="margin-top:0;">👔 Tenue scolaire</h3>
+                    <ul class="doc-list tenue">
+                        <li><strong>Garçons :</strong> pantalon bleu marine</li>
+                        <li><strong>Filles :</strong> jupe bleue marine</li>
+                        <li>Chemise blanche à manches longues</li>
+                        <li>Cravate bleue à acheter au collège</li>
+                        <li>Chaussures fermées — les « lèkès » sont interdits</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 style="margin-top:0;">📁 Dossier à fournir</h3>
+                    <p style="font-size:0.82rem; color:var(--text-muted); margin-top:0;">Général et Technique</p>
+                    <ul class="doc-list">
+                        <li>Bulletin du 3ème trimestre</li>
+                        <li>Reçu d'inscription en ligne de l'année en cours</li>
+                        <li>1 extrait de naissance (pour les nouveaux)</li>
+                        <li>Test d'entrée en 3ème et en Terminale</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- III. Les atouts -->
+        <section class="block">
+            <div class="section-title">
+                <div class="section-num">III</div>
+                <h2>Les atouts du Collège Anador Abobo</h2>
+            </div>
+            <div class="atouts-grid">
+                <div class="atout-item">
+                    <span class="atout-new">Nouveauté</span>
+                    <div class="atout-icon">💻</div>
+                    <span class="label">Aide pédagogique numérique</span>
+                </div>
+                <div class="atout-item">
+                    <span class="atout-new">Nouveauté</span>
+                    <div class="atout-icon">📹</div>
+                    <span class="label">Caméras de surveillance</span>
+                </div>
+                <div class="atout-item"><div class="atout-icon">🌳</div><span class="label">3 hectares avec infrastructures sportives</span></div>
+                <div class="atout-item"><div class="atout-icon">🏫</div><span class="label">Classes aérées et spacieuses</span></div>
+                <div class="atout-item"><div class="atout-icon">👨‍🏫</div><span class="label">Encadrement de qualité</span></div>
+                <div class="atout-item"><div class="atout-icon">🧑‍⚕️</div><span class="label">Inspecteur d'orientation-psychologue</span></div>
+                <div class="atout-item"><div class="atout-icon">📏</div><span class="label">Discipline et suivi des élèves</span></div>
+                <div class="atout-item"><div class="atout-icon">🏆</div><span class="label">Résultats excellents aux examens</span></div>
+                <div class="atout-item"><div class="atout-icon">🩺</div><span class="label">Infirmerie équipée</span></div>
+                <div class="atout-item"><div class="atout-icon">🚻</div><span class="label">Sanitaires carrelés et entretenus</span></div>
+                <div class="atout-item"><div class="atout-icon">📚</div><span class="label">Bibliothèque</span></div>
+                <div class="atout-item"><div class="atout-icon">🎉</div><span class="label">Journée de l'excellence</span></div>
+                <div class="atout-item"><div class="atout-icon">🖥️</div><span class="label">3 salles informatiques + internet</span></div>
+                <div class="atout-item"><div class="atout-icon">⚽</div><span class="label">Football / handball / basket / volley / maracana</span></div>
+                <div class="atout-item"><div class="atout-icon">💡</div><span class="label">Entrepreneuriat</span></div>
+                <div class="atout-item"><div class="atout-icon">🎭</div><span class="label">Académie des talents</span></div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div class="footer-band">
+            <div class="footer-left">
+                <div class="footer-lion">🦁</div>
+                <div>
+                    <div class="footer-name">Collège Anador Abobo — « ANADOR, J'ADORE ! »</div>
+                    <div class="footer-meta">
+                        Abobo Banco Anador &middot; 07 47 45 82 12 / 07 48 96 47 00<br>
+                        collegeanador000216@gmail.com
+                    </div>
+                </div>
+            </div>
+            <span class="footer-code">Code école : 000216</span>
+        </div>
+
+    </div>
+
+</body>
+</html>

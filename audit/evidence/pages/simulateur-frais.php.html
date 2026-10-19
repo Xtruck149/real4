@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur de frais — Combien vais-je payer ? · Collège Anador</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --violet: #7b2fa0;
+            --violet-dark: #5c1f7c;
+            --violet-soft: #f3e9f9;
+            --red: #d92b3f;
+            --red-soft: #fdecee;
+            --gold: #e8a20c;
+            --gold-soft: #fdf4e0;
+            --green: #0d9d72;
+            --green-soft: #e6f6f0;
+            --ink: #2a1b3d;
+            --border: #ece6f2;
+            --text-muted: #6b6178;
+            --blue: #2d7ef7;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #faf8fc;
+            color: var(--ink);
+            line-height: 1.5;
+        }
+        .wrap { max-width: 640px; margin: 0 auto; padding: 0 20px; }
+        a { color: inherit; }
+
+        .back-bar { max-width: 640px; margin: 0 auto; padding: 18px 20px 0; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            text-decoration: none; color: var(--violet); font-weight: 600; font-size: 0.9rem;
+        }
+
+        .hero {
+            position: relative;
+            background: linear-gradient(125deg, #5c1f7c, #7b2fa0, #9b4fc4);
+            color: #fff; text-align: center;
+            padding: 40px 20px 44px;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 26px; overflow: hidden;
+        }
+        .hero-lion-bg {
+            position: absolute; right: 0; bottom: -20px;
+            font-size: 12rem; opacity: 0.08; line-height: 1;
+            pointer-events: none; user-select: none;
+        }
+        .hero-content { position: relative; z-index: 1; }
+        .hero-badge {
+            display: inline-block; background: rgba(255,255,255,0.18);
+            padding: 7px 18px; border-radius: 30px;
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 0.6px;
+            text-transform: uppercase; margin-bottom: 16px;
+        }
+        .hero h1 { font-size: 1.9rem; margin: 0 0 8px; font-weight: 800; }
+        .hero h1 span { color: #ffd166; }
+        .hero p.sub { max-width: 480px; margin: 0 auto; color: rgba(255,255,255,0.9); font-size: 0.98rem; }
+
+        /* Barre d'étapes */
+        .steps-bar {
+            display: flex; align-items: center; justify-content: center;
+            gap: 6px; margin-bottom: 22px;
+        }
+        .step-pill {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 0.78rem; font-weight: 700; color: var(--text-muted);
+        }
+        .step-pill .num {
+            width: 26px; height: 26px; border-radius: 50%;
+            background: #eae3f1; color: var(--text-muted);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.8rem; flex-shrink: 0;
+        }
+        .step-pill.active .num { background: var(--violet); color: #fff; }
+        .step-pill.done .num { background: var(--green); color: #fff; }
+        .step-pill.active { color: var(--violet); }
+        .step-sep { width: 18px; height: 2px; background: #e0d7ea; }
+        @media (max-width: 480px) { .step-pill .txt { display: none; } .step-sep { width: 10px; } }
+
+        .card {
+            background: #fff; border: 1px solid var(--border);
+            border-radius: 20px; padding: 26px;
+            box-shadow: 0 6px 20px rgba(90,40,120,0.06);
+        }
+        .card h2 { font-size: 1.25rem; margin: 0 0 4px; text-align: center; }
+        .card .card-sub { text-align: center; color: var(--text-muted); font-size: 0.88rem; margin: 0 0 22px; }
+
+        .field { margin-bottom: 16px; }
+        .field label {
+            display: block; font-weight: 700; font-size: 0.82rem;
+            margin-bottom: 7px; color: var(--violet-dark);
+            text-transform: uppercase; letter-spacing: 0.4px;
+        }
+        select {
+            width: 100%; padding: 14px 16px; font-size: 1rem; font-family: inherit;
+            border: 2px solid var(--border); border-radius: 12px; background: #fff;
+            color: var(--ink); cursor: pointer; appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237b2fa0' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 14px center; background-size: 20px;
+        }
+        select:focus { outline: none; border-color: var(--violet); }
+
+        /* Choix en cartes (statut / nouveau) */
+        .choice-grid { display: grid; gap: 12px; }
+        .choice {
+            display: flex; align-items: center; gap: 14px;
+            padding: 16px 18px; border: 2px solid var(--border);
+            border-radius: 14px; cursor: pointer; transition: all 0.15s;
+            background: #fff;
+        }
+        .choice:hover { border-color: #d7c4e6; }
+        .choice.selected { border-color: var(--violet); background: var(--violet-soft); }
+        .choice .ico {
+            width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+            background: var(--violet-soft);
+        }
+        .choice.selected .ico { background: #fff; }
+        .choice .ctxt b { display: block; font-size: 1rem; }
+        .choice .ctxt span { font-size: 0.82rem; color: var(--text-muted); }
+        .choice .radio {
+            margin-left: auto; width: 22px; height: 22px; border-radius: 50%;
+            border: 2px solid #cbb8db; flex-shrink: 0; position: relative;
+        }
+        .choice.selected .radio { border-color: var(--violet); }
+        .choice.selected .radio::after {
+            content: ''; position: absolute; inset: 4px; border-radius: 50%; background: var(--violet);
+        }
+
+        .btn-row { display: flex; gap: 12px; margin-top: 24px; }
+        .btn {
+            flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 14px 22px; border-radius: 30px; font-weight: 700; font-size: 0.95rem;
+            text-decoration: none; cursor: pointer; border: 2px solid transparent; font-family: inherit;
+        }
+        .btn-primary { background: var(--violet); color: #fff; }
+        .btn-primary:disabled { background: #cbb8db; cursor: not-allowed; }
+        .btn-ghost { background: #fff; color: var(--violet); border-color: var(--border); flex: 0 0 auto; }
+
+        /* Résultat */
+        .result-head { text-align: center; margin-bottom: 20px; }
+        .result-head .big-amount {
+            font-size: 2.6rem; font-weight: 800; color: var(--violet-dark);
+            line-height: 1.1; margin: 6px 0;
+        }
+        .result-head .big-amount small { font-size: 1.1rem; color: var(--text-muted); font-weight: 600; }
+        .result-recap {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 18px;
+        }
+        .tag {
+            font-size: 0.76rem; font-weight: 700; padding: 5px 12px; border-radius: 20px;
+            background: var(--violet-soft); color: var(--violet-dark);
+        }
+        .breakdown { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--border); }
+        .breakdown li {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 2px; border-bottom: 1px solid var(--border); font-size: 0.92rem;
+        }
+        .breakdown li b { font-weight: 700; }
+        .breakdown li.total { font-size: 1.05rem; }
+        .breakdown li.total b { color: var(--violet-dark); }
+        .info-box {
+            background: var(--gold-soft); border: 1px solid #f2dca3; color: #7a5400;
+            border-radius: 14px; padding: 14px 16px; font-size: 0.85rem; margin-top: 18px;
+        }
+        .warn-box {
+            background: var(--red-soft); border: 1px solid #f6c6cc; color: #8a1526;
+            border-radius: 14px; padding: 14px 16px; font-size: 0.85rem; margin-top: 12px;
+        }
+        .hidden { display: none !important; }
+
+        .foot-note { text-align: center; color: var(--text-muted); font-size: 0.78rem; margin: 24px 0 40px; }
+        .foot-note a { color: var(--violet); font-weight: 600; }
+    </style>
+</head>
+<body>
+
+    <div class="back-bar">
+        <a href="index.php" class="back-link">&larr; Retour à l'accueil</a>
+    </div>
+
+    <section class="hero">
+        <span class="hero-lion-bg">🦁</span>
+        <div class="wrap hero-content">
+            <span class="hero-badge">Simulateur d'inscription · 2026-2027</span>
+            <h1>Combien vais-je <span>payer&nbsp;?</span></h1>
+            <p class="sub">Répondez à 3 questions et découvrez le montant à régler le jour de l'inscription de votre enfant.</p>
+        </div>
+    </section>
+
+    <div class="wrap">
+
+        <!-- Barre d'étapes -->
+        <div class="steps-bar">
+            <div class="step-pill active" data-pill="1"><span class="num">1</span><span class="txt">Niveau</span></div>
+            <div class="step-sep"></div>
+            <div class="step-pill" data-pill="2"><span class="num">2</span><span class="txt">Statut</span></div>
+            <div class="step-sep"></div>
+            <div class="step-pill" data-pill="3"><span class="num">3</span><span class="txt">Profil</span></div>
+            <div class="step-sep"></div>
+            <div class="step-pill" data-pill="4"><span class="num">✓</span><span class="txt">Montant</span></div>
+        </div>
+
+        <!-- ÉTAPE 1 : établissement + niveau -->
+        <div class="card step-panel" data-step="1">
+            <h2>Sélectionnez un niveau</h2>
+            <p class="card-sub">Choisissez l'établissement puis la classe de votre enfant.</p>
+            <div class="field">
+                <label for="etab">Établissement</label>
+                <select id="etab">
+                    <option value="">— Choisir —</option>
+                    <option value="abobo">Collège Anador Abobo</option>
+                    <option value="yopougon">Collège Anador Yopougon</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="niveau">Niveau / Classe</label>
+                <select id="niveau" disabled>
+                    <option value="">— Choisir d'abord un établissement —</option>
+                </select>
+            </div>
+            <div class="btn-row">
+                <button class="btn btn-primary" id="next1" disabled>Suivant &rarr;</button>
+            </div>
+        </div>
+
+        <!-- ÉTAPE 2 : statut -->
+        <div class="card step-panel hidden" data-step="2">
+            <h2>Votre statut</h2>
+            <p class="card-sub">Votre enfant est-il affecté par l'État dans cet établissement ?</p>
+            <div class="choice-grid">
+                <div class="choice" data-statut="affecte">
+                    <div class="ico">🏛️</div>
+                    <div class="ctxt"><b>Affecté d'État</b><span>Orienté par l'État (DECO / affectation)</span></div>
+                    <div class="radio"></div>
+                </div>
+                <div class="choice" data-statut="non-affecte">
+                    <div class="ico">🎓</div>
+                    <div class="ctxt"><b>Non affecté</b><span>Inscription libre / à la charge des parents</span></div>
+                    <div class="radio"></div>
+                </div>
+            </div>
+            <div class="btn-row">
+                <button class="btn btn-ghost" data-back="1">&larr;</button>
+                <button class="btn btn-primary" id="next2" disabled>Suivant &rarr;</button>
+            </div>
+        </div>
+
+        <!-- ÉTAPE 3 : nouveau / ancien -->
+        <div class="card step-panel hidden" data-step="3">
+            <h2>Vous êtes nouveau&nbsp;?</h2>
+            <p class="card-sub">Votre enfant est-il un nouvel élève ou déjà inscrit l'an dernier ?</p>
+            <div class="choice-grid">
+                <div class="choice" data-nouveau="oui">
+                    <div class="ico">✨</div>
+                    <div class="ctxt"><b>Oui, nouvel élève</b><span>Première inscription au collège</span></div>
+                    <div class="radio"></div>
+                </div>
+                <div class="choice" data-nouveau="non">
+                    <div class="ico">🔄</div>
+                    <div class="ctxt"><b>Non, déjà élève</b><span>Réinscription (ancien élève)</span></div>
+                    <div class="radio"></div>
+                </div>
+            </div>
+            <div class="btn-row">
+                <button class="btn btn-ghost" data-back="2">&larr;</button>
+                <button class="btn btn-primary" id="next3" disabled>Voir le montant ✓</button>
+            </div>
+        </div>
+
+        <!-- ÉTAPE 4 : résultat -->
+        <div class="card step-panel hidden" data-step="4">
+            <div class="result-head">
+                <p class="card-sub" style="margin-bottom:2px;">À régler le jour de l'inscription</p>
+                <div class="big-amount" id="resAmount">— <small>F CFA</small></div>
+            </div>
+            <div class="result-recap" id="resRecap"></div>
+            <ul class="breakdown" id="resBreakdown"></ul>
+            <div class="info-box" id="resInfo"></div>
+            <div class="warn-box">
+                ⚠️ Montant indicatif basé sur les tarifs 2026-2027. Une scolarité entamée est entièrement due et non remboursable. Confirmez le détail auprès du secrétariat.
+            </div>
+            <div class="btn-row">
+                <button class="btn btn-ghost" data-back="3">&larr;</button>
+                <a class="btn btn-primary" id="resScoLink" href="#">Voir la scolarité complète</a>
+            </div>
+            <div class="btn-row" style="margin-top:12px;">
+                <button class="btn btn-ghost" id="restart" style="flex:1;">↺ Recommencer la simulation</button>
+            </div>
+        </div>
+
+        <p class="foot-note">
+            Une question ? <a href="index.php#contact">Contactez le secrétariat</a> ·
+            Direction 07 07 04 04 37 · « ANADOR, J'ADORE&nbsp;! »
+        </p>
+
+    </div>
+
+    <script>
+    // ── Barème des frais 2026-2027 ──────────────────────────────────────────
+    // Montant à l'inscription (non affecté) = 1er versement + 5 000 (frais inscription) + frais annexes.
+    // Élève affecté = forfait indiqué sur la page scolarité (payé tel quel à l'inscription).
+    const FRAIS_INSCRIPTION = 5000;
+
+    const BAREME = {
+        abobo: {
+            nom: "Collège Anador Abobo",
+            scolarite: "scolarite-abobo.php",
+            annexes: { general: 35000, technique: 40000 },
+            niveaux: [
+                { v: "6e",  label: "6ème",            filiere: "general",   premier: 30000, affecte: 75000 },
+                { v: "5e",  label: "5ème",            filiere: "general",   premier: 30000, affecte: 75000 },
+                { v: "4e",  label: "4ème",            filiere: "general",   premier: 30000, affecte: 75000 },
+                { v: "3e",  label: "3ème",            filiere: "general",   premier: 30000, affecte: 75000 },
+                { v: "2nde",label: "2nde (Général)",  filiere: "general",   premier: 35000, affecte: 80000 },
+                { v: "1ere",label: "1ère (Général)",  filiere: "general",   premier: 35000, affecte: 80000 },
+                { v: "tle", label: "Terminale (Général)", filiere: "general", premier: 35000, affecte: 80000 },
+                { v: "2ndeG",label: "2nde G1-G2 (Technique)", filiere: "technique", premier: 30000, affecte: 101300, affecteDetail: { base: 95600, cravate: 2500, enligne: 3200 } },
+                { v: "1ereG",label: "1ère G1-G2 (Technique)", filiere: "technique", premier: 30000, affecte: 101300, affecteDetail: { base: 95600, cravate: 2500, enligne: 3200 } },
+                { v: "tleG", label: "Tle G1-G2 (Technique)",  filiere: "technique", premier: 30000, affecte: 101300, affecteDetail: { base: 95600, cravate: 2500, enligne: 3200 } }
+            ]
+        },
+        yopougon: {
+            nom: "Collège Anador Yopougon",
+            scolarite: "scolarite-yopougon.php",
+            annexes: { general: 35000, technique: 50000 },
+            niveaux: [
+                { v: "6e",  label: "6ème",            filiere: "general",   premier: 30000, affecte: 80600 },
+                { v: "5e",  label: "5ème",            filiere: "general",   premier: 30000, affecte: 80600 },
+                { v: "4e",  label: "4ème",            filiere: "general",   premier: 30000, affecte: 80600 },
+                { v: "3e",  label: "3ème",            filiere: "general",   premier: 30000, affecte: 80600 },
+                { v: "2nde",label: "2nde (Général)",  filiere: "general",   premier: 35000, affecte: 85600 },
+                { v: "1ere",label: "1ère (Général)",  filiere: "general",   premier: 35000, affecte: 85600 },
+                { v: "tle", label: "Terminale (Général)", filiere: "general", premier: 35000, affecte: 85600 },
+                { v: "2ndeG",label: "2nde G1-G2 (Technique)", filiere: "technique", premier: 30000, affecte: 85600 },
+                { v: "1ereG",label: "1ère G1-G2 (Technique)", filiere: "technique", premier: 30000, affecte: 85600 },
+                { v: "tleG", label: "Tle G1-G2 (Technique)",  filiere: "technique", premier: 35000, affecte: 85600 }
+            ]
+        }
+    };
+
+    const fmt = n => n.toLocaleString('fr-FR').replace(/ /g, ' ') + " F";
+
+    // ── État ────────────────────────────────────────────────────────────────
+    const state = { etab: "", niveau: "", statut: "", nouveau: "" };
+
+    const $ = s => document.querySelector(s);
+    const $$ = s => document.querySelectorAll(s);
+
+    function showStep(n) {
+        $$('.step-panel').forEach(p => p.classList.toggle('hidden', +p.dataset.step !== n));
+        $$('.step-pill').forEach(p => {
+            const i = +p.dataset.pill;
+            p.classList.toggle('active', i === n);
+            p.classList.toggle('done', i < n);
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Étape 1 : établissement -> niveaux
+    $('#etab').addEventListener('change', e => {
+        state.etab = e.target.value;
+        state.niveau = "";
+        const sel = $('#niveau');
+        if (!state.etab) {
+            sel.innerHTML = '<option value="">— Choisir d\'abord un établissement —</option>';
+            sel.disabled = true;
+        } else {
+            const opts = BAREME[state.etab].niveaux
+                .map(n => `<option value="${n.v}">${n.label}</option>`).join('');
+            sel.innerHTML = '<option value="">— Choisir la classe —</option>' + opts;
+            sel.disabled = false;
+        }
+        checkStep1();
+    });
+    $('#niveau').addEventListener('change', e => { state.niveau = e.target.value; checkStep1(); });
+    function checkStep1() { $('#next1').disabled = !(state.etab && state.niveau); }
+
+    // Étape 2 : statut
+    $$('[data-statut]').forEach(c => c.addEventListener('click', () => {
+        $$('[data-statut]').forEach(x => x.classList.remove('selected'));
+        c.classList.add('selected');
+        state.statut = c.dataset.statut;
+        $('#next2').disabled = false;
+    }));
+
+    // Étape 3 : nouveau
+    $$('[data-nouveau]').forEach(c => c.addEventListener('click', () => {
+        $$('[data-nouveau]').forEach(x => x.classList.remove('selected'));
+        c.classList.add('selected');
+        state.nouveau = c.dataset.nouveau;
+        $('#next3').disabled = false;
+    }));
+
+    // Navigation
+    $('#next1').addEventListener('click', () => showStep(2));
+    $('#next2').addEventListener('click', () => showStep(3));
+    $('#next3').addEventListener('click', () => { computeResult(); showStep(4); });
+    $$('[data-back]').forEach(b => b.addEventListener('click', () => showStep(+b.dataset.back)));
+    $('#restart').addEventListener('click', () => {
+        state.etab = state.niveau = state.statut = state.nouveau = "";
+        $('#etab').value = ""; $('#etab').dispatchEvent(new Event('change'));
+        $$('.choice').forEach(x => x.classList.remove('selected'));
+        $('#next2').disabled = $('#next3').disabled = true;
+        showStep(1);
+    });
+
+    // ── Calcul du montant à l'inscription ────────────────────────────────────
+    function computeResult() {
+        const etab = BAREME[state.etab];
+        const niv = etab.niveaux.find(n => n.v === state.niveau);
+        const filiereLabel = niv.filiere === 'technique' ? 'Technique' : 'Général';
+        const recap = $('#resRecap');
+        const bd = $('#resBreakdown');
+        const info = $('#resInfo');
+
+        recap.innerHTML = `
+            <span class="tag">${etab.nom.replace('Collège Anador ', '')}</span>
+            <span class="tag">${niv.label}</span>
+            <span class="tag">${state.statut === 'affecte' ? 'Affecté d\'État' : 'Non affecté'}</span>
+            <span class="tag">${state.nouveau === 'oui' ? 'Nouvel élève' : 'Ancien élève'}</span>`;
+
+        let total, lignes = [];
+
+        if (state.statut === 'affecte') {
+            total = niv.affecte;
+            if (niv.affecteDetail) {
+                lignes.push(['Forfait de base', niv.affecteDetail.base]);
+                lignes.push(['Cravate', niv.affecteDetail.cravate]);
+                lignes.push(['Inscription en ligne', niv.affecteDetail.enligne]);
+            } else {
+                lignes.push(['Forfait élève affecté', niv.affecte]);
+            }
+            info.innerHTML = `🏛️ En tant qu'<b>élève affecté d'État</b>, le montant à l'inscription est un forfait de <b>${fmt(niv.affecte)}</b> pour la filière ${filiereLabel}. Les frais d'examen (BEPC 2 000 F · BAC 5 000 F) restent à régler en ligne par les parents.`;
+        } else {
+            const annexes = etab.annexes[niv.filiere];
+            total = niv.premier + FRAIS_INSCRIPTION + annexes;
+            lignes.push(['1er versement de scolarité', niv.premier]);
+            lignes.push(["Frais d'inscription", FRAIS_INSCRIPTION]);
+            lignes.push([`Frais annexes (${filiereLabel})`, annexes]);
+            info.innerHTML = `🎓 Pour un <b>élève non affecté</b>, vous réglez le 1er versement + les frais d'inscription + les frais annexes. Les 5 versements suivants s'échelonnent d'octobre à février. ${state.nouveau === 'oui' ? "En tant que <b>nouvel élève</b>, pensez à l'extrait de naissance et au test d'entrée (3ème / Tle)." : "En <b>réinscription</b>, fournissez le bulletin du 3ème trimestre et le reçu de l'année en cours."}`;
+        }
+
+        bd.innerHTML = lignes.map(([l, v]) =>
+            `<li><span>${l}</span><b>${fmt(v)}</b></li>`).join('') +
+            `<li class="total"><span><b>À payer à l'inscription</b></span><b>${fmt(total)}</b></li>`;
+
+        $('#resAmount').innerHTML = fmt(total).replace(' F', '') + ' <small>F CFA</small>';
+        $('#resScoLink').href = etab.scolarite;
+    }
+    </script>
+
+</body>
+</html>

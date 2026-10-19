@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toutes nos actualités — GS Anador</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=1787810981">
+    <style>
+        :root { --a-primary: #0a2540; --a-accent: #f59e0b; --a-border: #e6ebf1; --a-muted: #64748b; }
+        .actu-hero { background: linear-gradient(135deg, #0a2540 0%, #123a63 100%); color: #fff; padding: 70px 5% 90px; text-align: center; position: relative; overflow: hidden; }
+        .actu-hero::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 50px; background: var(--bg-light, #f8fafc); border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
+        .actu-hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(245,158,11,0.18); color: var(--a-accent); padding: 6px 18px; border-radius: 30px; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 16px; }
+        .actu-hero h1 { margin: 0 0 10px; font-size: 2.4rem; font-family: 'Outfit', sans-serif; }
+        .actu-hero p { margin: 0; color: rgba(255,255,255,0.82); font-size: 1.02rem; max-width: 620px; margin: 0 auto; }
+
+        .actu-wrap { max-width: 1180px; margin: -40px auto 70px; padding: 0 22px; position: relative; z-index: 2; }
+
+        /* Filtres années */
+        .actu-filters { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 36px; }
+        .actu-filter { border: 1px solid var(--a-border); background: #fff; color: var(--a-primary); padding: 9px 20px; border-radius: 30px; font-weight: 700; font-size: 0.9rem; cursor: pointer; font-family: inherit; transition: all .18s; box-shadow: 0 2px 8px rgba(10,37,64,0.04); }
+        .actu-filter:hover { border-color: var(--a-accent); color: var(--a-accent); }
+        .actu-filter.active { background: var(--a-accent); border-color: var(--a-accent); color: #fff; box-shadow: 0 6px 18px rgba(245,158,11,0.35); }
+
+        /* Grille */
+        .actu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 26px; }
+        .actu-card { background: #fff; border: 1px solid var(--a-border); border-radius: 18px; overflow: hidden; box-shadow: 0 6px 22px rgba(10,37,64,0.06); transition: transform .22s, box-shadow .22s; display: flex; flex-direction: column; }
+        .actu-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(10,37,64,0.13); }
+        .actu-card-img { width: 100%; aspect-ratio: 16 / 9; background-size: cover; background-position: center; background-color: #0a2540; position: relative; }
+        .actu-card-img.no-photo { display: flex; align-items: center; justify-content: center; }
+        .actu-card-img.no-photo i { color: rgba(255,255,255,0.25); font-size: 2.4rem; }
+        .actu-card-date { position: absolute; top: 12px; left: 12px; background: var(--a-accent); color: #fff; font-weight: 700; font-size: 0.74rem; padding: 5px 12px; border-radius: 30px; box-shadow: 0 3px 10px rgba(0,0,0,0.2); }
+        .actu-card-body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }
+        .actu-card-body h3 { margin: 0 0 10px; font-size: 1.12rem; color: var(--a-primary); line-height: 1.3; font-family: 'Outfit', sans-serif; }
+        .actu-card-body p { margin: 0 0 16px; color: var(--a-muted); font-size: 0.9rem; line-height: 1.6; flex: 1;
+            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .actu-read { align-self: flex-start; color: var(--a-primary); font-weight: 700; font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; cursor: pointer; transition: gap .18s, color .18s; }
+        .actu-read:hover { color: var(--a-accent); gap: 11px; }
+
+        .actu-empty { text-align: center; color: var(--a-muted); padding: 60px 20px; }
+        .actu-empty i { font-size: 2.6rem; color: var(--a-accent); display: block; margin-bottom: 14px; }
+        .actu-count { text-align: center; color: var(--a-muted); font-size: 0.85rem; margin-bottom: 22px; }
+
+        @media (max-width: 600px) {
+            .actu-hero h1 { font-size: 1.8rem; }
+            .actu-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <span class="top-bar-slogan"><i class="fa-solid fa-heart"></i> Anador, j'adore&hellip;</span>
+        <span class="top-bar-motto">Discipline - Émulation - Rigueur</span>
+        <a href="tel:0707998179" class="top-bar-contact"><i class="fa-solid fa-phone"></i> +225 07 07 99 81 79</a>
+        <a href="admin.php" class="top-bar-profil"><i class="fa-solid fa-circle-user"></i> Admin</a>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <a href="index.php" class="logo" style="text-decoration:none;">
+            <div class="logo-icon"><img src="assets/images/logo-anador.png" alt="Lion Logo" style="height: 90px; border-radius: 12px; mix-blend-mode: multiply;"></div>
+            <div class="logo-text">
+                <h1>GS ANADOR</h1>
+                <span>Préscolaire, Primaires & Collèges</span>
+            </div>
+        </a>
+        <nav class="nav-links">
+            <a href="index.php#accueil">Accueil</a>
+            <a href="index.php#academie">Présentation</a>
+            <a href="index.php#actualite" class="active">Actualité</a>
+            <a href="index.php#chartes">Chartes</a>
+            <a href="index.php#resultats">Résultats</a>
+            <div class="nav-dropdown">
+                <a href="#" class="nav-dropdown-toggle">Scolarité <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="nav-dropdown-menu">
+                    <a href="scolarite-abobo.php"><i class="fa-solid fa-school"></i> Collège Anador Abobo</a>
+                    <a href="scolarite-yopougon.php"><i class="fa-solid fa-school"></i> Collège Anador Yopougon</a>
+                    <a href="inscriptions.php?e=junior-abobo"><i class="fa-solid fa-child-reaching"></i> Anador Junior Abobo</a>
+                    <a href="inscriptions.php?e=junior-yopougon"><i class="fa-solid fa-child-reaching"></i> Anador Junior Yopougon</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <a href="#" class="nav-dropdown-toggle">Voir + <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="nav-dropdown-menu">
+                    <a href="vie-scolaire.php"><i class="fa-solid fa-people-group"></i> Vie scolaire</a>
+                    <a href="calendrier.php"><i class="fa-solid fa-calendar-check"></i> Calendrier des devoirs</a>
+                    <a href="emploi-du-temps.php"><i class="fa-solid fa-clock"></i> Emploi du temps</a>
+                    <a href="clubs.php"><i class="fa-solid fa-users-rectangle"></i> Clubs</a>
+                    <a href="mediatheque.php"><i class="fa-solid fa-photo-film"></i> Médiathèque</a>
+                </div>
+            </div>
+            <a href="exos.php" class="btn-nav-accent" onclick="return goToExos(event)">Suivi Scolaire</a>
+            <a href="index.php#contact" class="btn-primary">Nous Contacter</a>
+        </nav>
+        <div class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></div>
+    </header>
+
+    <!-- Hero -->
+    <section class="actu-hero">
+        <span class="actu-hero-badge"><i class="fa-solid fa-newspaper"></i> Vie de l'école</span>
+        <h1>Toutes nos actualités</h1>
+        <p>Retrouvez tous les événements et moments forts de la vie scolaire du Groupe Scolaire Anador.</p>
+    </section>
+
+    <div class="actu-wrap">
+                    <!-- Filtres années -->
+            <div class="actu-filters" id="actuFilters">
+                <button class="actu-filter active" data-annee="all">Toutes</button>
+                                <button class="actu-filter" data-annee="Autres">Autres</button>
+                                <button class="actu-filter" data-annee="2027">2027</button>
+                                <button class="actu-filter" data-annee="2026">2026</button>
+                                <button class="actu-filter" data-annee="2025">2025</button>
+                            </div>
+
+            <div class="actu-count" id="actuCount">6 actualités</div>
+
+            <!-- Grille -->
+            <div class="actu-grid" id="actuGrid">
+                                <article class="actu-card" data-annee="Autres"
+                    data-news-title="Rentrée scolaire : le paiement par Wave arrive à Anador"
+                    data-news-date="CONTENU: Le Groupe Scolaire Anador a le plaisir d&#039;"
+                    data-news-desc="Le Groupe Scolaire Anador a le plaisir d&#039;annoncer une nouveauté pour cette rentrée scolaire : le règlement des frais est désormais possible par Wave. Cette solution moderne offre aux familles de nos sites d&#039;Abobo et de Yopougon plus de simplicité et de sérénité dans leurs démarches. Fidèle à sa devise « Discipline · Émulation · Rigueur », notre établissement poursuit ainsi ses efforts pour vous accompagner au mieux tout au long de l&#039;année."
+                    data-news-img="assets/images/23342872-25664141-5c732946.jpg">
+                    <div class="actu-card-img" style="background-image:url(assets/images/23342872-25664141-5c732946.jpg);">
+                                                <span class="actu-card-date">CONTENU: Le Groupe Scolaire Anador a le plaisir d&#039;</span>                    </div>
+                    <div class="actu-card-body">
+                        <h3>Rentrée scolaire : le paiement par Wave arrive à Anador</h3>
+                        <p>Le Groupe Scolaire Anador a le plaisir d&#039;annoncer une nouveauté pour cette rentrée scolaire : le règlement des frais est désormais possible par Wave. Cette solution moderne offre aux familles de nos sites d&#039;Abobo et de Yopougon plus de simplicité et de sérénité dans leurs démarches. Fidèle à sa devise « Discipline · Émulation · Rigueur », notre établissement poursuit ainsi ses efforts pour vous accompagner au mieux tout au long de l&#039;année.</p>
+                        <a class="actu-read" onclick="return openNewsModal(this)">Lire la suite <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                                <article class="actu-card" data-annee="2027"
+                    data-news-title="Le Groupe Scolaire Anador distingué meilleur établissement"
+                    data-news-date="01/01/2027"
+                    data-news-desc="C&#039;est avec une immense fierté que le Groupe Scolaire Anador a été primé meilleur établissement scolaire, une distinction qui vient couronner l&#039;engagement quotidien de toute notre communauté éducative. Cette reconnaissance récompense les valeurs qui nous animent depuis toujours : Discipline, Émulation et Rigueur. Nous adressons nos plus chaleureux remerciements à nos élèves, à leurs familles et à l&#039;ensemble de notre personnel, dont le dévouement rend possible une telle réussite sur nos sites d&#039;Abobo et de Yopougon."
+                    data-news-img="assets/images/2026-07-12-06_50_29-excellence-logo---Re-49da8a80.png">
+                    <div class="actu-card-img" style="background-image:url(assets/images/2026-07-12-06_50_29-excellence-logo---Re-49da8a80.png);">
+                                                <span class="actu-card-date">01/01/2027</span>                    </div>
+                    <div class="actu-card-body">
+                        <h3>Le Groupe Scolaire Anador distingué meilleur établissement</h3>
+                        <p>C&#039;est avec une immense fierté que le Groupe Scolaire Anador a été primé meilleur établissement scolaire, une distinction qui vient couronner l&#039;engagement quotidien de toute notre communauté éducative. Cette reconnaissance récompense les valeurs qui nous animent depuis toujours : Discipline, Émulation et Rigueur. Nous adressons nos plus chaleureux remerciements à nos élèves, à leurs familles et à l&#039;ensemble de notre personnel, dont le dévouement rend possible une telle réussite sur nos sites d&#039;Abobo et de Yopougon.</p>
+                        <a class="actu-read" onclick="return openNewsModal(this)">Lire la suite <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                                <article class="actu-card" data-annee="2025"
+                    data-news-title="La Fête du Travail célébrée ensemble par nos deux collèges"
+                    data-news-date="01/05/2025"
+                    data-news-desc="Le 1er mai dernier, le Groupe Scolaire Anador a vécu un moment de communion en réunissant ses deux collèges d&#039;Abobo et de Yopougon autour de la Fête du Travail. Cette célébration commune a été l&#039;occasion de renforcer les liens qui unissent notre communauté éducative et de partager, dans la joie et la fierté, les valeurs de discipline, d&#039;émulation et de rigueur qui nous rassemblent. Nous remercions chaleureusement l&#039;ensemble des personnels, élèves et familles ayant contribué à la réussite de cette belle journée."
+                    data-news-img="assets/images/2026-07-12-00_22_00-FKY_0008-JPG-93859170.png">
+                    <div class="actu-card-img" style="background-image:url(assets/images/2026-07-12-00_22_00-FKY_0008-JPG-93859170.png);">
+                                                <span class="actu-card-date">01/05/2025</span>                    </div>
+                    <div class="actu-card-body">
+                        <h3>La Fête du Travail célébrée ensemble par nos deux collèges</h3>
+                        <p>Le 1er mai dernier, le Groupe Scolaire Anador a vécu un moment de communion en réunissant ses deux collèges d&#039;Abobo et de Yopougon autour de la Fête du Travail. Cette célébration commune a été l&#039;occasion de renforcer les liens qui unissent notre communauté éducative et de partager, dans la joie et la fierté, les valeurs de discipline, d&#039;émulation et de rigueur qui nous rassemblent. Nous remercions chaleureusement l&#039;ensemble des personnels, élèves et familles ayant contribué à la réussite de cette belle journée.</p>
+                        <a class="actu-read" onclick="return openNewsModal(this)">Lire la suite <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                                <article class="actu-card" data-annee="2026"
+                    data-news-title="Une journée carrière réussie au Groupe Scolaire Anador"
+                    data-news-date="11/02/2026"
+                    data-news-desc="Le Groupe Scolaire Anador a eu le plaisir d&#039;organiser une journée carrière le 11 février 2026, offrant à ses élèves un moment privilégié de découverte et d&#039;orientation. Fidèle à sa devise « Discipline · Émulation · Rigueur », notre établissement s&#039;engage à préparer chaque apprenant à un avenir prometteur. Nous remercions chaleureusement toutes les personnes qui ont contribué à la réussite de cette belle initiative."
+                    data-news-img="assets/images/2026-07-12-00_20_03-IMG_0478-jpg-29b0c71c.png">
+                    <div class="actu-card-img" style="background-image:url(assets/images/2026-07-12-00_20_03-IMG_0478-jpg-29b0c71c.png);">
+                                                <span class="actu-card-date">11/02/2026</span>                    </div>
+                    <div class="actu-card-body">
+                        <h3>Une journée carrière réussie au Groupe Scolaire Anador</h3>
+                        <p>Le Groupe Scolaire Anador a eu le plaisir d&#039;organiser une journée carrière le 11 février 2026, offrant à ses élèves un moment privilégié de découverte et d&#039;orientation. Fidèle à sa devise « Discipline · Émulation · Rigueur », notre établissement s&#039;engage à préparer chaque apprenant à un avenir prometteur. Nous remercions chaleureusement toutes les personnes qui ont contribué à la réussite de cette belle initiative.</p>
+                        <a class="actu-read" onclick="return openNewsModal(this)">Lire la suite <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                                <article class="actu-card" data-annee="2026"
+                    data-news-title="Anador aux côtés des familles : un don de vivres solidaire"
+                    data-news-date="01/05/2026"
+                    data-news-desc="Fidèle à ses valeurs de solidarité et de partage, le Groupe Scolaire Anador a offert des vivres à des familles démunies le 1er mai 2026. À travers ce geste chaleureux, notre établissement réaffirme son engagement auprès de la communauté et son attachement à l&#039;entraide. Nous adressons nos remerciements à toutes les personnes qui ont rendu cette belle action possible."
+                    data-news-img="assets/images/2026-07-12-00_12_18-ANADOR-EXPRESS-N--2--d0a02d8d.png">
+                    <div class="actu-card-img" style="background-image:url(assets/images/2026-07-12-00_12_18-ANADOR-EXPRESS-N--2--d0a02d8d.png);">
+                                                <span class="actu-card-date">01/05/2026</span>                    </div>
+                    <div class="actu-card-body">
+                        <h3>Anador aux côtés des familles : un don de vivres solidaire</h3>
+                        <p>Fidèle à ses valeurs de solidarité et de partage, le Groupe Scolaire Anador a offert des vivres à des familles démunies le 1er mai 2026. À travers ce geste chaleureux, notre établissement réaffirme son engagement auprès de la communauté et son attachement à l&#039;entraide. Nous adressons nos remerciements à toutes les personnes qui ont rendu cette belle action possible.</p>
+                        <a class="actu-read" onclick="return openNewsModal(this)">Lire la suite <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                                <article class="actu-card" data-annee="2026"
+                    data-news-title="Madame la Ministre honore de sa présence le collège Anador Abobo"
+                    data-news-date="07/10/2026"
+                    data-news-desc="C&#039;est avec une immense fierté que le Groupe Scolaire Anador a accueilli Madame la Ministre au sein de son collège d&#039;Abobo. Cette visite distinguée témoigne de la reconnaissance portée à notre établissement et à l&#039;engagement quotidien de l&#039;ensemble de notre communauté éducative. Fidèles à notre devise « Discipline · Émulation · Rigueur », nous avons été honorés de présenter le fruit du travail de nos élèves et de nos équipes pédagogiques. Nous adressons nos sincères remerciements à Madame la Ministre pour cet encouragement précieux qui nous conforte dans notre mission d&#039;excellence."
+                    data-news-img="assets/images/2026-07-11-22_57_09-mme-le-ministre---Re-69b7de5a.png">
+                    <div class="actu-card-img" style="background-image:url(assets/images/2026-07-11-22_57_09-mme-le-ministre---Re-69b7de5a.png);">
+                                                <span class="actu-card-date">07/10/2026</span>                    </div>
+                    <div class="actu-card-body">
+                        <h3>Madame la Ministre honore de sa présence le collège Anador Abobo</h3>
+                        <p>C&#039;est avec une immense fierté que le Groupe Scolaire Anador a accueilli Madame la Ministre au sein de son collège d&#039;Abobo. Cette visite distinguée témoigne de la reconnaissance portée à notre établissement et à l&#039;engagement quotidien de l&#039;ensemble de notre communauté éducative. Fidèles à notre devise « Discipline · Émulation · Rigueur », nous avons été honorés de présenter le fruit du travail de nos élèves et de nos équipes pédagogiques. Nous adressons nos sincères remerciements à Madame la Ministre pour cet encouragement précieux qui nous conforte dans notre mission d&#039;excellence.</p>
+                        <a class="actu-read" onclick="return openNewsModal(this)">Lire la suite <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                            </div>
+
+            <div class="actu-empty" id="actuNoResult" style="display:none;">
+                <i class="fa-regular fa-calendar-xmark"></i>
+                Aucune actualité pour cette année.
+            </div>
+            </div>
+
+    <!-- Modal Actualité (réutilise openNewsModal de main.js) -->
+    <div class="news-modal-overlay" id="newsModal" onclick="if(event.target===this)closeNewsModal()">
+        <div class="news-modal">
+            <button class="news-modal-close" onclick="closeNewsModal()" aria-label="Fermer">&times;</button>
+            <div class="news-modal-img" id="newsModalImg"></div>
+            <div class="news-modal-body">
+                <span class="news-modal-date" id="newsModalDate"></span>
+                <h2 id="newsModalTitle"></h2>
+                <p id="newsModalDesc"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js?v=1787810984"></script>
+    <script>
+        // Filtres par année (client) + compteur.
+        (function () {
+            const filters = document.getElementById('actuFilters');
+            if (!filters) return;
+            const cards = Array.from(document.querySelectorAll('.actu-card'));
+            const count = document.getElementById('actuCount');
+            const noRes = document.getElementById('actuNoResult');
+            filters.addEventListener('click', function (e) {
+                const btn = e.target.closest('.actu-filter');
+                if (!btn) return;
+                filters.querySelectorAll('.actu-filter').forEach(b => b.classList.toggle('active', b === btn));
+                const an = btn.dataset.annee;
+                let visibles = 0;
+                cards.forEach(c => {
+                    const ok = (an === 'all' || c.dataset.annee === an);
+                    c.style.display = ok ? '' : 'none';
+                    if (ok) visibles++;
+                });
+                if (count) count.textContent = visibles + ' actualité' + (visibles > 1 ? 's' : '');
+                if (noRes) noRes.style.display = visibles === 0 ? '' : 'none';
+            });
+        })();
+    </script>
+</body>
+</html>

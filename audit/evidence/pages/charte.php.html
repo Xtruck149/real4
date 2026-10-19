@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charte du Collège Anador — Politique Qualité</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=1787810981">
+</head>
+<body>
+
+    <!-- Top Bar / Slogan -->
+    <div class="top-bar">
+        <span class="top-bar-slogan"><i class="fa-solid fa-heart"></i> Anador, j'adore&hellip;</span>
+        <span class="top-bar-motto">Discipline - Émulation - Rigueur</span>
+        <a href="tel:0707998179" class="top-bar-contact"><i class="fa-solid fa-phone"></i> +225 07 07 99 81 79</a>
+        <a href="admin.php" class="top-bar-profil"><i class="fa-solid fa-circle-user"></i> Admin</a>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <a href="index.php" class="logo" style="text-decoration:none;">
+            <div class="logo-icon"><img src="assets/images/logo-anador.png" alt="Lion Logo" style="height: 90px; border-radius: 12px; mix-blend-mode: multiply;"></div>
+            <div class="logo-text">
+                <h1>GS ANADOR</h1>
+                <span>Préscolaire, Primaires & Collèges</span>
+            </div>
+        </a>
+        <nav class="nav-links">
+            <a href="index.php#accueil">Accueil</a>
+            <a href="index.php#academie">Présentation</a>
+            <a href="index.php#actualite">Actualité</a>
+            <a href="index.php#chartes" class="active">Chartes</a>
+            <a href="index.php#resultats">Résultats</a>
+            <!-- <a href="index.php#prodiges">Nos Prodiges</a> --><!-- Nos Prodiges masqué temporairement -->
+            <div class="nav-dropdown">
+                <a href="#" class="nav-dropdown-toggle">Scolarité <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="nav-dropdown-menu">
+                    <a href="scolarite-abobo.php"><i class="fa-solid fa-school"></i> Collège Anador Abobo</a>
+                    <a href="scolarite-yopougon.php"><i class="fa-solid fa-school"></i> Collège Anador Yopougon</a>
+                    <a href="inscriptions.php?e=junior-abobo"><i class="fa-solid fa-child-reaching"></i> Anador Junior Abobo</a>
+                    <a href="inscriptions.php?e=junior-yopougon"><i class="fa-solid fa-child-reaching"></i> Anador Junior Yopougon</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <a href="#" class="nav-dropdown-toggle">Voir + <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="nav-dropdown-menu">
+                    <a href="vie-scolaire.php"><i class="fa-solid fa-people-group"></i> Vie scolaire</a>
+                    <a href="index.php#calendrier-devoirs"><i class="fa-solid fa-calendar-check"></i> Calendrier des devoirs</a>
+                    <a href="emploi-du-temps.php"><i class="fa-solid fa-clock"></i> Emploi du temps</a>
+                    <a href="clubs.php"><i class="fa-solid fa-users-rectangle"></i> Clubs</a>
+                    <a href="mediatheque.php"><i class="fa-solid fa-photo-film"></i> Médiathèque</a>
+                </div>
+            </div>
+            <a href="exos.php" class="btn-nav-accent" onclick="return goToExos(event)">Suivi Scolaire</a>
+            <a href="index.php#contact" class="btn-primary">Nous Contacter</a>
+        </nav>
+        <div class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></div>
+    </header>
+
+    <!-- Hero Charte -->
+    <section class="charte-hero">
+        <div class="charte-hero-content">
+            <span class="charte-hero-badge"><i class="fa-solid fa-scroll"></i> Politique Qualité</span>
+            <h1>Charte du Collège Anador</h1>
+            <p class="charte-hero-devise">Discipline &middot; Émulation &middot; Rigueur</p>
+        </div>
+    </section>
+
+    <!-- Préambule -->
+    <section class="section-padding bg-light">
+        <div class="container charte-preambule">
+            <span class="subtitle">Préambule</span>
+            <h2 class="title">Notre engagement</h2>
+            <div class="divider" style="margin: 12px 0 28px;"></div>
+            <p><strong>NOUS, COLLÈGE ANADOR, sommes résolus</strong> à placer la réussite de nos élèves au cœur de notre système ; cela commande :</p>
+            <ul class="charte-preambule-list">
+                <li><i class="fa-solid fa-check"></i> De créer les conditions nécessaires au plein épanouissement de toute notre communauté éducative (élèves, enseignants, personnel d'encadrement, parents…) ;</li>
+                <li><i class="fa-solid fa-check"></i> De créer les conditions d'un vivre-ensemble harmonieux à travers la solidarité ;</li>
+                <li><i class="fa-solid fa-check"></i> D'inculquer des valeurs d'abnégation et de travail à nos élèves ;</li>
+                <li><i class="fa-solid fa-check"></i> De leur enseigner des valeurs humaines, morales et citoyennes.</li>
+            </ul>
+            <p><strong>AVONS décidé de conjuguer nos efforts afin d'atteindre ces objectifs.</strong> En conséquence, la charte du Collège Anador a été mise en place.</p>
+        </div>
+    </section>
+
+    <!-- Les Articles -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle">Nos Engagements</span>
+                <h2 class="title">Les Articles de la Charte</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="charte-articles-grid">
+                                <article class="charte-article-card">
+                    <div class="charte-article-num">1</div>
+                    <div class="charte-article-body">
+                        <h3><i class="fa-solid fa-flag"></i> Discipline · Émulation · Rigueur</h3>
+                        <p>DISCIPLINE - ÉMULATION - RIGUEUR, telle est la devise du Collège Anador. Toute personne faisant partie du Collège Anador doit faire sienne cette devise et la pratiquer.</p>
+                    </div>
+                </article>
+                                <article class="charte-article-card">
+                    <div class="charte-article-num">2</div>
+                    <div class="charte-article-body">
+                        <h3><i class="fa-solid fa-trophy"></i> La réussite, priorité de tous</h3>
+                        <p>La réussite de nos apprenants est la priorité de toutes les parties prenantes. Chacune, en ce qui la concerne, doit y apporter sa contribution.</p>
+                    </div>
+                </article>
+                                <article class="charte-article-card">
+                    <div class="charte-article-num">3</div>
+                    <div class="charte-article-body">
+                        <h3><i class="fa-solid fa-seedling"></i> Un environnement propice</h3>
+                        <p>Un environnement propice aux enseignements et à l&#039;épanouissement de l&#039;ensemble du personnel doit être maintenu par tous.</p>
+                    </div>
+                </article>
+                                <article class="charte-article-card">
+                    <div class="charte-article-num">4</div>
+                    <div class="charte-article-body">
+                        <h3><i class="fa-solid fa-handshake-angle"></i> Un service de qualité</h3>
+                        <p>Offrir un SERVICE DE QUALITÉ à la communauté éducative est notre sacerdoce. Notre façon de servir doit être le respect, la courtoisie, l&#039;écoute, la disponibilité, la diligence et la pleine satisfaction de nos usagers.</p>
+                    </div>
+                </article>
+                                <article class="charte-article-card">
+                    <div class="charte-article-num">5</div>
+                    <div class="charte-article-body">
+                        <h3><i class="fa-solid fa-people-roof"></i> Inclusion sociale</h3>
+                        <p>Le Collège Anador mène une politique basée sur l&#039;inclusion sociale par la prise en compte des besoins et autres difficultés des élèves, en mettant un accent sur ceux ayant des besoins particuliers (handicaps…).</p>
+                    </div>
+                </article>
+                                <article class="charte-article-card">
+                    <div class="charte-article-num">6</div>
+                    <div class="charte-article-body">
+                        <h3><i class="fa-solid fa-user-graduate"></i> Conscience professionnelle</h3>
+                        <p>Chaque membre du personnel, outillé et formé, imprégné des idéaux de travail et de valeurs morales, doit voir le Collège Anador comme un système. Il se doit d&#039;exercer son service avec conscience professionnelle, et s&#039;inscrire résolument dans la vision de l&#039;établissement : l&#039;excellence à tous les échelons.</p>
+                    </div>
+                </article>
+                                <article class="charte-article-card">
+                    <div class="charte-article-num">7</div>
+                    <div class="charte-article-body">
+                        <h3><i class="fa-solid fa-masks-theater"></i> Une vie scolaire dynamique</h3>
+                        <p>Le Collège Anador développe une vie scolaire riche, variée et dynamique qui favorise l&#039;éclosion du génie de ses élèves.</p>
+                    </div>
+                </article>
+                                <article class="charte-article-card">
+                    <div class="charte-article-num">8</div>
+                    <div class="charte-article-body">
+                        <h3><i class="fa-solid fa-award"></i> Une école de qualité</h3>
+                        <p>Le Collège Anador s&#039;engage à prendre sa part de responsabilité pour une école de qualité sur l&#039;échiquier national.</p>
+                    </div>
+                </article>
+                            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="charte-conclusion">
+        <div class="container text-center">
+            <i class="fa-solid fa-quote-left charte-quote-icon"></i>
+            <h2>Conclusion</h2>
+            <p>Le Collège Anador est une école qui se veut un label de qualité. L'excellence étant une quête, tout est mis en place, au quotidien, en vue de satisfaire tous ceux qui placent leur confiance en lui. Cette charte est le symbole de notre engagement ferme et résolu dans cette perspective.</p>
+            <span class="charte-signature">Le Fondateur</span>
+            <div class="etab-hero-actions" style="justify-content:center; margin-top: 30px;">
+                <a href="index.php#contact" class="btn-primary"><i class="fa-solid fa-phone"></i> Nous contacter</a>
+                <a href="index.php" class="btn-ghost"><i class="fa-solid fa-house"></i> Retour à l'accueil</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="main.js?v=1787810984"></script>
+</body>
+</html>

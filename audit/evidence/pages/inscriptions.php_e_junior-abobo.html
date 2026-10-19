@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide des inscriptions 2026-2027 — Anador Junior Abobo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue: #2547d0;
+            --blue-soft: #e9edfd;
+            --blue-dark: #1c2445;
+            --red: #d92b3f;
+            --red-soft: #fdecee;
+            --green: #0d9d72;
+            --amber: #e8930c;
+            --ink: #161a2e;
+            --border: #e6e8f2;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #f7f8fc;
+            color: var(--ink);
+            line-height: 1.5;
+        }
+        .wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
+        a { color: inherit; }
+
+        /* Retour site */
+        .back-bar {
+            max-width: 1060px;
+            margin: 0 auto;
+            padding: 18px 20px 0;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--blue);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(125deg, #1e3ab8, #2547d0, #4d6ae8);
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px 130px;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: -90px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.18);
+            padding: 7px 18px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2.4rem;
+            margin: 0 0 14px;
+            font-weight: 800;
+        }
+        .hero h1 span { color: #ffd166; }
+        .hero p {
+            max-width: 640px;
+            margin: 0 auto 28px;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.02rem;
+        }
+        .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 26px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.92rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .btn-white { background: #fff; color: var(--blue); }
+        .btn-outline-white { background: transparent; color: #fff; border-color: rgba(255,255,255,0.7); }
+
+        /* Sections génériques */
+        section.block { padding: 40px 0; }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+        .section-num {
+            width: 34px; height: 34px;
+            background: var(--blue);
+            color: #fff;
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+        .section-title h2 { font-size: 1.3rem; margin: 0; }
+
+        /* Cartes tarifaires */
+        .price-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+        .card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 26px;
+            box-shadow: 0 4px 14px rgba(20,30,80,0.05);
+        }
+        .price-card-head {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+        .price-icon {
+            width: 46px; height: 46px;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem;
+        }
+        .price-icon.blue { background: var(--blue-soft); }
+        .price-icon.red { background: var(--red-soft); }
+        .price-card-head h3 { margin: 0; font-size: 1.1rem; }
+        .chip {
+            display: inline-block;
+            background: var(--blue-soft);
+            color: var(--blue);
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-top: 4px;
+        }
+        .price-amount { font-size: 1.9rem; font-weight: 800; margin: 10px 0 4px; }
+        .price-note { color: #6b7280; font-size: 0.85rem; margin-bottom: 16px; }
+        .advantages { list-style: none; padding: 0; margin: 0; }
+        .advantages li {
+            display: flex;
+            gap: 10px;
+            padding: 8px 0;
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+        .advantages li:first-child { border-top: none; }
+        .check { color: var(--green); font-weight: 800; flex-shrink: 0; }
+
+        /* Tableau scolarité */
+        .table-wrap {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(20,30,80,0.05);
+        }
+        table.fees {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        table.fees thead th {
+            background: var(--blue-dark);
+            color: #fff;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 700;
+        }
+        table.fees tbody td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+        table.fees tbody tr:nth-child(even) { background: #fafbff; }
+        .verse-date { display: block; color: #8a8fa3; font-size: 0.74rem; margin-top: 2px; }
+        table.fees tfoot td {
+            background: var(--blue-soft);
+            color: var(--blue);
+            font-weight: 800;
+            border-top: 3px solid var(--blue);
+            padding: 14px 16px;
+        }
+        .warning-box {
+            background: var(--red-soft);
+            border: 1px solid #f6c6cc;
+            color: #8a1526;
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin-top: 18px;
+            font-size: 0.88rem;
+        }
+        .warning-box strong { color: var(--red); }
+
+        /* Dossier */
+        .doc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+        .doc-list { list-style: none; padding: 0; margin: 14px 0 0; }
+        .doc-list li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 9px 0;
+            border-top: 1px solid var(--border);
+            font-size: 0.88rem;
+        }
+        .doc-list li:first-child { border-top: none; }
+        .pill-available {
+            background: #e7f7f1;
+            color: var(--green);
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        .age-mini-grid { display: flex; gap: 10px; margin-top: 16px; }
+        .age-mini {
+            flex: 1;
+            background: var(--blue-soft);
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+        .age-mini .lbl { font-size: 0.68rem; color: var(--blue); font-weight: 700; text-transform: uppercase; }
+        .age-mini .val { font-size: 0.85rem; font-weight: 700; margin-top: 2px; }
+
+        /* Tenue */
+        .uniform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+        .uniform-grid p { font-size: 0.9rem; margin: 8px 0; }
+        .uniform-grid strong { color: var(--blue); }
+
+        /* Cantine & calendrier */
+        .bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+        .canteen-row {
+            display: flex;
+            justify-content: space-between;
+            background: #f4f5fa;
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        .canteen-row b { font-weight: 800; }
+        .amber-banner {
+            background: #fdf2e0;
+            border: 1px solid #f5d999;
+            color: var(--amber);
+            border-radius: 12px;
+            padding: 12px 16px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            margin-bottom: 16px;
+        }
+        .schedule-box {
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-bottom: 12px;
+            font-size: 0.88rem;
+        }
+        .schedule-box.primaire { background: var(--blue-soft); color: var(--blue-dark); }
+        .schedule-box.maternelle { background: var(--red-soft); color: #8a1526; }
+        .schedule-box b { display: block; margin-bottom: 4px; }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px 50px;
+            color: #8a8fa3;
+            font-size: 0.82rem;
+        }
+
+        @media (max-width: 760px) {
+            .price-grid, .doc-grid, .uniform-grid, .bottom-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 1.8rem; }
+            table.fees { font-size: 0.78rem; }
+            table.fees thead th, table.fees tbody td, table.fees tfoot td { padding: 9px 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="back-bar">
+        <a href="etablissement.php?e=junior-abobo" class="back-link">&larr; Retour à Anador Junior Abobo</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="wrap">
+            <span class="hero-badge">Année scolaire 2026-2027 · ABOBO</span>
+            <h1>Inscriptions <span>ouvertes</span> — Maternelle &amp; Primaire</h1>
+            <p>Anador Junior Abobo — Kit ANADOR Junior, SMS de suivi de scolarité et assurance scolaire inclus pour chaque élève inscrit.</p>
+            <div class="hero-actions">
+                <a href="#frais" class="btn btn-white">Voir les frais</a>
+                <a href="#dossier" class="btn btn-outline-white">Dossier à fournir</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="wrap">
+
+        <!-- Cartes tarifaires -->
+        <section class="block" id="frais" style="padding-top:0;">
+            <div class="price-grid">
+                <div class="card">
+                    <div class="price-card-head">
+                        <div class="price-icon red">🧸</div>
+                        <div>
+                            <h3>Maternelle</h3>
+                            <span class="chip">2 à 4 ans</span>
+                        </div>
+                    </div>
+                    <div class="price-amount">41 000 F</div>
+                    <div class="price-note">Frais d'inscription — fournitures offertes</div>
+                    <ul class="advantages">
+                        <li><span class="check">✓</span> Kit ANADOR Junior (cartable, tenue de base, ardoise, trousse)</li>
+                        <li><span class="check">✓</span> SMS de suivi de la scolarité de l'enfant</li>
+                        <li><span class="check">✓</span> Assurance scolaire incluse</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="price-card-head">
+                        <div class="price-icon blue">🎒</div>
+                        <div>
+                            <h3>Primaire</h3>
+                            <span class="chip">CP1 à CM2</span>
+                        </div>
+                    </div>
+                    <div class="price-amount">29 000 F <span style="font-size:1rem; font-weight:600; color:#6b7280;">anciens</span></div>
+                    <div class="price-note">31 000 F nouveaux · + 3 000 F (évaluation, coopérative, visite IEP CP1-CM1) · + 6 000 F droit d'examen CM2</div>
+                    <ul class="advantages">
+                        <li><span class="check">✓</span> Kit ANADOR Junior (cartable, tenue de base, ardoise, trousse)</li>
+                        <li><span class="check">✓</span> SMS de suivi de la scolarité de l'enfant</li>
+                        <li><span class="check">✓</span> Assurance scolaire incluse</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- II. Tableau de scolarité -->
+        <section class="block">
+            <div class="section-title">
+                <div class="section-num">II</div>
+                <h2>Tableau de scolarité</h2>
+            </div>
+            <div class="table-wrap">
+                <table class="fees">
+                    <thead>
+                        <tr>
+                            <th>Versement</th>
+                            <th>Maternelle</th>
+                            <th>CP1-CP2</th>
+                            <th>CE1-CE2</th>
+                            <th>CM1-CM2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1er versement<span class="verse-date">À l'inscription (obligatoire)</span></td>
+                            <td>25 000 F</td>
+                            <td>30 000 F</td>
+                            <td>30 000 F</td>
+                            <td>30 000 F</td>
+                        </tr>
+                        <tr>
+                            <td>2e versement<span class="verse-date">Au plus tard le 05 novembre</span></td>
+                            <td>20 000 F</td>
+                            <td>20 000 F</td>
+                            <td>20 000 F</td>
+                            <td>25 000 F</td>
+                        </tr>
+                        <tr>
+                            <td>3e versement<span class="verse-date">Au plus tard le 05 décembre</span></td>
+                            <td>20 000 F</td>
+                            <td>20 000 F</td>
+                            <td>20 000 F</td>
+                            <td>20 000 F</td>
+                        </tr>
+                        <tr>
+                            <td>4e versement<span class="verse-date">Au plus tard le 05 janvier</span></td>
+                            <td>20 000 F</td>
+                            <td>20 000 F</td>
+                            <td>20 000 F</td>
+                            <td>20 000 F</td>
+                        </tr>
+                        <tr>
+                            <td>5e versement<span class="verse-date">Au plus tard le 05 février</span></td>
+                            <td>15 000 F</td>
+                            <td>11 000 F</td>
+                            <td>15 000 F</td>
+                            <td>15 000 F</td>
+                        </tr>
+                        <tr>
+                            <td>6e versement<span class="verse-date">Au plus tard le 05 mars</span></td>
+                            <td>15 000 F</td>
+                            <td>11 000 F</td>
+                            <td>12 000 F</td>
+                            <td>12 000 F</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Total scolarité</td>
+                            <td>115 000 F</td>
+                            <td>112 000 F</td>
+                            <td>117 000 F</td>
+                            <td>122 000 F</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="warning-box">
+                <strong>Important :</strong> les versements se font uniquement en caisse. Aucun remboursement n'est possible. Toute scolarité entamée est entièrement due. Le paiement doit intervenir au plus tard le 05 du mois indiqué, faute de quoi l'élève ne sera pas admis en classe.
+            </div>
+        </section>
+
+        <!-- III. Dossier à fournir -->
+        <section class="block" id="dossier">
+            <div class="section-title">
+                <div class="section-num">III</div>
+                <h2>Dossier à fournir</h2>
+            </div>
+            <div class="doc-grid">
+                <div class="card">
+                    <h3 style="margin-top:0;">Primaire</h3>
+                    <ul class="doc-list">
+                        <li>Extraits de naissance (01 pour CP1-CM1, 02 pour CM2)</li>
+                        <li>Certificat de vaccination (nouveaux CP1-CP2)</li>
+                        <li>06 photos d'identité couleur</li>
+                        <li>Certificat de scolarité + fiche scolaire (établissement d'origine)</li>
+                        <li>Relevé de notes</li>
+                        <li>Craies blanches ROBERCOLOR — 100 bâtons <span class="pill-available">Disponible à l'école</span></li>
+                        <li>08 rouleaux de papier hygiénique <span class="pill-available">Disponible à l'école</span></li>
+                        <li>Chemise à rabat <span class="pill-available">Disponible à l'école</span></li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 style="margin-top:0;">Maternelle</h3>
+                    <ul class="doc-list">
+                        <li>Extrait de naissance + certificat de vaccination (nouveaux)</li>
+                        <li>06 photos d'identité couleur</li>
+                        <li>Craies de couleur ROBERCOLOR <span class="pill-available">Disponible à l'école</span></li>
+                        <li>Papier hygiénique <span class="pill-available">Disponible à l'école</span></li>
+                        <li>Chemise à rabat <span class="pill-available">Disponible à l'école</span></li>
+                        <li>Paquet de rame <span class="pill-available">Disponible à l'école</span></li>
+                    </ul>
+                    <div class="age-mini-grid">
+                        <div class="age-mini"><div class="lbl">Petite section</div><div class="val">2 - 2 ans ½</div></div>
+                        <div class="age-mini"><div class="lbl">Moyenne section</div><div class="val">3 ans</div></div>
+                        <div class="age-mini"><div class="lbl">Grande section</div><div class="val">4 ans</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IV. Tenue scolaire -->
+        <section class="block">
+            <div class="section-title">
+                <div class="section-num">IV</div>
+                <h2>Tenue scolaire</h2>
+            </div>
+            <div class="uniform-grid">
+                <div class="card">
+                    <h3 style="margin-top:0;">Primaire</h3>
+                    <p><strong>Filles :</strong> robe à carreaux Bleu-Blanc, dépassant les genoux.</p>
+                    <p><strong>Garçons :</strong> chemisette + culotte kaki.</p>
+                    <p><strong>Chaussures fermées et macaron obligatoires.</strong></p>
+                </div>
+                <div class="card">
+                    <h3 style="margin-top:0;">Maternelle</h3>
+                    <p><strong>Tenue :</strong> carreaux Rouge-Blanc + culotte kaki.</p>
+                    <p><strong>Chaussures fermées et macaron obligatoires.</strong></p>
+                </div>
+            </div>
+            <div class="warning-box">
+                <strong>NB :</strong> mèches, dreads, coiffures extravagantes et tenues fantaisistes sont formellement interdites.
+            </div>
+        </section>
+
+        <!-- V. Cantine & calendrier -->
+        <section class="block">
+            <div class="section-title">
+                <div class="section-num">V</div>
+                <h2>Cantine &amp; calendrier</h2>
+            </div>
+            <div class="bottom-grid">
+                <div class="card">
+                    <h3 style="margin-top:0;">Cantine (par trimestre)</h3>
+                    <div class="canteen-row"><span>1er trimestre</span><b>41 500 F</b></div>
+                    <div class="canteen-row"><span>2e trimestre</span><b>39 000 F</b></div>
+                    <div class="canteen-row"><span>3e trimestre</span><b>39 000 F</b></div>
+                </div>
+                <div class="card">
+                    <h3 style="margin-top:0;">Calendrier &amp; horaires</h3>
+                    <div class="amber-banner">🎉 Rentrée scolaire : septembre</div>
+                    <div class="schedule-box primaire">
+                        <b>Primaire</b>
+                        7h30 - 12h00 &nbsp;/&nbsp; 14h00 - 16h30
+                    </div>
+                    <div class="schedule-box maternelle">
+                        <b>Maternelle</b>
+                        8h00 - 11h30 &nbsp;/&nbsp; 14h30 - 16h15
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        Les frais d'inscription et le 1er versement sont obligatoires pour valider toute inscription — Anador Junior Abobo, année scolaire 2026-2027.
+    </footer>
+
+</body>
+</html>

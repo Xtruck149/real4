@@ -1,0 +1,147 @@
+{
+ "title": "Groupe Scolaire Anador | Accueil",
+ "lang": "fr",
+ "viewport": "width=device-width, initial-scale=1.0",
+ "description": "Découvrez le groupe scolaire GS ANADOR composé de 2 écoles primaires et 2 collèges (Abobo et Yopougon). Qualité éducative, suivi personnalisé et infrastructures modernes.",
+ "robots": null,
+ "canonical": null,
+ "og:image": null,
+ "jsonld_types": [],
+ "h1": [
+  "GS ANADOR"
+ ],
+ "h2": [
+  "La discipline, notre fierté",
+  "Apprendre en s'amusant",
+  "Notre fanfare sur scène",
+  "La science par la pratique",
+  "Une grande famille unie",
+  "Pourquoi Choisir le GS Anador ?",
+  "Présentation du groupe ANADOR",
+  "Dernières Actualités",
+  "Charte de l'École",
+  "Nos Résultats aux Examens 2025-2026",
+  "Résultats du BAC — 2024-2025 vs 2025-2026",
+  "Résultats du BEPC — 2024-2025 vs 2025-2026",
+  "Nos Prodiges",
+  "Collège Anador, Bienvenue à vous",
+  ""
+ ],
+ "img_count": 12,
+ "img_missing_alt": 0,
+ "img_lazy": 0,
+ "img_formats": {
+  "png": 5,
+  "jpg": 7
+ },
+ "forms": [
+  {
+   "action": null,
+   "method": null,
+   "fields": [
+    [
+     null,
+     "text",
+     false
+    ],
+    [
+     null,
+     "text",
+     false
+    ],
+    [
+     null,
+     "tel",
+     false
+    ],
+    [
+     null,
+     "email",
+     false
+    ],
+    [
+     null,
+     null,
+     false
+    ]
+   ],
+   "has_labels": 5
+  }
+ ],
+ "inputs_without_label_or_aria": 72,
+ "empty_links": 0,
+ "hash_or_empty_hrefs": 13,
+ "tel_links": [
+  "tel:0102096706",
+  "tel:0707998179",
+  "tel:0747458212",
+  "tel:0777494532",
+  "tel:0777853936"
+ ],
+ "mailto_links": [],
+ "whatsapp_links": [],
+ "social_links": [],
+ "internal_links": [
+  "https://collegeanador.ci/actualites.php",
+  "https://collegeanador.ci/admin.php",
+  "https://collegeanador.ci/calendrier.php",
+  "https://collegeanador.ci/charte.php",
+  "https://collegeanador.ci/clubs.php",
+  "https://collegeanador.ci/dashboard/index.html",
+  "https://collegeanador.ci/emploi-du-temps.php",
+  "https://collegeanador.ci/etablissement.php?e=college-abobo",
+  "https://collegeanador.ci/etablissement.php?e=college-yopougon",
+  "https://collegeanador.ci/etablissement.php?e=junior-abobo",
+  "https://collegeanador.ci/etablissement.php?e=junior-yopougon",
+  "https://collegeanador.ci/exos.php",
+  "https://collegeanador.ci/extra.php",
+  "https://collegeanador.ci/inscriptions.php?e=junior-abobo",
+  "https://collegeanador.ci/inscriptions.php?e=junior-yopougon",
+  "https://collegeanador.ci/mediatheque.php",
+  "https://collegeanador.ci/scolarite-abobo.php",
+  "https://collegeanador.ci/scolarite-yopougon.php",
+  "https://collegeanador.ci/simulateur-frais.php",
+  "https://collegeanador.ci/vie-scolaire.php"
+ ],
+ "external_links_other": [
+  "https://maps.google.com/?q=Anador+Primaire+Abobo",
+  "https://maps.google.com/?q=Anador+Primaire+Yopougon",
+  "https://maps.google.com/?q=College+Anador+Abobo",
+  "https://maps.google.com/?q=College+Anador+Yopougon"
+ ],
+ "scripts": [
+  "main.js?v=1787810984",
+  "https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js",
+  "bac-compare.js?v=1784051636",
+  "bepc-compare.js?v=1784051642"
+ ],
+ "stylesheets": [
+  "https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap",
+  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css",
+  "style.css?v=1787810981"
+ ],
+ "iframes": [],
+ "years_in_text": {
+  "2025": 13,
+  "2026": 18,
+  "2027": 3,
+  "2024": 2
+ },
+ "dates_in_text": [
+  "11 février 2026",
+  "11 février 2026"
+ ],
+ "phones_in_text": [
+  "+225 07 07 99 81 79",
+  "01 02 09 67 06",
+  "07 07 87 41 69",
+  "07 07 99 81 79",
+  "07 47 45 82 12",
+  "07 48 96 47 00",
+  "07 77 49 45 32",
+  "07 77 85 39 36"
+ ],
+ "emails_in_text": [],
+ "html_bytes": 129253,
+ "words": 2517
+}

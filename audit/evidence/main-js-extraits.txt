@@ -1,0 +1,14 @@
+# Extraits de https://collegeanador.ci/main.js (récupéré le 19/10/2026) — appels réseau cités dans le rapport (§9 V6)
+472:        const res = await fetch('auth_api.php?action=me');
+523:                <form id="exosLoginForm" onsubmit="return submitExosLogin(event)">
+595:window.submitExosLogin = async function(event) {
+613:        const res = await fetch('auth_api.php?action=login', {
+729:    try { await fetch('auth_api.php?action=logout', { method: 'POST' }); } catch (e) { /* on sort quand même */ }
+783:    exosDataLoadPromise = fetch('exos_api.php')
+848:        const res = await fetch(`devoirs_prof_api.php?action=public_list&classe=${encodeURIComponent(classeNom)}&matiere=${encodeURIComponent(matiere)}`);
+879:    fetch('devoirs_prof_api.php?action=track', {
+1004:        const res = await fetch('settings_api.php?action=get');
+1133:        const res = await fetch(`devoirs_niveau_api.php?action=public_list&niveau=${encodeURIComponent(niveau)}&matiere=${encodeURIComponent(matiere)}`);
+1168:        const res = await fetch(`sujets_examen_api.php?action=public_list&niveau=${encodeURIComponent(niveau)}&matiere=${encodeURIComponent(matiere)}`);
+1189:    fetch('sujets_examen_api.php?action=increment_vue', {
+1234:    fetch('devoirs_niveau_api.php?action=increment_vue', {

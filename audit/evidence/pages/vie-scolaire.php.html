@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vie scolaire — GS Anador</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=1787810981">
+    <style>
+        :root { --c-primary: #0a2540; --c-accent: #f59e0b; --c-border: #e6ebf1; --c-muted: #64748b; }
+
+        /* Hero (forme ovale identique à la médiathèque / clubs) */
+        .club-hero { background: linear-gradient(135deg, #0a2540 0%, #123a63 100%); color: #fff; padding: 70px 5% 90px; text-align: center; position: relative; overflow: hidden; }
+        .club-hero::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 50px; background: #f8fafc; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
+        .club-hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(245,158,11,0.18); color: var(--c-accent); padding: 6px 18px; border-radius: 30px; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 16px; }
+        .club-hero h1 { margin: 0 0 10px; font-size: 2.4rem; font-family: 'Outfit', sans-serif; }
+        .club-hero p { margin: 0 auto; color: rgba(255,255,255,0.82); font-size: 1.02rem; max-width: 640px; }
+
+        .club-wrap { max-width: 1180px; margin: -40px auto 70px; padding: 0 22px; position: relative; z-index: 2; }
+        .club-layout { display: grid; grid-template-columns: 260px 1fr; gap: 26px; align-items: start; }
+
+        /* Menu latéral */
+        .club-side { background: #fff; border: 1px solid var(--c-border); border-radius: 16px; padding: 12px; box-shadow: 0 6px 22px rgba(10,37,64,0.06); position: sticky; top: 20px; }
+        .club-side-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--c-muted); font-weight: 700; padding: 8px 12px 12px; }
+        .club-side-item { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; border: none; background: none; padding: 13px 14px; border-radius: 11px; cursor: pointer; font-family: inherit; font-size: 0.93rem; font-weight: 600; color: var(--c-primary); transition: background .16s, color .16s; }
+        .club-side-item i { width: 22px; text-align: center; color: var(--c-accent); font-size: 1.05rem; }
+        .club-side-item:hover { background: #f1f5f9; }
+        .club-side-item.active { background: var(--c-primary); color: #fff; }
+        .club-side-item.active i { color: var(--c-accent); }
+
+        /* Contenu */
+        .club-content { min-height: 400px; }
+        .club-panel { display: none; animation: fadeIn .25s ease; }
+        .club-panel.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+        .club-head { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
+        .club-head-ic { width: 60px; height: 60px; border-radius: 16px; background: linear-gradient(135deg, #0a2540, #123a63); color: var(--c-accent); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0; }
+        .club-head h2 { margin: 0; font-family: 'Outfit', sans-serif; font-size: 1.7rem; color: var(--c-primary); }
+
+        /* Affiche de présentation (bandeau) — activités qui en ont une, ex. le savon liquide. */
+        .club-affiche { display: block; margin-bottom: 22px; border-radius: 16px; overflow: hidden; border: 1px solid var(--c-border); box-shadow: 0 6px 22px rgba(10,37,64,0.05); line-height: 0; }
+        .club-affiche img { width: 100%; height: auto; display: block; transition: transform .4s ease; }
+        .club-affiche:hover img { transform: scale(1.02); }
+
+        .club-card { background: #fff; border: 1px solid var(--c-border); border-radius: 16px; padding: 24px 26px; box-shadow: 0 6px 22px rgba(10,37,64,0.05); margin-bottom: 22px; }
+        .club-card h3 { margin: 0 0 14px; font-family: 'Outfit', sans-serif; font-size: 1.15rem; color: var(--c-primary); display: flex; align-items: center; gap: 10px; }
+        .club-card h3 i { color: var(--c-accent); }
+        .club-card p { margin: 0; color: #334155; line-height: 1.7; }
+
+        .club-obj { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+        .club-obj li { display: flex; align-items: flex-start; gap: 12px; color: #334155; line-height: 1.6; }
+        .club-obj li i { color: #16a34a; margin-top: 4px; }
+
+        .club-membres { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+        .club-membre { display: flex; align-items: center; gap: 13px; background: #f8fafc; border: 1px solid var(--c-border); border-radius: 12px; padding: 12px 14px; }
+        .club-membre-av { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--c-accent), #fbbf24); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.05rem; flex-shrink: 0; }
+        .club-membre-info strong { display: block; color: var(--c-primary); font-size: 0.95rem; }
+        .club-membre-info span { color: var(--c-muted); font-size: 0.8rem; }
+
+        /* Section photos — 3 par ligne */
+        /* Sélecteur d'année des photos (n'apparaît qu'à partir de 2 années). */
+        .club-annee { padding: 7px 12px; border: 1px solid var(--c-border); border-radius: 8px; font-family: inherit; font-size: 0.85rem; font-weight: 600; color: var(--c-primary); background: #fff; cursor: pointer; }
+        .club-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        .club-ph { aspect-ratio: 4/3; border-radius: 12px; overflow: hidden; background: #0a2540 center/cover no-repeat; cursor: pointer; border: none; padding: 0; transition: transform .18s, box-shadow .18s; }
+        .club-ph:hover { transform: scale(1.03); box-shadow: 0 8px 24px rgba(10,37,64,0.18); }
+        .club-ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .club-ph-state { grid-column: 1/-1; text-align: center; color: var(--c-muted); padding: 40px 20px; }
+        .club-ph-state i { font-size: 2.2rem; color: var(--c-accent); display: block; margin-bottom: 12px; }
+        .club-ph-spin { width: 32px; height: 32px; border: 3px solid #e2e8f0; border-top-color: var(--c-accent); border-radius: 50%; animation: cspin .8s linear infinite; margin: 0 auto 14px; }
+        @keyframes cspin { to { transform: rotate(360deg); } }
+
+        /* Lightbox */
+        .lb-ov { position: fixed; inset: 0; background: rgba(0,0,0,0.94); display: none; align-items: center; justify-content: center; z-index: 3200; }
+        .lb-ov.active { display: flex; }
+        .lb-ov img { max-width: 92vw; max-height: 88vh; border-radius: 8px; box-shadow: 0 10px 50px rgba(0,0,0,0.6); }
+        .lb-close { position: absolute; top: 18px; right: 24px; background: none; border: none; color: #fff; font-size: 2.4rem; line-height: 1; cursor: pointer; }
+        .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.12); border: none; color: #fff; width: 52px; height: 52px; border-radius: 50%; font-size: 1.3rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .18s; }
+        .lb-nav:hover { background: var(--c-accent); }
+        .lb-prev { left: 20px; } .lb-next { right: 20px; }
+
+        @media (max-width: 860px) {
+            .club-layout { grid-template-columns: 1fr; }
+            .club-side { position: static; }
+            .club-photos { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 560px) {
+            .club-hero h1 { font-size: 1.8rem; }
+            .club-photos { grid-template-columns: 1fr; }
+            .lb-nav { width: 42px; height: 42px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <span class="top-bar-slogan"><i class="fa-solid fa-heart"></i> Anador, j'adore&hellip;</span>
+        <span class="top-bar-motto">Discipline - Émulation - Rigueur</span>
+        <a href="tel:0707998179" class="top-bar-contact"><i class="fa-solid fa-phone"></i> +225 07 07 99 81 79</a>
+        <a href="admin.php" class="top-bar-profil"><i class="fa-solid fa-circle-user"></i> Admin</a>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <a href="index.php" class="logo" style="text-decoration:none;">
+            <div class="logo-icon"><img src="assets/images/logo-anador.png" alt="Lion Logo" style="height: 90px; border-radius: 12px; mix-blend-mode: multiply;"></div>
+            <div class="logo-text"><h1>GS ANADOR</h1><span>Préscolaire, Primaires & Collèges</span></div>
+        </a>
+        <nav class="nav-links">
+            <a href="index.php#accueil">Accueil</a>
+            <a href="index.php#academie">Présentation</a>
+            <a href="index.php#actualite">Actualité</a>
+            <a href="index.php#chartes">Chartes</a>
+            <a href="index.php#resultats">Résultats</a>
+            <div class="nav-dropdown">
+                <a href="#" class="nav-dropdown-toggle">Scolarité <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="nav-dropdown-menu">
+                    <a href="scolarite-abobo.php"><i class="fa-solid fa-school"></i> Collège Anador Abobo</a>
+                    <a href="scolarite-yopougon.php"><i class="fa-solid fa-school"></i> Collège Anador Yopougon</a>
+                    <a href="inscriptions.php?e=junior-abobo"><i class="fa-solid fa-child-reaching"></i> Anador Junior Abobo</a>
+                    <a href="inscriptions.php?e=junior-yopougon"><i class="fa-solid fa-child-reaching"></i> Anador Junior Yopougon</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <a href="#" class="nav-dropdown-toggle">Voir + <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="nav-dropdown-menu">
+                    <a href="vie-scolaire.php" class="active"><i class="fa-solid fa-people-group"></i> Vie scolaire</a>
+                    <a href="calendrier.php"><i class="fa-solid fa-calendar-check"></i> Calendrier des devoirs</a>
+                    <a href="emploi-du-temps.php"><i class="fa-solid fa-clock"></i> Emploi du temps</a>
+                    <a href="clubs.php"><i class="fa-solid fa-users-rectangle"></i> Clubs</a>
+                    <a href="mediatheque.php"><i class="fa-solid fa-photo-film"></i> Médiathèque</a>
+                </div>
+            </div>
+            <a href="exos.php" class="btn-nav-accent" onclick="return goToExos(event)">Suivi Scolaire</a>
+            <a href="index.php#contact" class="btn-primary">Nous Contacter</a>
+        </nav>
+        <div class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></div>
+    </header>
+
+    <!-- Hero -->
+    <section class="club-hero">
+        <span class="club-hero-badge"><i class="fa-solid fa-people-group"></i> Vie scolaire</span>
+        <h1>La Vie scolaire</h1>
+        <p>Au-delà des cours, le GS Anador fait vivre à ses élèves une multitude d'activités artistiques, culturelles et pratiques qui révèlent chaque talent.</p>
+    </section>
+
+    <div class="club-wrap">
+        <div class="club-layout">
+            <!-- Menu latéral -->
+            <aside class="club-side">
+                <div class="club-side-title">Nos activités</div>
+                                <button class="club-side-item active" data-slug="percussion" onclick="showClub('percussion', this)">
+                    <i class="fa-solid fa-drum"></i> Percussion                </button>
+                                <button class="club-side-item " data-slug="chorale" onclick="showClub('chorale', this)">
+                    <i class="fa-solid fa-music"></i> La Chorale Anador                </button>
+                                <button class="club-side-item " data-slug="fanfare" onclick="showClub('fanfare', this)">
+                    <i class="fa-solid fa-bullhorn"></i> La Fanfare                </button>
+                                <button class="club-side-item " data-slug="escargots" onclick="showClub('escargots', this)">
+                    <i class="fa-solid fa-worm"></i> L&#039;élevage d&#039;escargots                </button>
+                                <button class="club-side-item " data-slug="poulets" onclick="showClub('poulets', this)">
+                    <i class="fa-solid fa-egg"></i> L&#039;élevage de poulets                </button>
+                                <button class="club-side-item " data-slug="agriculture-hors-sol" onclick="showClub('agriculture-hors-sol', this)">
+                    <i class="fa-solid fa-seedling"></i> L&#039;agriculture hors sol                </button>
+                                <button class="club-side-item " data-slug="batik" onclick="showClub('batik', this)">
+                    <i class="fa-solid fa-shirt"></i> Le Batik                </button>
+                                <button class="club-side-item " data-slug="savon-liquide" onclick="showClub('savon-liquide', this)">
+                    <i class="fa-solid fa-pump-soap"></i> Le savon liquide Choco                </button>
+                                <button class="club-side-item " data-slug="perlage" onclick="showClub('perlage', this)">
+                    <i class="fa-solid fa-gem"></i> Le Perlage                </button>
+                                <button class="club-side-item " data-slug="club-vert" onclick="showClub('club-vert', this)">
+                    <i class="fa-solid fa-leaf"></i> Le Club Vert                </button>
+                            </aside>
+
+            <!-- Contenu -->
+            <div class="club-content">
+                                <div class="club-panel active" id="club-percussion" data-drive="">
+                    <div class="club-head">
+                        <div class="club-head-ic"><i class="fa-solid fa-drum"></i></div>
+                        <h2>Percussion</h2>
+                    </div>
+
+                                        <a href="assets/images/vie-scolaire/percussion.jpg" target="_blank" class="club-affiche" title="Voir l'affiche en grand">
+                        <img src="assets/images/vie-scolaire/percussion.jpg" alt="Affiche — Percussion">
+                    </a>
+                    
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-circle-info"></i> Présentation</h3>
+                        <p>L&#039;atelier de Percussion fait vibrer le GS Anador au rythme des tam-tams et des djembés. Les élèves y découvrent la richesse des rythmes traditionnels ivoiriens et africains, et apprennent à jouer ensemble, à l&#039;écoute les uns des autres.</p>
+                    </div>
+
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-bullseye"></i> Objectifs</h3>
+                        <ul class="club-obj">
+                                                        <li><i class="fa-solid fa-check"></i> Transmettre le patrimoine rythmique ivoirien et africain.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Développer le sens du rythme, de l&#039;écoute et de la coordination.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Favoriser la cohésion de groupe et la discipline collective.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Animer les cérémonies et événements de l&#039;école.</li>
+                                                    </ul>
+                    </div>
+
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-users-gear"></i> Membres de gestion</h3>
+                                                                        <div class="club-ph-state"><i class="fa-solid fa-user-group"></i>Les membres de cette activité seront bientôt présentés.</div>
+                                            </div>
+
+                    <div class="club-card">
+                                                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+                            <h3 style="margin:0;"><i class="fa-solid fa-images"></i> En images</h3>
+                                                    </div>
+                        <div class="club-photos" id="photos-percussion" style="margin-top:14px;">
+                                                        <div class="club-ph-state"><i class="fa-solid fa-image"></i>Les photos de cette activité seront bientôt disponibles.</div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="club-panel " id="club-chorale" data-drive="">
+                    <div class="club-head">
+                        <div class="club-head-ic"><i class="fa-solid fa-music"></i></div>
+                        <h2>La Chorale Anador</h2>
+                    </div>
+
+                                        <a href="assets/images/vie-scolaire/chorale.jpg" target="_blank" class="club-affiche" title="Voir l'affiche en grand">
+                        <img src="assets/images/vie-scolaire/chorale.jpg" alt="Affiche — La Chorale Anador">
+                    </a>
+                    
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-circle-info"></i> Présentation</h3>
+                        <p>La Chorale Anador rassemble les élèves qui aiment chanter. Des chants classiques aux mélodies contemporaines, en passant par le répertoire du terroir, la chorale porte haut les couleurs de l&#039;école lors des grands rendez-vous.</p>
+                    </div>
+
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-bullseye"></i> Objectifs</h3>
+                        <ul class="club-obj">
+                                                        <li><i class="fa-solid fa-check"></i> Développer la voix, l&#039;oreille musicale et le chant choral.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Cultiver la confiance en soi et le goût de la scène.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Représenter l&#039;école lors des cérémonies et concours.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Créer un esprit de famille autour de la musique.</li>
+                                                    </ul>
+                    </div>
+
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-users-gear"></i> Membres de gestion</h3>
+                                                                        <div class="club-ph-state"><i class="fa-solid fa-user-group"></i>Les membres de cette activité seront bientôt présentés.</div>
+                                            </div>
+
+                    <div class="club-card">
+                                                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+                            <h3 style="margin:0;"><i class="fa-solid fa-images"></i> En images</h3>
+                                                    </div>
+                        <div class="club-photos" id="photos-chorale" style="margin-top:14px;">
+                                                        <div class="club-ph-state"><i class="fa-solid fa-image"></i>Les photos de cette activité seront bientôt disponibles.</div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="club-panel " id="club-fanfare" data-drive="">
+                    <div class="club-head">
+                        <div class="club-head-ic"><i class="fa-solid fa-bullhorn"></i></div>
+                        <h2>La Fanfare</h2>
+                    </div>
+
+                                        <a href="assets/images/vie-scolaire/fanfare.jpg" target="_blank" class="club-affiche" title="Voir l'affiche en grand">
+                        <img src="assets/images/vie-scolaire/fanfare.jpg" alt="Affiche — La Fanfare">
+                    </a>
+                    
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-circle-info"></i> Présentation</h3>
+                        <p>La Fanfare du GS Anador, c&#039;est l&#039;éclat des cuivres et la fierté des défilés. Trompettes, tambours et clairons ouvrent la marche lors des cérémonies officielles et insufflent une énergie unique à la vie de l&#039;établissement.</p>
+                    </div>
+
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-bullseye"></i> Objectifs</h3>
+                        <ul class="club-obj">
+                                                        <li><i class="fa-solid fa-check"></i> Initier les élèves aux instruments à vent et de marche.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Apprendre la rigueur, la tenue et le sens de la représentation.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Animer les défilés, remises de prix et fêtes de l&#039;école.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Valoriser l&#039;image et le prestige du Groupe Scolaire Anador.</li>
+                                                    </ul>
+                    </div>
+
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-users-gear"></i> Membres de gestion</h3>
+                                                                        <div class="club-ph-state"><i class="fa-solid fa-user-group"></i>Les membres de cette activité seront bientôt présentés.</div>
+                                            </div>
+
+                    <div class="club-card">
+                                                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+                            <h3 style="margin:0;"><i class="fa-solid fa-images"></i> En images</h3>
+                                                    </div>
+                        <div class="club-photos" id="photos-fanfare" style="margin-top:14px;">
+                                                        <div class="club-ph-state"><i class="fa-solid fa-image"></i>Les photos de cette activité seront bientôt disponibles.</div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="club-panel " id="club-escargots" data-drive="">
+                    <div class="club-head">
+                        <div class="club-head-ic"><i class="fa-solid fa-worm"></i></div>
+                        <h2>L&#039;élevage d&#039;escargots</h2>
+                    </div>
+
+                                        <a href="assets/images/vie-scolaire/escargots.jpg" target="_blank" class="club-affiche" title="Voir l'affiche en grand">
+                        <img src="assets/images/vie-scolaire/escargots.jpg" alt="Affiche — L&#039;élevage d&#039;escargots">
+                    </a>
+                    
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-circle-info"></i> Présentation</h3>
+                        <p>L&#039;atelier d&#039;héliciculture (élevage d&#039;escargots) initie les élèves aux sciences de la vie et à l&#039;entrepreneuriat agricole. De la construction de l&#039;escargotière au suivi de la croissance, les élèves apprennent en observant et en agissant.</p>
+                    </div>
+
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-bullseye"></i> Objectifs</h3>
+                        <ul class="club-obj">
+                                                        <li><i class="fa-solid fa-check"></i> Découvrir concrètement les sciences de la vie et de la terre.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Sensibiliser à l&#039;agriculture durable et à l&#039;autonomie alimentaire.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Développer le sens de la responsabilité et de la patience.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Initier une petite activité génératrice de revenus pour l&#039;école.</li>
+                                                    </ul>
+                    </div>
+
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-users-gear"></i> Membres de gestion</h3>
+                                                                        <div class="club-ph-state"><i class="fa-solid fa-user-group"></i>Les membres de cette activité seront bientôt présentés.</div>
+                                            </div>
+
+                    <div class="club-card">
+                                                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+                            <h3 style="margin:0;"><i class="fa-solid fa-images"></i> En images</h3>
+                                                    </div>
+                        <div class="club-photos" id="photos-escargots" style="margin-top:14px;">
+                                                        <div class="club-ph-state"><i class="fa-solid fa-image"></i>Les photos de cette activité seront bientôt disponibles.</div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="club-panel " id="club-poulets" data-drive="">
+                    <div class="club-head">
+                        <div class="club-head-ic"><i class="fa-solid fa-egg"></i></div>
+                        <h2>L&#039;élevage de poulets</h2>
+                    </div>
+
+                                        <a href="assets/images/vie-scolaire/poulets.jpg" target="_blank" class="club-affiche" title="Voir l'affiche en grand">
+                        <img src="assets/images/vie-scolaire/poulets.jpg" alt="Affiche — L&#039;élevage de poulets">
+                    </a>
+                    
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-circle-info"></i> Présentation</h3>
+                        <p>L&#039;atelier d&#039;aviculture (élevage de poulets) plonge les élèves dans le monde de la ferme. Alimentation, hygiène du poulailler, suivi sanitaire : une activité complète qui allie savoir pratique, esprit d&#039;équipe et sens des affaires.</p>
+                    </div>
+
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-bullseye"></i> Objectifs</h3>
+                        <ul class="club-obj">
+                                                        <li><i class="fa-solid fa-check"></i> Acquérir les bases de l&#039;aviculture et de la gestion d&#039;un élevage.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Comprendre les cycles de vie et les règles d&#039;hygiène.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Développer l&#039;esprit d&#039;équipe et la régularité dans l&#039;effort.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Contribuer à un projet économique concret pour l&#039;établissement.</li>
+                                                    </ul>
+                    </div>
+
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-users-gear"></i> Membres de gestion</h3>
+                                                                        <div class="club-ph-state"><i class="fa-solid fa-user-group"></i>Les membres de cette activité seront bientôt présentés.</div>
+                                            </div>
+
+                    <div class="club-card">
+                                                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+                            <h3 style="margin:0;"><i class="fa-solid fa-images"></i> En images</h3>
+                                                    </div>
+                        <div class="club-photos" id="photos-poulets" style="margin-top:14px;">
+                                                        <div class="club-ph-state"><i class="fa-solid fa-image"></i>Les photos de cette activité seront bientôt disponibles.</div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="club-panel " id="club-agriculture-hors-sol" data-drive="">
+                    <div class="club-head">
+                        <div class="club-head-ic"><i class="fa-solid fa-seedling"></i></div>
+                        <h2>L&#039;agriculture hors sol</h2>
+                    </div>
+
+                                        <a href="assets/images/vie-scolaire/agriculture-hors-sol.jpg" target="_blank" class="club-affiche" title="Voir l'affiche en grand">
+                        <img src="assets/images/vie-scolaire/agriculture-hors-sol.jpg" alt="Affiche — L&#039;agriculture hors sol">
+                    </a>
+                    
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-circle-info"></i> Présentation</h3>
+                        <p>L&#039;atelier d&#039;agriculture hors sol initie les élèves aux cultures modernes sans terre arable : hydroponie, bacs de culture et substrats. Une activité qui montre qu&#039;en ville, sur une simple dalle, on peut produire des légumes sains toute l&#039;année.</p>
+                    </div>
+
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-bullseye"></i> Objectifs</h3>
+                        <ul class="club-obj">
+                                                        <li><i class="fa-solid fa-check"></i> Découvrir les techniques de culture hors sol (hydroponie, substrats).</li>
+                                                        <li><i class="fa-solid fa-check"></i> Comprendre les besoins des plantes : eau, lumière, nutriments.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Sensibiliser à l&#039;agriculture urbaine et à l&#039;autonomie alimentaire.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Produire des légumes frais et développer l&#039;esprit d&#039;initiative.</li>
+                                                    </ul>
+                    </div>
+
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-users-gear"></i> Membres de gestion</h3>
+                                                                        <div class="club-ph-state"><i class="fa-solid fa-user-group"></i>Les membres de cette activité seront bientôt présentés.</div>
+                                            </div>
+
+                    <div class="club-card">
+                                                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+                            <h3 style="margin:0;"><i class="fa-solid fa-images"></i> En images</h3>
+                                                    </div>
+                        <div class="club-photos" id="photos-agriculture-hors-sol" style="margin-top:14px;">
+                                                        <div class="club-ph-state"><i class="fa-solid fa-image"></i>Les photos de cette activité seront bientôt disponibles.</div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="club-panel " id="club-batik" data-drive="">
+                    <div class="club-head">
+                        <div class="club-head-ic"><i class="fa-solid fa-shirt"></i></div>
+                        <h2>Le Batik</h2>
+                    </div>
+
+                                        <a href="assets/images/vie-scolaire/batik.jpg" target="_blank" class="club-affiche" title="Voir l'affiche en grand">
+                        <img src="assets/images/vie-scolaire/batik.jpg" alt="Affiche — Le Batik">
+                    </a>
+                    
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-circle-info"></i> Présentation</h3>
+                        <p>L&#039;atelier de Batik est dédié à la conception de pagnes et de tenues traditionnelles. Teinture à la cire, motifs, couleurs : les élèves y apprennent un art textile ancestral et créent de leurs mains des pièces uniques aux couleurs d&#039;Anador.</p>
+                    </div>
+
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-bullseye"></i> Objectifs</h3>
+                        <ul class="club-obj">
+                                                        <li><i class="fa-solid fa-check"></i> Maîtriser les techniques de teinture et de décoration du pagne.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Valoriser le patrimoine textile et vestimentaire ivoirien.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Développer la créativité, le sens des couleurs et la minutie.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Confectionner des tenues traditionnelles pour les événements de l&#039;école.</li>
+                                                    </ul>
+                    </div>
+
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-users-gear"></i> Membres de gestion</h3>
+                                                                        <div class="club-ph-state"><i class="fa-solid fa-user-group"></i>Les membres de cette activité seront bientôt présentés.</div>
+                                            </div>
+
+                    <div class="club-card">
+                                                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+                            <h3 style="margin:0;"><i class="fa-solid fa-images"></i> En images</h3>
+                                                    </div>
+                        <div class="club-photos" id="photos-batik" style="margin-top:14px;">
+                                                        <div class="club-ph-state"><i class="fa-solid fa-image"></i>Les photos de cette activité seront bientôt disponibles.</div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="club-panel " id="club-savon-liquide" data-drive="">
+                    <div class="club-head">
+                        <div class="club-head-ic"><i class="fa-solid fa-pump-soap"></i></div>
+                        <h2>Le savon liquide Choco</h2>
+                    </div>
+
+                                        <a href="assets/images/vie-scolaire/savon-liquide-choco.jpg" target="_blank" class="club-affiche" title="Voir l'affiche en grand">
+                        <img src="assets/images/vie-scolaire/savon-liquide-choco.jpg" alt="Affiche — Le savon liquide Choco">
+                    </a>
+                    
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-circle-info"></i> Présentation</h3>
+                        <p>L&#039;atelier de fabrication du savon liquide « Choco » transforme les élèves en petits chimistes-entrepreneurs. Du dosage des ingrédients au conditionnement en bouteilles, ils apprennent à fabriquer, étiqueter et vendre un produit d&#039;hygiène de qualité.</p>
+                    </div>
+
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-bullseye"></i> Objectifs</h3>
+                        <ul class="club-obj">
+                                                        <li><i class="fa-solid fa-check"></i> Découvrir la chimie appliquée à travers la saponification.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Apprendre les règles d&#039;hygiène, de dosage et de sécurité.</li>
+                                                        <li><i class="fa-solid fa-check"></i> S&#039;initier à l&#039;entrepreneuriat : production, packaging et vente.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Générer des revenus au profit des projets de l&#039;école.</li>
+                                                    </ul>
+                    </div>
+
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-users-gear"></i> Membres de gestion</h3>
+                                                                        <div class="club-ph-state"><i class="fa-solid fa-user-group"></i>Les membres de cette activité seront bientôt présentés.</div>
+                                            </div>
+
+                    <div class="club-card">
+                                                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+                            <h3 style="margin:0;"><i class="fa-solid fa-images"></i> En images</h3>
+                                                    </div>
+                        <div class="club-photos" id="photos-savon-liquide" style="margin-top:14px;">
+                                                        <div class="club-ph-state"><i class="fa-solid fa-image"></i>Les photos de cette activité seront bientôt disponibles.</div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="club-panel " id="club-perlage" data-drive="">
+                    <div class="club-head">
+                        <div class="club-head-ic"><i class="fa-solid fa-gem"></i></div>
+                        <h2>Le Perlage</h2>
+                    </div>
+
+                                        <a href="assets/images/vie-scolaire/perlage.jpg" target="_blank" class="club-affiche" title="Voir l'affiche en grand">
+                        <img src="assets/images/vie-scolaire/perlage.jpg" alt="Affiche — Le Perlage">
+                    </a>
+                    
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-circle-info"></i> Présentation</h3>
+                        <p>L&#039;atelier de Perlage cultive la patience et le sens du détail. Colliers, bracelets, parures et accessoires : les élèves enfilent, assemblent et créent de véritables bijoux artisanaux, entre tradition africaine et inspiration contemporaine.</p>
+                    </div>
+
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-bullseye"></i> Objectifs</h3>
+                        <ul class="club-obj">
+                                                        <li><i class="fa-solid fa-check"></i> Apprendre les techniques d&#039;enfilage, de tissage et d&#039;assemblage de perles.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Développer la patience, la précision et la créativité.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Valoriser l&#039;artisanat et la parure traditionnelle africaine.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Créer des bijoux vendus au profit des activités de l&#039;école.</li>
+                                                    </ul>
+                    </div>
+
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-users-gear"></i> Membres de gestion</h3>
+                                                                        <div class="club-ph-state"><i class="fa-solid fa-user-group"></i>Les membres de cette activité seront bientôt présentés.</div>
+                                            </div>
+
+                    <div class="club-card">
+                                                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+                            <h3 style="margin:0;"><i class="fa-solid fa-images"></i> En images</h3>
+                                                    </div>
+                        <div class="club-photos" id="photos-perlage" style="margin-top:14px;">
+                                                        <div class="club-ph-state"><i class="fa-solid fa-image"></i>Les photos de cette activité seront bientôt disponibles.</div>
+                                                    </div>
+                    </div>
+                </div>
+                                <div class="club-panel " id="club-club-vert" data-drive="">
+                    <div class="club-head">
+                        <div class="club-head-ic"><i class="fa-solid fa-leaf"></i></div>
+                        <h2>Le Club Vert</h2>
+                    </div>
+
+                    
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-circle-info"></i> Présentation</h3>
+                        <p>Le Club Vert veille sur le cadre de vie du GS Anador. Salubrité des espaces, propreté des classes et de la cour, tri et gestion des déchets : ses membres s&#039;engagent au quotidien pour une école saine, verte et agréable, où il fait bon apprendre.</p>
+                    </div>
+
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-bullseye"></i> Objectifs</h3>
+                        <ul class="club-obj">
+                                                        <li><i class="fa-solid fa-check"></i> Sensibiliser toute l&#039;école à l&#039;hygiène, à la salubrité et au respect de l&#039;environnement.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Maintenir la propreté des classes, de la cour et des espaces communs.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Promouvoir le tri des déchets, le recyclage et les gestes éco-responsables.</li>
+                                                        <li><i class="fa-solid fa-check"></i> Embellir et végétaliser le cadre de vie de l&#039;établissement.</li>
+                                                    </ul>
+                    </div>
+
+                    <div class="club-card">
+                        <h3><i class="fa-solid fa-users-gear"></i> Membres de gestion</h3>
+                                                                        <div class="club-ph-state"><i class="fa-solid fa-user-group"></i>Les membres de cette activité seront bientôt présentés.</div>
+                                            </div>
+
+                    <div class="club-card">
+                                                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+                            <h3 style="margin:0;"><i class="fa-solid fa-images"></i> En images</h3>
+                                                    </div>
+                        <div class="club-photos" id="photos-club-vert" style="margin-top:14px;">
+                                                        <div class="club-ph-state"><i class="fa-solid fa-image"></i>Les photos de cette activité seront bientôt disponibles.</div>
+                                                    </div>
+                    </div>
+                </div>
+                            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox plein écran -->
+    <div class="lb-ov" id="lightbox" onclick="if(event.target===this)closeLightbox()">
+        <button class="lb-nav lb-prev" onclick="lbStep(-1)" aria-label="Précédente"><i class="fa-solid fa-chevron-left"></i></button>
+        <img id="lbImg" src="" alt="">
+        <button class="lb-nav lb-next" onclick="lbStep(1)" aria-label="Suivante"><i class="fa-solid fa-chevron-right"></i></button>
+        <button class="lb-close" onclick="closeLightbox()" aria-label="Fermer">&times;</button>
+    </div>
+
+    <script src="main.js?v=1787810984"></script>
+    <script>
+        const clubPhotosCache = {};
+        let lbPhotos = [], lbIndex = 0;
+
+        // Photos validées, rendues côté serveur. Toutes les années sont chargées d'un coup :
+        // basculer d'une année à l'autre est instantané, sans requête.
+                const PHOTOS_PAR_ANNEE = [];
+        Object.assign(clubPhotosCache, []);
+
+        // Bascule d'année : on réaffiche la grille et on réaligne le cache de la lightbox.
+        window.changerAnneePhotos = function (sel) {
+            const slug = sel.dataset.slug;
+            const photos = (PHOTOS_PAR_ANNEE[slug] || {})[sel.value] || [];
+            clubPhotosCache[slug] = photos;
+            const box = document.getElementById('photos-' + slug);
+            box.innerHTML = photos.length
+                ? photos.map((p, i) =>
+                    '<button class="club-ph" onclick="openLightbox(\'' + slug + '\',' + i + ')">' +
+                    '<img loading="lazy" src="' + p.thumb + '" alt="' + (p.name || '') + '"></button>').join('')
+                : '<div class="club-ph-state"><i class="fa-solid fa-image"></i>Aucune photo pour cette année.</div>';
+        };
+
+        window.showClub = function (slug, btn) {
+            document.querySelectorAll('.club-side-item').forEach(b => b.classList.toggle('active', b === btn));
+            document.querySelectorAll('.club-panel').forEach(p => p.classList.toggle('active', p.id === 'club-' + slug));
+            loadClubPhotos(slug);
+        };
+
+        async function loadClubPhotos(slug) {
+            const panel = document.getElementById('club-' + slug);
+            const drive = panel ? (panel.dataset.drive || '') : '';
+            const box = document.getElementById('photos-' + slug);
+            if (!box || !drive) return;
+            if (clubPhotosCache[slug]) return;
+            clubPhotosCache[slug] = 'loading';
+            box.innerHTML = '<div class="club-ph-state"><div class="club-ph-spin"></div>Chargement des photos…</div>';
+            try {
+                const r = await fetch('drive_api.php?action=photos&folder=' + encodeURIComponent(drive));
+                const data = await r.json();
+                if (!data.ok || !(data.photos || []).length) {
+                    clubPhotosCache[slug] = [];
+                    box.innerHTML = '<div class="club-ph-state"><i class="fa-solid fa-image"></i>' +
+                        (data.unavailable ? 'Galerie bientôt disponible.' : (data.message || 'Aucune photo pour le moment.')) + '</div>';
+                    return;
+                }
+                clubPhotosCache[slug] = data.photos;
+                box.innerHTML = data.photos.map(function (p, i) {
+                    return '<button class="club-ph" onclick="openLightbox(\'' + slug + '\',' + i + ')">' +
+                        '<img loading="lazy" src="' + p.thumb + '" alt="' + (p.name || '') + '"></button>';
+                }).join('');
+            } catch (e) {
+                clubPhotosCache[slug] = [];
+                box.innerHTML = '<div class="club-ph-state"><i class="fa-solid fa-triangle-exclamation"></i>Erreur de chargement.</div>';
+            }
+        }
+
+        window.openLightbox = function (slug, i) {
+            lbPhotos = clubPhotosCache[slug] || [];
+            lbIndex = i;
+            if (!lbPhotos.length) return;
+            document.getElementById('lbImg').src = lbPhotos[i].full;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+        window.lbStep = function (d) {
+            if (!lbPhotos.length) return;
+            lbIndex = (lbIndex + d + lbPhotos.length) % lbPhotos.length;
+            document.getElementById('lbImg').src = lbPhotos[lbIndex].full;
+        };
+        window.closeLightbox = function () {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        };
+        document.addEventListener('keydown', function (e) {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'ArrowLeft') lbStep(-1);
+            else if (e.key === 'ArrowRight') lbStep(1);
+            else if (e.key === 'Escape') closeLightbox();
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const first = document.querySelector('.club-panel.active');
+            if (first) loadClubPhotos(first.id.replace('club-', ''));
+        });
+    </script>
+</body>
+</html>

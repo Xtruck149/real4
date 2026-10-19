@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collège Anador Abobo — GS Anador</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=1787810981">
+</head>
+<body>
+
+    <!-- Top Bar / Slogan -->
+    <div class="top-bar">
+        <span class="top-bar-slogan"><i class="fa-solid fa-heart"></i> Anador, j'adore&hellip;</span>
+        <span class="top-bar-motto">Discipline - Émulation - Rigueur</span>
+        <a href="tel:0707998179" class="top-bar-contact"><i class="fa-solid fa-phone"></i> +225 07 07 99 81 79</a>
+        <a href="admin.php" class="top-bar-profil"><i class="fa-solid fa-circle-user"></i> Admin</a>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <a href="index.php" class="logo" style="text-decoration:none;">
+            <div class="logo-icon"><img src="assets/images/logo-anador.png" alt="Lion Logo" style="height: 90px; border-radius: 12px; mix-blend-mode: multiply;"></div>
+            <div class="logo-text">
+                <h1>GS ANADOR</h1>
+                <span>Préscolaire, Primaires & Collèges</span>
+            </div>
+        </a>
+        <nav class="nav-links">
+            <a href="index.php#accueil">Accueil</a>
+            <a href="index.php#academie" class="active">Présentation</a>
+            <a href="index.php#actualite">Actualité</a>
+            <a href="index.php#chartes">Chartes</a>
+            <a href="index.php#resultats">Résultats</a>
+            <!-- <a href="index.php#prodiges">Nos Prodiges</a> --><!-- Nos Prodiges masqué temporairement -->
+            <div class="nav-dropdown">
+                <a href="#" class="nav-dropdown-toggle">Scolarité <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="nav-dropdown-menu">
+                    <a href="scolarite-abobo.php"><i class="fa-solid fa-school"></i> Collège Anador Abobo</a>
+                    <a href="scolarite-yopougon.php"><i class="fa-solid fa-school"></i> Collège Anador Yopougon</a>
+                    <a href="inscriptions.php?e=junior-abobo"><i class="fa-solid fa-child-reaching"></i> Anador Junior Abobo</a>
+                    <a href="inscriptions.php?e=junior-yopougon"><i class="fa-solid fa-child-reaching"></i> Anador Junior Yopougon</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <a href="#" class="nav-dropdown-toggle">Voir + <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="nav-dropdown-menu">
+                    <a href="vie-scolaire.php"><i class="fa-solid fa-people-group"></i> Vie scolaire</a>
+                    <a href="index.php#calendrier-devoirs"><i class="fa-solid fa-calendar-check"></i> Calendrier des devoirs</a>
+                    <a href="emploi-du-temps.php"><i class="fa-solid fa-clock"></i> Emploi du temps</a>
+                    <a href="clubs.php"><i class="fa-solid fa-users-rectangle"></i> Clubs</a>
+                    <a href="mediatheque.php"><i class="fa-solid fa-photo-film"></i> Médiathèque</a>
+                </div>
+            </div>
+            <a href="exos.php" class="btn-nav-accent" onclick="return goToExos(event)">Suivi Scolaire</a>
+            <a href="index.php#contact" class="btn-primary">Nous Contacter</a>
+        </nav>
+        <div class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></div>
+    </header>
+
+    <!-- Hero établissement -->
+    <section class="etab-hero" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('assets/images/etab-abobo.jpg');">
+        <div class="etab-hero-content">
+            <span class="etab-hero-type"><i class="fa-solid fa-graduation-cap"></i> Collège · Enseignement Secondaire · Enseignement Technique</span>
+            <h1>Collège Anador Abobo</h1>
+            <p class="etab-hero-ville"><i class="fa-solid fa-location-dot"></i> Abobo, Abidjan</p>
+            <div class="etab-hero-actions">
+                <a href="scolarite-abobo.php" class="btn-primary"><i class="fa-solid fa-coins"></i> Inscriptions 2026-2027</a>
+                <a href="simulateur-frais.php" class="btn-ghost"><i class="fa-solid fa-calculator"></i> Combien vais-je payer ?</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- À propos & Directeurs successifs -->
+    <section class="section-padding bg-light etab-about-wrap">
+        <div class="container etab-about-grid">
+            <div class="etab-about">
+                <span class="subtitle">À propos de l'établissement</span>
+                <h2 class="etab-about-title">Notre établissement</h2>
+                                <p>Le Collège Anador d&#039;Abobo s&#039;est donné pour mission d&#039;offrir un enseignement secondaire de qualité, accessible et exigeant. Depuis sa création, notre objectif reste le même : former des élèves compétents, autonomes et citoyens responsables, dans un cadre discipliné et bienveillant.</p>
+                <div class="etab-values">
+                    <h4>Nos valeurs</h4>
+                    <div class="value-chips">
+                        <span><i class="fa-solid fa-shield-halved"></i> Discipline</span>
+                        <span><i class="fa-solid fa-trophy"></i> Émulation</span>
+                        <span><i class="fa-solid fa-star"></i> Rigueur</span>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="etab-succession">
+                <h3><i class="fa-solid fa-clock-rotate-left"></i> Nos Directeurs successifs</h3>
+                <p class="succession-sub">Depuis la création de l'établissement</p>
+                <ul class="succession-list">
+                                        <li>
+                        <span class="succ-name">M. Amandou Ouattara</span>
+                        <span class="succ-periode">En poste depuis le 02 août 2021</span>
+                    </li>
+                                        <li>
+                        <span class="succ-name">M. N&#039;Guessan Kouakoussui Aser</span>
+                        <span class="succ-periode">En poste depuis le 02 août 2021</span>
+                    </li>
+                                        <li>
+                        <span class="succ-name">M. Da Dramane</span>
+                        <span class="succ-periode">2010 - 2021</span>
+                    </li>
+                                        <li>
+                        <span class="succ-name">M. Dybi</span>
+                        <span class="succ-periode">1990 - 2010</span>
+                    </li>
+                                    </ul>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Direction -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle">L'équipe dirigeante</span>
+                <h2 class="title">Direction</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="staff-grid"><div class="admin-profile"><div class="admin-avatar" style="background-image: url('assets/images/amandou-ouattara.png');"></div><div class="admin-details"><h5>M. Amandou Ouattara</h5><span class="admin-role">Directeur</span><span class="admin-level">6è, 5è, 4è + Technique</span></div></div><div class="admin-profile"><div class="admin-avatar" style="background-image: url('assets/images/kouakoussui.png');"></div><div class="admin-details"><h5>M. N&#039;Guessan Kouakoussui Aser</h5><span class="admin-role">Directeur</span><span class="admin-level">3è + 2nde, 1ère, Tle</span></div></div></div>        </div>
+    </section>
+
+    <!-- Éducateurs -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle">Encadrement & suivi</span>
+                <h2 class="title">Nos Éducateurs</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="educ-table-wrap"><table class="educ-table"><thead><tr><th><i class="fa-solid fa-layer-group"></i> Niveau</th><th><i class="fa-solid fa-user-tie"></i> Éducateur</th></tr></thead><tbody><tr class="educ-group-start"><td class="educ-niveau" rowspan="3"><span>6ème</span></td><td class="educ-nom">Kouakou Yao Didier</td></tr><tr class=""><td class="educ-nom">Guiro Hippolitte</td></tr><tr class=""><td class="educ-nom">Assouman Koffi Constant</td></tr><tr class="educ-group-start educ-shade"><td class="educ-niveau educ-shade" rowspan="3"><span>5ème</span></td><td class="educ-nom educ-shade">Akari Konan Jean-Marie</td></tr><tr class="educ-shade"><td class="educ-nom educ-shade">N&#039;Cho Valéri Martial</td></tr><tr class="educ-shade"><td class="educ-nom educ-shade">Aké Mambo Marcellin</td></tr><tr class="educ-group-start"><td class="educ-niveau" rowspan="3"><span>4ème</span></td><td class="educ-nom">Yao N&#039;Guessan Augustin</td></tr><tr class=""><td class="educ-nom">N&#039;Zi N&#039;Zi Jean Pierre</td></tr><tr class=""><td class="educ-nom">Traoré Mamadou</td></tr><tr class="educ-group-start educ-shade"><td class="educ-niveau educ-shade" rowspan="3"><span>3ème</span></td><td class="educ-nom educ-shade">Kouadio Yao Alexandre</td></tr><tr class="educ-shade"><td class="educ-nom educ-shade">N&#039;Da Kouadio Armand</td></tr><tr class="educ-shade"><td class="educ-nom educ-shade">Doumbia Moussa</td></tr><tr class="educ-group-start"><td class="educ-niveau" rowspan="2"><span>2nde</span></td><td class="educ-nom">Honoré Kam</td></tr><tr class=""><td class="educ-nom">Koffi Yapo Arnaud</td></tr><tr class="educ-group-start educ-shade"><td class="educ-niveau educ-shade" rowspan="2"><span>1ère</span></td><td class="educ-nom educ-shade">Yao Marie Jeanne</td></tr><tr class="educ-shade"><td class="educ-nom educ-shade">Koné Dramane</td></tr><tr class="educ-group-start"><td class="educ-niveau" rowspan="3"><span>Terminale</span></td><td class="educ-nom">Kouamé N&#039;Guessan Kouacou Urbain</td></tr><tr class=""><td class="educ-nom">Irigo Derotho Gilles</td></tr><tr class=""><td class="educ-nom">Sékongo Katiénéfoua</td></tr><tr class="educ-group-start educ-shade"><td class="educ-niveau educ-shade" rowspan="2"><span>Technique</span></td><td class="educ-nom educ-shade">Kaboré Abdoul Maliki Awal</td></tr><tr class="educ-shade"><td class="educ-nom educ-shade">Yéo Dognéri</td></tr></tbody></table></div>        </div>
+    </section>
+
+    <!-- CTA bas de page -->
+    <section class="etab-cta">
+        <div class="container text-center">
+            <h2>Rejoignez la famille Collège Anador Abobo</h2>
+            <p>Inscriptions ouvertes pour l'année scolaire 2026-2027.</p>
+            <div class="etab-hero-actions" style="justify-content:center;">
+                <a href="scolarite-abobo.php" class="btn-primary"><i class="fa-solid fa-coins"></i> Voir les frais d'inscription</a>
+                <a href="simulateur-frais.php" class="btn-ghost"><i class="fa-solid fa-calculator"></i> Combien vais-je payer ?</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="main.js?v=1787810984"></script>
+</body>
+</html>

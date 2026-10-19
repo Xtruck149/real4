@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendrier des Devoirs — GS Anador</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=1787810981">
+</head>
+<body>
+
+    <!-- Top Bar / Slogan -->
+    <div class="top-bar">
+        <span class="top-bar-slogan"><i class="fa-solid fa-heart"></i> Anador, j'adore&hellip;</span>
+        <span class="top-bar-motto">Discipline - Émulation - Rigueur</span>
+        <a href="tel:0707998179" class="top-bar-contact"><i class="fa-solid fa-phone"></i> +225 07 07 99 81 79</a>
+        <a href="admin.php" class="top-bar-profil"><i class="fa-solid fa-circle-user"></i> Admin</a>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <a href="index.php" class="logo" style="text-decoration:none;">
+            <div class="logo-icon"><img src="assets/images/logo-anador.png" alt="Lion Logo" style="height: 90px; border-radius: 12px; mix-blend-mode: multiply;"></div>
+            <div class="logo-text">
+                <h1>GS ANADOR</h1>
+                <span>Préscolaire, Primaires & Collèges</span>
+            </div>
+        </a>
+        <nav class="nav-links">
+            <a href="index.php#accueil">Accueil</a>
+            <a href="index.php#academie">Présentation</a>
+            <a href="index.php#actualite">Actualité</a>
+            <a href="index.php#chartes">Chartes</a>
+            <a href="index.php#resultats">Résultats</a>
+            <!-- <a href="index.php#prodiges">Nos Prodiges</a> --><!-- Nos Prodiges masqué temporairement -->
+            <div class="nav-dropdown">
+                <a href="#" class="nav-dropdown-toggle">Scolarité <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="nav-dropdown-menu">
+                    <a href="scolarite-abobo.php"><i class="fa-solid fa-school"></i> Collège Anador Abobo</a>
+                    <a href="scolarite-yopougon.php"><i class="fa-solid fa-school"></i> Collège Anador Yopougon</a>
+                    <a href="inscriptions.php?e=junior-abobo"><i class="fa-solid fa-child-reaching"></i> Anador Junior Abobo</a>
+                    <a href="inscriptions.php?e=junior-yopougon"><i class="fa-solid fa-child-reaching"></i> Anador Junior Yopougon</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <a href="#" class="nav-dropdown-toggle">Voir + <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="nav-dropdown-menu">
+                    <a href="vie-scolaire.php"><i class="fa-solid fa-people-group"></i> Vie scolaire</a>
+                    <a href="calendrier.php"><i class="fa-solid fa-calendar-check"></i> Calendrier des devoirs</a>
+                    <a href="emploi-du-temps.php"><i class="fa-solid fa-clock"></i> Emploi du temps</a>
+                    <a href="clubs.php"><i class="fa-solid fa-users-rectangle"></i> Clubs</a>
+                    <a href="mediatheque.php"><i class="fa-solid fa-photo-film"></i> Médiathèque</a>
+                </div>
+            </div>
+            <a href="exos.php" class="btn-nav-accent" onclick="return goToExos(event)">Suivi Scolaire</a>
+            <a href="index.php#contact" class="btn-primary">Nous Contacter</a>
+        </nav>
+        <div class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></div>
+    </header>
+
+    <!-- Hero -->
+    <section class="cal-hero">
+        <div class="cal-hero-content">
+            <span class="cal-hero-badge"><i class="fa-regular fa-calendar-days"></i> Espace Élèves &amp; Parents</span>
+            <h1>Calendrier des Devoirs</h1>
+            <p class="cal-hero-sub">Consultez les devoirs de niveau, par établissement et par classe.</p>
+        </div>
+    </section>
+
+    <!-- Sélecteur établissement + onglets niveaux -->
+    <section class="section-padding bg-light">
+        <div class="container">
+
+            <!-- Choix établissement -->
+            <div class="cal-etab-switch">
+                                <button class="cal-etab-btn active" data-etab="college-abobo">
+                    <i class="fa-solid fa-school"></i> Collège Anador Abobo                </button>
+                                <button class="cal-etab-btn" data-etab="college-yopougon">
+                    <i class="fa-solid fa-school"></i> Collège Anador Yopougon                </button>
+                            </div>
+
+                        <div class="cal-etab-panel active" data-etab="college-abobo">
+
+                <div class="cal-etab-head">
+                    <h2>Collège Anador Abobo</h2>
+                    <span class="cal-etab-meta"><i class="fa-regular fa-calendar"></i> Année scolaire 2025-2026 &middot; 3ᵉ Trimestre</span>
+                </div>
+
+                <!-- Onglets niveaux -->
+                <div class="cal-tabs">
+                                        <button class="cal-tab active" data-target="college-abobo-afc60f5a30cc9b36fb852f3f472c8b58">Sixième (6è)</button>
+                                        <button class="cal-tab" data-target="college-abobo-f2da506a63fef755ce34e4e375789ada">Cinquième (5è)</button>
+                                        <button class="cal-tab" data-target="college-abobo-cb3166f2a25726d63c60631853feae43">Quatrième (4è)</button>
+                                        <button class="cal-tab" data-target="college-abobo-b0939c7b67ac3709263a8fbb15749cee">Troisième (3è)</button>
+                                        <button class="cal-tab" data-target="college-abobo-e8d67e8698c5b4470f606660d4951701">Général — 2nde</button>
+                                        <button class="cal-tab" data-target="college-abobo-f289ef302d1595527a89d31138e1ba26">Général — 1ère</button>
+                                        <button class="cal-tab" data-target="college-abobo-22b8a5ef817e1c16eb079ff7032dfea6">Général — Tle</button>
+                                        <div class="cal-tabs-break"></div>
+                                        <button class="cal-tab" data-target="college-abobo-6965715f4a5b9daa10fe8369d63541a6">Technique — 2nde</button>
+                                        <button class="cal-tab" data-target="college-abobo-b27fb1b5bb3d3ca56b76682e9f8406b4">Technique — 1ère</button>
+                                        <button class="cal-tab" data-target="college-abobo-be5ce4990d30f067860d643e4c5986c6">Technique — Tle</button>
+                                    </div>
+
+                <!-- Contenus des niveaux -->
+                                <div class="cal-panel active" id="college-abobo-afc60f5a30cc9b36fb852f3f472c8b58">
+                                            <table class="cal-table">
+                            <thead>
+                                <tr><th>Date</th><th>Ordre</th><th>Matière</th></tr>
+                            </thead>
+                            <tbody>
+                                                                <tr>
+                                    <td class="cal-date">Vendredi 06 Mars 2026</td>
+                                    <td class="cal-ordre"><span>1</span></td>
+                                    <td class="cal-matiere">Mathématiques</td>
+                                </tr>
+                                                                <tr>
+                                    <td class="cal-date"></td>
+                                    <td class="cal-ordre"><span>2</span></td>
+                                    <td class="cal-matiere">Anglais</td>
+                                </tr>
+                                                                <tr class="cal-newdate">
+                                    <td class="cal-date">Vendredi 13 Mars 2026</td>
+                                    <td class="cal-ordre"><span>1</span></td>
+                                    <td class="cal-matiere">Physique-Chimie</td>
+                                </tr>
+                                                                <tr>
+                                    <td class="cal-date"></td>
+                                    <td class="cal-ordre"><span>2</span></td>
+                                    <td class="cal-matiere">Composition Française</td>
+                                </tr>
+                                                                <tr class="cal-newdate">
+                                    <td class="cal-date">Vendredi 20 Mars 2026</td>
+                                    <td class="cal-ordre"><span>1</span></td>
+                                    <td class="cal-matiere">SVT</td>
+                                </tr>
+                                                                <tr>
+                                    <td class="cal-date"></td>
+                                    <td class="cal-ordre"><span>2</span></td>
+                                    <td class="cal-matiere">EDHC</td>
+                                </tr>
+                                                                <tr class="cal-newdate">
+                                    <td class="cal-date">Vendredi 27 Mars 2026</td>
+                                    <td class="cal-ordre"><span>1</span></td>
+                                    <td class="cal-matiere">Orthographe</td>
+                                </tr>
+                                                                <tr>
+                                    <td class="cal-date"></td>
+                                    <td class="cal-ordre"><span>2</span></td>
+                                    <td class="cal-matiere">Histoire-Géographie</td>
+                                </tr>
+                                                                <tr class="cal-newdate">
+                                    <td class="cal-date">Vendredi 17 Avril 2026</td>
+                                    <td class="cal-ordre"><span>1</span></td>
+                                    <td class="cal-matiere">Mathématiques</td>
+                                </tr>
+                                                                <tr>
+                                    <td class="cal-date"></td>
+                                    <td class="cal-ordre"><span>2</span></td>
+                                    <td class="cal-matiere">Anglais</td>
+                                </tr>
+                                                                <tr class="cal-newdate">
+                                    <td class="cal-date">Vendredi 24 Avril 2026</td>
+                                    <td class="cal-ordre"><span>1</span></td>
+                                    <td class="cal-matiere">Physique-Chimie</td>
+                                </tr>
+                                                                <tr>
+                                    <td class="cal-date"></td>
+                                    <td class="cal-ordre"><span>2</span></td>
+                                    <td class="cal-matiere">Composition Française</td>
+                                </tr>
+                                                            </tbody>
+                        </table>
+                        <p class="cal-signature"><i class="fa-solid fa-pen-nib"></i> La Direction des Études</p>
+                                    </div>
+                                <div class="cal-panel" id="college-abobo-f2da506a63fef755ce34e4e375789ada">
+                                            <table class="cal-table">
+                            <thead>
+                                <tr><th>Date</th><th>Ordre</th><th>Matière</th></tr>
+                            </thead>
+                            <tbody>
+                                                                <tr>
+                                    <td class="cal-date">Vendredi 06 Mars 2026</td>
+                                    <td class="cal-ordre"><span>1</span></td>
+                                    <td class="cal-matiere">Mathématiques</td>
+                                </tr>
+                                                                <tr>
+                                    <td class="cal-date"></td>
+                                    <td class="cal-ordre"><span>2</span></td>
+                                    <td class="cal-matiere">Anglais</td>
+                                </tr>
+                                                                <tr class="cal-newdate">
+                                    <td class="cal-date">Vendredi 13 Mars 2026</td>
+                                    <td class="cal-ordre"><span>1</span></td>
+                                    <td class="cal-matiere">Physique-Chimie</td>
+                                </tr>
+                                                                <tr>
+                                    <td class="cal-date"></td>
+                                    <td class="cal-ordre"><span>2</span></td>
+                                    <td class="cal-matiere">Composition Française</td>
+                                </tr>
+                                                                <tr class="cal-newdate">
+                                    <td class="cal-date">Vendredi 20 Mars 2026</td>
+                                    <td class="cal-ordre"><span>1</span></td>
+                                    <td class="cal-matiere">SVT</td>
+                                </tr>
+                                                                <tr>
+                                    <td class="cal-date"></td>
+                                    <td class="cal-ordre"><span>2</span></td>
+                                    <td class="cal-matiere">EDHC</td>
+                                </tr>
+                                                                <tr class="cal-newdate">
+                                    <td class="cal-date">Vendredi 27 Mars 2026</td>
+                                    <td class="cal-ordre"><span>1</span></td>
+                                    <td class="cal-matiere">Orthographe</td>
+                                </tr>
+                                                                <tr>
+                                    <td class="cal-date"></td>
+                                    <td class="cal-ordre"><span>2</span></td>
+                                    <td class="cal-matiere">Histoire-Géographie</td>
+                                </tr>
+                                                                <tr class="cal-newdate">
+                                    <td class="cal-date">Vendredi 17 Avril 2026</td>
+                                    <td class="cal-ordre"><span>1</span></td>
+                                    <td class="cal-matiere">Mathématiques</td>
+                                </tr>
+                                                                <tr>
+                                    <td class="cal-date"></td>
+                                    <td class="cal-ordre"><span>2</span></td>
+                                    <td class="cal-matiere">Anglais</td>
+                                </tr>
+                                                                <tr class="cal-newdate">
+                                    <td class="cal-date">Vendredi 24 Avril 2026</td>
+                                    <td class="cal-ordre"><span>1</span></td>
+                                    <td class="cal-matiere">Physique-Chimie</td>
+                                </tr>
+                                                                <tr>
+                                    <td class="cal-date"></td>
+                                    <td class="cal-ordre"><span>2</span></td>
+                                    <td class="cal-matiere">Composition Française</td>
+                                </tr>
+                                                            </tbody>
+                        </table>
+                        <p class="cal-signature"><i class="fa-solid fa-pen-nib"></i> La Direction des Études</p>
+                                    </div>
+                                <div class="cal-panel" id="college-abobo-cb3166f2a25726d63c60631853feae43">
+                                            <div class="cal-empty"><i class="fa-regular fa-clock"></i> Calendrier <strong>Quatrième (4è)</strong> à venir. Il sera publié prochainement par la Direction des Études.</div>
+                                    </div>
+                                <div class="cal-panel" id="college-abobo-b0939c7b67ac3709263a8fbb15749cee">
+                                            <div class="cal-empty"><i class="fa-regular fa-clock"></i> Calendrier <strong>Troisième (3è)</strong> à venir. Il sera publié prochainement par la Direction des Études.</div>
+                                    </div>
+                                <div class="cal-panel" id="college-abobo-e8d67e8698c5b4470f606660d4951701">
+                                            <div class="cal-empty"><i class="fa-regular fa-clock"></i> Calendrier <strong>Général — 2nde</strong> à venir. Il sera publié prochainement par la Direction des Études.</div>
+                                    </div>
+                                <div class="cal-panel" id="college-abobo-f289ef302d1595527a89d31138e1ba26">
+                                            <div class="cal-empty"><i class="fa-regular fa-clock"></i> Calendrier <strong>Général — 1ère</strong> à venir. Il sera publié prochainement par la Direction des Études.</div>
+                                    </div>
+                                <div class="cal-panel" id="college-abobo-22b8a5ef817e1c16eb079ff7032dfea6">
+                                            <div class="cal-empty"><i class="fa-regular fa-clock"></i> Calendrier <strong>Général — Tle</strong> à venir. Il sera publié prochainement par la Direction des Études.</div>
+                                    </div>
+                                <div class="cal-panel" id="college-abobo-6965715f4a5b9daa10fe8369d63541a6">
+                                            <div class="cal-empty"><i class="fa-regular fa-clock"></i> Calendrier <strong>Technique — 2nde</strong> à venir. Il sera publié prochainement par la Direction des Études.</div>
+                                    </div>
+                                <div class="cal-panel" id="college-abobo-b27fb1b5bb3d3ca56b76682e9f8406b4">
+                                            <div class="cal-empty"><i class="fa-regular fa-clock"></i> Calendrier <strong>Technique — 1ère</strong> à venir. Il sera publié prochainement par la Direction des Études.</div>
+                                    </div>
+                                <div class="cal-panel" id="college-abobo-be5ce4990d30f067860d643e4c5986c6">
+                                            <div class="cal-empty"><i class="fa-regular fa-clock"></i> Calendrier <strong>Technique — Tle</strong> à venir. Il sera publié prochainement par la Direction des Études.</div>
+                                    </div>
+                
+            </div>
+                        <div class="cal-etab-panel" data-etab="college-yopougon">
+
+                <div class="cal-etab-head">
+                    <h2>Collège Anador Yopougon</h2>
+                    <span class="cal-etab-meta"><i class="fa-regular fa-calendar"></i> Année scolaire 2025-2026 &middot; 3ᵉ Trimestre</span>
+                </div>
+
+                <!-- Onglets niveaux -->
+                <div class="cal-tabs">
+                                        <button class="cal-tab active" data-target="college-yopougon-afc60f5a30cc9b36fb852f3f472c8b58">Sixième (6è)</button>
+                                        <button class="cal-tab" data-target="college-yopougon-f2da506a63fef755ce34e4e375789ada">Cinquième (5è)</button>
+                                        <button class="cal-tab" data-target="college-yopougon-cb3166f2a25726d63c60631853feae43">Quatrième (4è)</button>
+                                        <button class="cal-tab" data-target="college-yopougon-b0939c7b67ac3709263a8fbb15749cee">Troisième (3è)</button>
+                                        <button class="cal-tab" data-target="college-yopougon-e8d67e8698c5b4470f606660d4951701">Général — 2nde</button>
+                                        <button class="cal-tab" data-target="college-yopougon-f289ef302d1595527a89d31138e1ba26">Général — 1ère</button>
+                                        <button class="cal-tab" data-target="college-yopougon-22b8a5ef817e1c16eb079ff7032dfea6">Général — Tle</button>
+                                        <div class="cal-tabs-break"></div>
+                                        <button class="cal-tab" data-target="college-yopougon-6965715f4a5b9daa10fe8369d63541a6">Technique — 2nde</button>
+                                        <button class="cal-tab" data-target="college-yopougon-b27fb1b5bb3d3ca56b76682e9f8406b4">Technique — 1ère</button>
+                                        <button class="cal-tab" data-target="college-yopougon-be5ce4990d30f067860d643e4c5986c6">Technique — Tle</button>
+                                    </div>
+
+                <!-- Contenus des niveaux -->
+                                <div class="cal-panel active" id="college-yopougon-afc60f5a30cc9b36fb852f3f472c8b58">
+                                            <div class="cal-empty"><i class="fa-regular fa-clock"></i> Calendrier <strong>Sixième (6è)</strong> à venir. Il sera publié prochainement par la Direction des Études.</div>
+                                    </div>
+                                <div class="cal-panel" id="college-yopougon-f2da506a63fef755ce34e4e375789ada">
+                                            <div class="cal-empty"><i class="fa-regular fa-clock"></i> Calendrier <strong>Cinquième (5è)</strong> à venir. Il sera publié prochainement par la Direction des Études.</div>
+                                    </div>
+                                <div class="cal-panel" id="college-yopougon-cb3166f2a25726d63c60631853feae43">
+                                            <div class="cal-empty"><i class="fa-regular fa-clock"></i> Calendrier <strong>Quatrième (4è)</strong> à venir. Il sera publié prochainement par la Direction des Études.</div>
+                                    </div>
+                                <div class="cal-panel" id="college-yopougon-b0939c7b67ac3709263a8fbb15749cee">
+                                            <div class="cal-empty"><i class="fa-regular fa-clock"></i> Calendrier <strong>Troisième (3è)</strong> à venir. Il sera publié prochainement par la Direction des Études.</div>
+                                    </div>
+                                <div class="cal-panel" id="college-yopougon-e8d67e8698c5b4470f606660d4951701">
+                                            <div class="cal-empty"><i class="fa-regular fa-clock"></i> Calendrier <strong>Général — 2nde</strong> à venir. Il sera publié prochainement par la Direction des Études.</div>
+                                    </div>
+                                <div class="cal-panel" id="college-yopougon-f289ef302d1595527a89d31138e1ba26">
+                                            <div class="cal-empty"><i class="fa-regular fa-clock"></i> Calendrier <strong>Général — 1ère</strong> à venir. Il sera publié prochainement par la Direction des Études.</div>
+                                    </div>
+                                <div class="cal-panel" id="college-yopougon-22b8a5ef817e1c16eb079ff7032dfea6">
+                                            <div class="cal-empty"><i class="fa-regular fa-clock"></i> Calendrier <strong>Général — Tle</strong> à venir. Il sera publié prochainement par la Direction des Études.</div>
+                                    </div>
+                                <div class="cal-panel" id="college-yopougon-6965715f4a5b9daa10fe8369d63541a6">
+                                            <div class="cal-empty"><i class="fa-regular fa-clock"></i> Calendrier <strong>Technique — 2nde</strong> à venir. Il sera publié prochainement par la Direction des Études.</div>
+                                    </div>
+                                <div class="cal-panel" id="college-yopougon-b27fb1b5bb3d3ca56b76682e9f8406b4">
+                                            <div class="cal-empty"><i class="fa-regular fa-clock"></i> Calendrier <strong>Technique — 1ère</strong> à venir. Il sera publié prochainement par la Direction des Études.</div>
+                                    </div>
+                                <div class="cal-panel" id="college-yopougon-be5ce4990d30f067860d643e4c5986c6">
+                                            <div class="cal-empty"><i class="fa-regular fa-clock"></i> Calendrier <strong>Technique — Tle</strong> à venir. Il sera publié prochainement par la Direction des Études.</div>
+                                    </div>
+                
+            </div>
+            
+        </div>
+    </section>
+
+    <script src="main.js?v=1787810984"></script>
+    <script>
+    // Bascule établissement
+    document.querySelectorAll('.cal-etab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const etab = btn.dataset.etab;
+            document.querySelectorAll('.cal-etab-btn').forEach(b => b.classList.toggle('active', b === btn));
+            document.querySelectorAll('.cal-etab-panel').forEach(p => p.classList.toggle('active', p.dataset.etab === etab));
+        });
+    });
+    // Bascule niveau (onglets) — délégation par panel établissement
+    document.querySelectorAll('.cal-etab-panel').forEach(panel => {
+        const tabs = panel.querySelectorAll('.cal-tab');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.toggle('active', t === tab));
+                panel.querySelectorAll('.cal-panel').forEach(cp => cp.classList.toggle('active', cp.id === tab.dataset.target));
+            });
+        });
+    });
+    </script>
+</body>
+</html>

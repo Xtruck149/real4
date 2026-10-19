@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groupe Scolaire Anador | Accueil</title>
+    <meta name="description" content="Découvrez le groupe scolaire GS ANADOR composé de 2 écoles primaires et 2 collèges (Abobo et Yopougon). Qualité éducative, suivi personnalisé et infrastructures modernes.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=1787810981">
+</head>
+<body>
+
+    <!-- Top Bar / Slogan -->
+    <div class="top-bar">
+        <span class="top-bar-slogan"><i class="fa-solid fa-heart"></i> Anador, j'adore&hellip;</span>
+        <span class="top-bar-motto">Discipline - Émulation - Rigueur</span>
+        <a href="extra.php" class="top-bar-extra"><i class="fa-solid fa-newspaper"></i> Anador Express</a>
+        <a href="tel:0707998179" class="top-bar-contact"><i class="fa-solid fa-phone"></i> +225 07 07 99 81 79</a>
+        <a href="admin.php" class="top-bar-profil"><i class="fa-solid fa-circle-user"></i> Admin</a>
+    </div>
+
+    <!-- Bouton flottant Anador Express -->
+    <a href="extra.php" class="extra-fab" aria-label="Anador Express — le journal de l'école">
+        <i class="fa-solid fa-newspaper"></i>
+        <span>Anador Express</span>
+    </a>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <div class="logo-icon"><img src="assets/images/logo-anador.png" alt="Lion Logo" style="height: 90px; border-radius: 12px; mix-blend-mode: multiply;"></div>
+            <div class="logo-text">
+                <h1>GS ANADOR</h1>
+                <span>Préscolaire, Primaires & Collèges</span>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a href="#accueil" class="active">Accueil</a>
+            <a href="#academie">Présentation</a>
+            <a href="#actualite">Actualité</a>
+            <a href="#chartes">Chartes</a>
+            <a href="#resultats">Résultats</a>
+            <!-- <a href="#prodiges">Nos Prodiges</a> --><!-- Nos Prodiges masqué temporairement -->
+            <div class="nav-dropdown">
+                <a href="#" class="nav-dropdown-toggle">Scolarité <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="nav-dropdown-menu">
+                    <a href="scolarite-abobo.php"><i class="fa-solid fa-school"></i> Collège Anador Abobo</a>
+                    <a href="scolarite-yopougon.php"><i class="fa-solid fa-school"></i> Collège Anador Yopougon</a>
+                    <a href="inscriptions.php?e=junior-abobo"><i class="fa-solid fa-child-reaching"></i> Anador Junior Abobo</a>
+                    <a href="inscriptions.php?e=junior-yopougon"><i class="fa-solid fa-child-reaching"></i> Anador Junior Yopougon</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <a href="#" class="nav-dropdown-toggle">Voir + <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="nav-dropdown-menu">
+                    <a href="vie-scolaire.php"><i class="fa-solid fa-people-group"></i> Vie scolaire</a>
+                    <a href="calendrier.php"><i class="fa-solid fa-calendar-check"></i> Calendrier des devoirs</a>
+                    <a href="emploi-du-temps.php"><i class="fa-solid fa-clock"></i> Emploi du temps</a>
+                    <a href="clubs.php"><i class="fa-solid fa-users-rectangle"></i> Clubs</a>
+                    <a href="mediatheque.php"><i class="fa-solid fa-photo-film"></i> Médiathèque</a>
+                </div>
+            </div>
+            <a href="exos.php" class="btn-nav-accent" onclick="return goToExos(event)">Suivi Scolaire</a>
+            <a href="#contact" class="btn-primary">Nous Contacter</a>
+        </nav>
+        <div class="mobile-menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Slider Section -->
+    <section id="accueil" class="hero-slider">
+                <div class="slide active">
+            <img src="assets/images/slide-ceremonie.jpg" alt="La discipline, notre fierté">
+            <div class="slide-overlay">
+                <div class="slide-content">
+                    <span class="badge">Discipline &amp; Civisme</span>
+                    <h2>La discipline, notre fierté</h2>
+                    <p>Cérémonie de levée des couleurs : nos élèves apprennent dès le plus jeune âge la rigueur, le civisme et le respect du drapeau national.</p>
+                </div>
+            </div>
+        </div>
+                <div class="slide ">
+            <img src="assets/images/slide-metiers.jpg" alt="Apprendre en s&#039;amusant">
+            <div class="slide-overlay">
+                <div class="slide-content">
+                    <span class="badge">Éveil &amp; Découverte</span>
+                    <h2>Apprendre en s&#039;amusant</h2>
+                    <p>Journée des métiers en préscolaire : les tout-petits découvrent les professions dans un cadre ludique et bienveillant.</p>
+                </div>
+            </div>
+        </div>
+                <div class="slide ">
+            <img src="assets/images/slide-fanfare.jpg" alt="Notre fanfare sur scène">
+            <div class="slide-overlay">
+                <div class="slide-content">
+                    <span class="badge">Rayonnement Culturel</span>
+                    <h2>Notre fanfare sur scène</h2>
+                    <p>La fanfare du Collège Anador brille au MASA, le Marché des Arts du Spectacle Africain d&#039;Abidjan.</p>
+                </div>
+            </div>
+        </div>
+                <div class="slide ">
+            <img src="assets/images/slide-agropastoral.jpg" alt="La science par la pratique">
+            <div class="slide-overlay">
+                <div class="slide-content">
+                    <span class="badge">Sciences &amp; Nature</span>
+                    <h2>La science par la pratique</h2>
+                    <p>Club agropastoral : les élèves découvrent l&#039;élevage et les sciences naturelles de manière concrète et vivante.</p>
+                </div>
+            </div>
+        </div>
+                <div class="slide ">
+            <img src="assets/images/slide-famille.jpg" alt="Une grande famille unie">
+            <div class="slide-overlay">
+                <div class="slide-content">
+                    <span class="badge">Esprit de Famille</span>
+                    <h2>Une grande famille unie</h2>
+                    <p>Élèves et encadreurs réunis : l&#039;esprit de solidarité et de fierté qui anime le Collège Anador au quotidien.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- [VARIANTE 2] Bandeau simulateur superposé dans le hero -->
+        <a href="simulateur-frais.php" class="sim-hero-banner">
+            <span class="sim-hero-ico"><i class="fa-solid fa-calculator"></i></span>
+            <span class="sim-hero-txt">
+                <strong>Combien vais-je payer&nbsp;?</strong>
+                <small>Simulez les frais d'inscription en 30 s</small>
+            </span>
+            <span class="sim-hero-cta">Lancer <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <!-- Graphes circulaires Résultats (remplace l'info box) -->
+        <a href="#resultats" class="slide-results-panel">
+            <div class="srp-title"><i class="fa-solid fa-trophy"></i> Résultats aux examens <span class="srp-year">2025-2026</span></div>
+
+            <div class="srp-city-headers">
+                <span>Abobo</span>
+                <span>Yopougon</span>
+            </div>
+            <div class="srp-rings">
+                                <div class="ring-item" data-target="100" data-color="#22c55e">
+                    <svg class="ring-svg" viewBox="0 0 120 120">
+                        <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+                        <circle class="ring-fg" cx="60" cy="60" r="52"></circle>
+                    </svg>
+                    <div class="ring-center"><span class="ring-pct">0%</span></div>
+                    <span class="ring-label">CEPE</span>
+                </div>
+                                <div class="ring-item" data-target="100" data-color="#22c55e">
+                    <svg class="ring-svg" viewBox="0 0 120 120">
+                        <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+                        <circle class="ring-fg" cx="60" cy="60" r="52"></circle>
+                    </svg>
+                    <div class="ring-center"><span class="ring-pct">0%</span></div>
+                    <span class="ring-label">CEPE</span>
+                </div>
+                                <div class="ring-item" data-target="86.65" data-color="#f59e0b">
+                    <svg class="ring-svg" viewBox="0 0 120 120">
+                        <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+                        <circle class="ring-fg" cx="60" cy="60" r="52"></circle>
+                    </svg>
+                    <div class="ring-center"><span class="ring-pct">0%</span></div>
+                    <span class="ring-label">BEPC</span>
+                </div>
+                                <div class="ring-item" data-target="90.17" data-color="#f59e0b">
+                    <svg class="ring-svg" viewBox="0 0 120 120">
+                        <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+                        <circle class="ring-fg" cx="60" cy="60" r="52"></circle>
+                    </svg>
+                    <div class="ring-center"><span class="ring-pct">0%</span></div>
+                    <span class="ring-label">BEPC</span>
+                </div>
+                                <div class="ring-item" data-target="68.11" data-color="#3b82f6">
+                    <svg class="ring-svg" viewBox="0 0 120 120">
+                        <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+                        <circle class="ring-fg" cx="60" cy="60" r="52"></circle>
+                    </svg>
+                    <div class="ring-center"><span class="ring-pct">0%</span></div>
+                    <span class="ring-label">BAC</span>
+                </div>
+                                <div class="ring-item" data-target="67.51" data-color="#3b82f6">
+                    <svg class="ring-svg" viewBox="0 0 120 120">
+                        <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+                        <circle class="ring-fg" cx="60" cy="60" r="52"></circle>
+                    </svg>
+                    <div class="ring-center"><span class="ring-pct">0%</span></div>
+                    <span class="ring-label">BAC</span>
+                </div>
+                            </div>
+
+                                    <div class="srp-technique">
+                <div class="srp-technique-head">
+                    <span class="srp-technique-title">⚙️ BAC Technique</span>
+                    <span class="srp-technique-badge">G1 · G2</span>
+                </div>
+                <div class="srp-technique-grid">
+                                        <div class="srp-tech-card">
+                        <div class="srp-tech-row">
+                            <span><strong>G1</strong> Abobo</span>
+                            <span class="srp-tech-pct">91,42%</span>
+                        </div>
+                        <div class="srp-tech-bar"><div class="srp-tech-bar-fill" style="width:91.42%"></div></div>
+                    </div>
+                                        <div class="srp-tech-card">
+                        <div class="srp-tech-row">
+                            <span><strong>G2</strong> Abobo</span>
+                            <span class="srp-tech-pct">97,53%</span>
+                        </div>
+                        <div class="srp-tech-bar"><div class="srp-tech-bar-fill" style="width:97.53%"></div></div>
+                    </div>
+                                        <div class="srp-tech-card">
+                        <div class="srp-tech-row">
+                            <span><strong>G1</strong> Yopougon</span>
+                            <span class="srp-tech-pct">92,31%</span>
+                        </div>
+                        <div class="srp-tech-bar"><div class="srp-tech-bar-fill" style="width:92.31%"></div></div>
+                    </div>
+                                        <div class="srp-tech-card">
+                        <div class="srp-tech-row">
+                            <span><strong>G2</strong> Yopougon</span>
+                            <span class="srp-tech-pct">80,76%</span>
+                        </div>
+                        <div class="srp-tech-bar"><div class="srp-tech-bar-fill" style="width:80.76%"></div></div>
+                    </div>
+                                    </div>
+            </div>
+                    </a>
+
+        <!-- Slider Controls -->
+        <button class="slider-btn prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="slider-btn next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+        
+        <div class="slider-dots">
+                        <div class="dot active" data-slide="0"></div>
+                        <div class="dot " data-slide="1"></div>
+                        <div class="dot " data-slide="2"></div>
+                        <div class="dot " data-slide="3"></div>
+                        <div class="dot " data-slide="4"></div>
+                    </div>
+
+        <!-- Information Ticker -->
+        <div class="info-ticker-wrapper">
+            <div class="ticker-label"><i class="fa-regular fa-bell"></i> INFO EN CONTINU</div>
+            <div class="ticker-content-wrapper">
+                <div class="ticker-content">
+                                        <span><i class="fa-solid fa-bolt"></i> Les inscriptions pour la rentrée 2026-2027 sont ouvertes à partir du 15 Aout 2025</span>
+                                        <span><i class="fa-solid fa-bolt"></i> Les paiements &quot;wave&quot; sont désormais possible pour cette année scolaire 2025-2026.</span>
+                                        <span><i class="fa-solid fa-bolt"></i> Félicitations à nos élèves du technique pour leurs excellents résultats aux examen 2025-2026.</span>
+                                        <!-- Duplicate for infinite scroll -->
+                                        <span><i class="fa-solid fa-bolt"></i> Les inscriptions pour la rentrée 2026-2027 sont ouvertes à partir du 15 Aout 2025</span>
+                                        <span><i class="fa-solid fa-bolt"></i> Les paiements &quot;wave&quot; sont désormais possible pour cette année scolaire 2025-2026.</span>
+                                        <span><i class="fa-solid fa-bolt"></i> Félicitations à nos élèves du technique pour leurs excellents résultats aux examen 2025-2026.</span>
+                                    </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* ═══ [VARIANTE 2] Bandeau superposé dans le hero ═══ */
+        .sim-hero-banner {
+            position: absolute; left: 30px; bottom: 110px; z-index: 20;
+            display: inline-flex; align-items: center; gap: 14px;
+            background: rgba(91,31,124,0.92); backdrop-filter: blur(4px);
+            color: #fff; text-decoration: none;
+            border-radius: 16px; padding: 12px 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.18s;
+        }
+        .sim-hero-banner:hover { transform: translateY(-3px); }
+        .sim-hero-ico {
+            width: 42px; height: 42px; flex-shrink: 0; border-radius: 11px;
+            background: rgba(255,255,255,0.2);
+            display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+        }
+        .sim-hero-txt { display: flex; flex-direction: column; line-height: 1.25; }
+        .sim-hero-txt strong { font-size: 1rem; }
+        .sim-hero-txt small { font-size: 0.78rem; color: rgba(255,255,255,0.85); }
+        .sim-hero-cta {
+            flex-shrink: 0; background: #ffd166; color: #4a3400;
+            font-weight: 800; font-size: 0.82rem; padding: 9px 16px; border-radius: 30px;
+            white-space: nowrap; display: inline-flex; align-items: center; gap: 6px;
+        }
+        @media (max-width: 760px) {
+            .sim-hero-banner { left: 12px; right: 12px; bottom: 120px; justify-content: center; }
+        }
+
+        /* Bouton doré « Anador Express » masqué sur l'accueil (gênait le coin bas-droite).
+           Il reste présent sur les autres pages. */
+        .extra-fab { display: none !important; }
+    </style>
+
+    <!-- Pourquoi nous choisir Section -->
+    <section id="pourquoi-nous" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle">Nos Atouts</span>
+                <h2 class="title">Pourquoi Choisir le GS Anador ?</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <h3>Corps Professoral Qualifié</h3>
+                    <p>Des enseignants dévoués, expérimentés et en formation continue pour garantir la meilleure approche pédagogique.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3>Infrastructures Modernes</h3>
+                    <p>2 primaires et 2 collèges équipés de technologies numériques, laboratoires et salles multimédia de pointe.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Suivi Personnalisé</h3>
+                    <p>Un accompagnement individualisé pour chaque élève, respectant son rythme et favorisant son épanouissement.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-basketball"></i>
+                    </div>
+                    <h3>Activités Extrascolaires</h3>
+                    <p>Sport, arts, clubs scientifiques... Un large panel d'activités pour développer de nouvelles passions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Académie Section -->
+    <section id="academie" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle">Nos Établissements</span>
+                <h2 class="title">Présentation du groupe ANADOR</h2>
+                <div class="divider"></div>
+                <p class="academy-intro">Le Groupe Scolaire ANADOR rassemble 2 collèges et 2 écoles primaires à Abobo et Yopougon, du préscolaire à la Terminale. Porté par les valeurs de discipline, d'émulation et de rigueur, il offre à chaque enfant un encadrement de proximité, des enseignants qualifiés et des infrastructures modernes. De l'éveil des plus jeunes à la réussite aux examens, nous accompagnons chaque élève vers l'excellence et l'épanouissement.</p>
+            </div>
+
+            <!-- Mot du Directeur Central -->
+            <div class="director-block">
+                <div class="director-photo">
+                    <img src="assets/images/directeur-central.png" alt="M. DA Dramane, Directeur Central du Groupe Scolaire ANADOR">
+                    <span class="director-badge"><i class="fa-solid fa-award"></i> Directeur Central</span>
+                </div>
+                <div class="director-text">
+                    <span class="director-label">Le mot du Directeur</span>
+                    <blockquote class="director-quote">
+                        « Notre ambition est simple : offrir à chaque enfant un cadre où la discipline, l'émulation et la rigueur deviennent les moteurs de sa réussite. À ANADOR, nous ne formons pas seulement des élèves brillants, mais des femmes et des hommes de valeur, prêts à relever les défis de demain. »
+                    </blockquote>
+                    <div class="director-sign">
+                        <span class="director-name">M. DA Dramane</span>
+                        <span class="director-role">Directeur Central — Groupe Scolaire ANADOR</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="academy-grid">
+                                <div class="academy-card">
+                    <img src="assets/images/etab1-abobo.jpg" alt="Collège Anador Abobo" class="academy-img">
+                    <div class="academy-content">
+                        <h3>Collège Anador Abobo</h3>
+                                                <a href="etablissement.php?e=college-abobo" class="btn-outline w-100 text-center"><i class="fa-solid fa-eye" style="margin-right: 5px;"></i> Consulter</a>
+                    </div>
+                </div>
+                                <div class="academy-card">
+                    <img src="assets/images/etab2-yopougon.jpg" alt="Collège Anador Yopougon" class="academy-img">
+                    <div class="academy-content">
+                        <h3>Collège Anador Yopougon</h3>
+                                                <a href="etablissement.php?e=college-yopougon" class="btn-outline w-100 text-center"><i class="fa-solid fa-eye" style="margin-right: 5px;"></i> Consulter</a>
+                    </div>
+                </div>
+                
+                                <div class="academy-card">
+                    <img src="assets/images/etab3-junior-abobo.png" alt="Anador Junior Abobo" class="academy-img">
+                    <div class="academy-content">
+                        <h3>Anador Junior Abobo</h3>
+                                                <a href="etablissement.php?e=junior-abobo" class="btn-outline w-100 text-center"><i class="fa-solid fa-eye" style="margin-right: 5px;"></i> Consulter</a>
+                    </div>
+                </div>
+                                <div class="academy-card">
+                    <img src="assets/images/etab4-junior-yopougon.png" alt="Anador Junior Yopougon" class="academy-img">
+                    <div class="academy-content">
+                        <h3>Anador Junior Yopougon</h3>
+                                                <a href="etablissement.php?e=junior-yopougon" class="btn-outline w-100 text-center"><i class="fa-solid fa-eye" style="margin-right: 5px;"></i> Consulter</a>
+                    </div>
+                </div>
+                            </div>
+        </div>
+    </section>
+
+    <!-- Actualité Section -->
+    <section id="actualite" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">En Direct du Campus</span>
+                <h2 class="title">Dernières Actualités</h2>
+                <div class="divider-left"></div>
+            </div>
+
+            <div class="news-grid">
+                                <article class="news-card"
+                    data-news-title="Rentrée scolaire : le paiement par Wave arrive à Anador"
+                    data-news-date="CONTENU: Le Groupe Scolaire Anador a le plaisir d&#039;"
+                    data-news-desc="Le Groupe Scolaire Anador a le plaisir d&#039;annoncer une nouveauté pour cette rentrée scolaire : le règlement des frais est désormais possible par Wave. Cette solution moderne offre aux familles de nos sites d&#039;Abobo et de Yopougon plus de simplicité et de sérénité dans leurs démarches. Fidèle à sa devise « Discipline · Émulation · Rigueur », notre établissement poursuit ainsi ses efforts pour vous accompagner au mieux tout au long de l&#039;année."
+                    data-news-img="assets/images/23342872-25664141-5c732946.jpg">
+                    <div class="news-img has-photo" style="background-image:url(assets/images/23342872-25664141-5c732946.jpg);"></div>
+                    <div class="news-content">
+                        <span class="news-date">CONTENU: Le Groupe Scolaire Anador a le plaisir d&#039;</span>
+                        <h3>Rentrée scolaire : le paiement par Wave arrive à Anador</h3>
+                        <p>Le Groupe Scolaire Anador a le plaisir d&#039;annoncer une nouveauté pour cette rentrée scolaire : le règlement des frais est désormais possible par Wave. Cette solution moderne offre aux familles de nos sites d&#039;Abobo et de Yopougon plus de simplicité et de sérénité dans leurs démarches. Fidèle à sa devise « Discipline · Émulation · Rigueur », notre établissement poursuit ainsi ses efforts pour vous accompagner au mieux tout au long de l&#039;année.</p>
+                        <a href="#" class="read-more" onclick="return openNewsModal(this)">Lire la suite <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                                <article class="news-card"
+                    data-news-title="Le Groupe Scolaire Anador distingué meilleur établissement"
+                    data-news-date="01/01/2027"
+                    data-news-desc="C&#039;est avec une immense fierté que le Groupe Scolaire Anador a été primé meilleur établissement scolaire, une distinction qui vient couronner l&#039;engagement quotidien de toute notre communauté éducative. Cette reconnaissance récompense les valeurs qui nous animent depuis toujours : Discipline, Émulation et Rigueur. Nous adressons nos plus chaleureux remerciements à nos élèves, à leurs familles et à l&#039;ensemble de notre personnel, dont le dévouement rend possible une telle réussite sur nos sites d&#039;Abobo et de Yopougon."
+                    data-news-img="assets/images/2026-07-12-06_50_29-excellence-logo---Re-49da8a80.png">
+                    <div class="news-img has-photo" style="background-image:url(assets/images/2026-07-12-06_50_29-excellence-logo---Re-49da8a80.png);"></div>
+                    <div class="news-content">
+                        <span class="news-date">01/01/2027</span>
+                        <h3>Le Groupe Scolaire Anador distingué meilleur établissement</h3>
+                        <p>C&#039;est avec une immense fierté que le Groupe Scolaire Anador a été primé meilleur établissement scolaire, une distinction qui vient couronner l&#039;engagement quotidien de toute notre communauté éducative. Cette reconnaissance récompense les valeurs qui nous animent depuis toujours : Discipline, Émulation et Rigueur. Nous adressons nos plus chaleureux remerciements à nos élèves, à leurs familles et à l&#039;ensemble de notre personnel, dont le dévouement rend possible une telle réussite sur nos sites d&#039;Abobo et de Yopougon.</p>
+                        <a href="#" class="read-more" onclick="return openNewsModal(this)">Lire la suite <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                                <article class="news-card"
+                    data-news-title="La Fête du Travail célébrée ensemble par nos deux collèges"
+                    data-news-date="01/05/2025"
+                    data-news-desc="Le 1er mai dernier, le Groupe Scolaire Anador a vécu un moment de communion en réunissant ses deux collèges d&#039;Abobo et de Yopougon autour de la Fête du Travail. Cette célébration commune a été l&#039;occasion de renforcer les liens qui unissent notre communauté éducative et de partager, dans la joie et la fierté, les valeurs de discipline, d&#039;émulation et de rigueur qui nous rassemblent. Nous remercions chaleureusement l&#039;ensemble des personnels, élèves et familles ayant contribué à la réussite de cette belle journée."
+                    data-news-img="assets/images/2026-07-12-00_22_00-FKY_0008-JPG-93859170.png">
+                    <div class="news-img has-photo" style="background-image:url(assets/images/2026-07-12-00_22_00-FKY_0008-JPG-93859170.png);"></div>
+                    <div class="news-content">
+                        <span class="news-date">01/05/2025</span>
+                        <h3>La Fête du Travail célébrée ensemble par nos deux collèges</h3>
+                        <p>Le 1er mai dernier, le Groupe Scolaire Anador a vécu un moment de communion en réunissant ses deux collèges d&#039;Abobo et de Yopougon autour de la Fête du Travail. Cette célébration commune a été l&#039;occasion de renforcer les liens qui unissent notre communauté éducative et de partager, dans la joie et la fierté, les valeurs de discipline, d&#039;émulation et de rigueur qui nous rassemblent. Nous remercions chaleureusement l&#039;ensemble des personnels, élèves et familles ayant contribué à la réussite de cette belle journée.</p>
+                        <a href="#" class="read-more" onclick="return openNewsModal(this)">Lire la suite <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                                <article class="news-card"
+                    data-news-title="Une journée carrière réussie au Groupe Scolaire Anador"
+                    data-news-date="11/02/2026"
+                    data-news-desc="Le Groupe Scolaire Anador a eu le plaisir d&#039;organiser une journée carrière le 11 février 2026, offrant à ses élèves un moment privilégié de découverte et d&#039;orientation. Fidèle à sa devise « Discipline · Émulation · Rigueur », notre établissement s&#039;engage à préparer chaque apprenant à un avenir prometteur. Nous remercions chaleureusement toutes les personnes qui ont contribué à la réussite de cette belle initiative."
+                    data-news-img="assets/images/2026-07-12-00_20_03-IMG_0478-jpg-29b0c71c.png">
+                    <div class="news-img has-photo" style="background-image:url(assets/images/2026-07-12-00_20_03-IMG_0478-jpg-29b0c71c.png);"></div>
+                    <div class="news-content">
+                        <span class="news-date">11/02/2026</span>
+                        <h3>Une journée carrière réussie au Groupe Scolaire Anador</h3>
+                        <p>Le Groupe Scolaire Anador a eu le plaisir d&#039;organiser une journée carrière le 11 février 2026, offrant à ses élèves un moment privilégié de découverte et d&#039;orientation. Fidèle à sa devise « Discipline · Émulation · Rigueur », notre établissement s&#039;engage à préparer chaque apprenant à un avenir prometteur. Nous remercions chaleureusement toutes les personnes qui ont contribué à la réussite de cette belle initiative.</p>
+                        <a href="#" class="read-more" onclick="return openNewsModal(this)">Lire la suite <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                                <article class="news-card"
+                    data-news-title="Anador aux côtés des familles : un don de vivres solidaire"
+                    data-news-date="01/05/2026"
+                    data-news-desc="Fidèle à ses valeurs de solidarité et de partage, le Groupe Scolaire Anador a offert des vivres à des familles démunies le 1er mai 2026. À travers ce geste chaleureux, notre établissement réaffirme son engagement auprès de la communauté et son attachement à l&#039;entraide. Nous adressons nos remerciements à toutes les personnes qui ont rendu cette belle action possible."
+                    data-news-img="assets/images/2026-07-12-00_12_18-ANADOR-EXPRESS-N--2--d0a02d8d.png">
+                    <div class="news-img has-photo" style="background-image:url(assets/images/2026-07-12-00_12_18-ANADOR-EXPRESS-N--2--d0a02d8d.png);"></div>
+                    <div class="news-content">
+                        <span class="news-date">01/05/2026</span>
+                        <h3>Anador aux côtés des familles : un don de vivres solidaire</h3>
+                        <p>Fidèle à ses valeurs de solidarité et de partage, le Groupe Scolaire Anador a offert des vivres à des familles démunies le 1er mai 2026. À travers ce geste chaleureux, notre établissement réaffirme son engagement auprès de la communauté et son attachement à l&#039;entraide. Nous adressons nos remerciements à toutes les personnes qui ont rendu cette belle action possible.</p>
+                        <a href="#" class="read-more" onclick="return openNewsModal(this)">Lire la suite <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                                <article class="news-card"
+                    data-news-title="Madame la Ministre honore de sa présence le collège Anador Abobo"
+                    data-news-date="07/10/2026"
+                    data-news-desc="C&#039;est avec une immense fierté que le Groupe Scolaire Anador a accueilli Madame la Ministre au sein de son collège d&#039;Abobo. Cette visite distinguée témoigne de la reconnaissance portée à notre établissement et à l&#039;engagement quotidien de l&#039;ensemble de notre communauté éducative. Fidèles à notre devise « Discipline · Émulation · Rigueur », nous avons été honorés de présenter le fruit du travail de nos élèves et de nos équipes pédagogiques. Nous adressons nos sincères remerciements à Madame la Ministre pour cet encouragement précieux qui nous conforte dans notre mission d&#039;excellence."
+                    data-news-img="assets/images/2026-07-11-22_57_09-mme-le-ministre---Re-69b7de5a.png">
+                    <div class="news-img has-photo" style="background-image:url(assets/images/2026-07-11-22_57_09-mme-le-ministre---Re-69b7de5a.png);"></div>
+                    <div class="news-content">
+                        <span class="news-date">07/10/2026</span>
+                        <h3>Madame la Ministre honore de sa présence le collège Anador Abobo</h3>
+                        <p>C&#039;est avec une immense fierté que le Groupe Scolaire Anador a accueilli Madame la Ministre au sein de son collège d&#039;Abobo. Cette visite distinguée témoigne de la reconnaissance portée à notre établissement et à l&#039;engagement quotidien de l&#039;ensemble de notre communauté éducative. Fidèles à notre devise « Discipline · Émulation · Rigueur », nous avons été honorés de présenter le fruit du travail de nos élèves et de nos équipes pédagogiques. Nous adressons nos sincères remerciements à Madame la Ministre pour cet encouragement précieux qui nous conforte dans notre mission d&#039;excellence.</p>
+                        <a href="#" class="read-more" onclick="return openNewsModal(this)">Lire la suite <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                            </div>
+            <div class="text-center mt-xl">
+                <a href="actualites.php" class="btn-outline">Toutes nos actualités</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charte de l'École Section -->
+    <section id="chartes" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle">Nos Valeurs & Engagements</span>
+                <h2 class="title">Charte de l'École</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="charte-container" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+                <div class="charte-content" style="flex: 1; min-width: 300px;">
+                    <ul class="charte-list" style="list-style: none; padding: 0;">
+                                                <li style="display: flex; gap: 15px; margin-bottom: 22px;">
+                            <i class="fa-solid fa-check-double" style="color: var(--accent); font-size: 1.5rem; margin-top: 5px;"></i>
+                            <div>
+                                <span style="display:block; font-size:0.72rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; color: var(--accent); margin-bottom:2px;">Article 1</span>
+                                <h4 style="color: var(--primary); font-size: 1.2rem; margin-bottom: 6px;">Discipline · Émulation · Rigueur</h4>
+                                <p style="color: var(--text-muted); font-size: 0.95rem;">C&#039;est la devise du Collège Anador. Toute personne faisant partie du Collège doit la faire sienne et la pratiquer.</p>
+                            </div>
+                        </li>
+                                                <li style="display: flex; gap: 15px; margin-bottom: 22px;">
+                            <i class="fa-solid fa-check-double" style="color: var(--accent); font-size: 1.5rem; margin-top: 5px;"></i>
+                            <div>
+                                <span style="display:block; font-size:0.72rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; color: var(--accent); margin-bottom:2px;">Article 2</span>
+                                <h4 style="color: var(--primary); font-size: 1.2rem; margin-bottom: 6px;">La réussite, notre priorité</h4>
+                                <p style="color: var(--text-muted); font-size: 0.95rem;">La réussite de nos apprenants est la priorité de toutes les parties prenantes ; chacune y apporte sa contribution.</p>
+                            </div>
+                        </li>
+                                                <li style="display: flex; gap: 15px; margin-bottom: 22px;">
+                            <i class="fa-solid fa-check-double" style="color: var(--accent); font-size: 1.5rem; margin-top: 5px;"></i>
+                            <div>
+                                <span style="display:block; font-size:0.72rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; color: var(--accent); margin-bottom:2px;">Article 3</span>
+                                <h4 style="color: var(--primary); font-size: 1.2rem; margin-bottom: 6px;">Un environnement propice</h4>
+                                <p style="color: var(--text-muted); font-size: 0.95rem;">Un cadre favorable aux enseignements et à l&#039;épanouissement de l&#039;ensemble du personnel est maintenu par tous.</p>
+                            </div>
+                        </li>
+                                                <li style="display: flex; gap: 15px; margin-bottom: 22px;">
+                            <i class="fa-solid fa-check-double" style="color: var(--accent); font-size: 1.5rem; margin-top: 5px;"></i>
+                            <div>
+                                <span style="display:block; font-size:0.72rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; color: var(--accent); margin-bottom:2px;">Article 4</span>
+                                <h4 style="color: var(--primary); font-size: 1.2rem; margin-bottom: 6px;">Un service de qualité</h4>
+                                <p style="color: var(--text-muted); font-size: 0.95rem;">Respect, courtoisie, écoute, disponibilité et diligence : notre façon de servir la communauté éducative.</p>
+                            </div>
+                        </li>
+                                            </ul>
+                    <div style="margin-top: 30px;">
+                        <a href="charte.php" target="_blank" rel="noopener" class="btn-primary"><i class="fa-solid fa-scroll" style="margin-right: 8px;"></i> Consulter la charte</a>
+                    </div>
+                </div>
+                <div class="charte-image" style="flex: 1; min-width: 300px; text-align: center; background: var(--white); padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow-soft); border: 1px solid #e2e8f0;">
+                    <i class="fa-solid fa-scale-balanced" style="font-size: 6rem; color: var(--primary); margin-bottom: 20px;"></i>
+                    <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 10px;">Politique Qualité</h3>
+                    <p style="color: var(--text-muted);">« Le Collège Anador est une école qui se veut un label de qualité. L'excellence étant une quête, tout est mis en place, au quotidien, pour satisfaire ceux qui placent leur confiance en lui. »</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Résultats aux Examens Section -->
+    <section id="resultats" class="section-padding" style="background:#F1F5F9;">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle">Excellence & Réussite</span>
+                <h2 class="title">Nos Résultats aux Examens <span style="color: var(--accent);">2025-2026</span></h2>
+                <div class="divider"></div>
+                <p style="color: var(--text-muted); max-width: 640px; margin: 15px auto 0;">Des taux de réussite qui reflètent l'engagement de nos équipes pédagogiques et le sérieux de nos élèves.</p>
+            </div>
+
+                        <div class="exam-city-block">
+                <h3 class="exam-city-title">Abobo</h3>
+                <div class="exam-cards-grid">
+                                        <div class="exam-card">
+                        <div class="exam-card-icon">🎓</div>
+                        <div class="exam-card-pct" data-target="100" data-suffix="%">0%</div>
+                        <h4>CEPE</h4>
+                        <p>Certificat d'Études Primaires Élémentaires</p>
+                                            </div>
+                                        <div class="exam-card">
+                        <div class="exam-card-icon">🏫</div>
+                        <div class="exam-card-pct" data-target="86.65" data-suffix="%">0%</div>
+                        <h4>BEPC</h4>
+                        <p>Brevet d'Études du Premier Cycle</p>
+                                                <span class="exam-effectif-pill">813 admis / 938</span>
+                                            </div>
+                                        <div class="exam-card">
+                        <div class="exam-card-icon">⏳</div>
+                        <div class="exam-card-pct" data-target="68.11" data-suffix="%">0%</div>
+                        <h4>BAC</h4>
+                        <p>Baccalauréat</p>
+                                                <span class="exam-effectif-pill">487 admis / 715</span>
+                                            </div>
+                    
+                                        <div class="exam-card exam-card-tech">
+                        <div class="exam-card-icon exam-card-icon-tech">⚙️</div>
+                        <h4>BAC Technique</h4>
+                        <p>Filières tertiaires</p>
+                        <div class="exam-tech-split">
+                                                        <div class="exam-tech-half">
+                                <span class="exam-tech-badge">G1</span>
+                                <div class="exam-tech-pct" data-target="91.42" data-suffix="%">0%</div>
+                            </div>
+                                                        <div class="exam-tech-half">
+                                <span class="exam-tech-badge">G2</span>
+                                <div class="exam-tech-pct" data-target="97.53" data-suffix="%">0%</div>
+                            </div>
+                                                    </div>
+                    </div>
+                                    </div>
+            </div>
+                        <div class="exam-city-block">
+                <h3 class="exam-city-title">Yopougon</h3>
+                <div class="exam-cards-grid">
+                                        <div class="exam-card">
+                        <div class="exam-card-icon">🎓</div>
+                        <div class="exam-card-pct" data-target="100" data-suffix="%">0%</div>
+                        <h4>CEPE</h4>
+                        <p>Certificat d'Études Primaires Élémentaires</p>
+                                            </div>
+                                        <div class="exam-card">
+                        <div class="exam-card-icon">🏫</div>
+                        <div class="exam-card-pct" data-target="90.17" data-suffix="%">0%</div>
+                        <h4>BEPC</h4>
+                        <p>Brevet d'Études du Premier Cycle</p>
+                                                <span class="exam-effectif-pill">661 admis / 733</span>
+                                            </div>
+                                        <div class="exam-card">
+                        <div class="exam-card-icon">⏳</div>
+                        <div class="exam-card-pct" data-target="67.51" data-suffix="%">0%</div>
+                        <h4>BAC</h4>
+                        <p>Baccalauréat</p>
+                                                <span class="exam-effectif-pill">478 admis / 708</span>
+                                            </div>
+                    
+                                        <div class="exam-card exam-card-tech">
+                        <div class="exam-card-icon exam-card-icon-tech">⚙️</div>
+                        <h4>BAC Technique</h4>
+                        <p>Filières tertiaires</p>
+                        <div class="exam-tech-split">
+                                                        <div class="exam-tech-half">
+                                <span class="exam-tech-badge">G1</span>
+                                <div class="exam-tech-pct" data-target="92.31" data-suffix="%">0%</div>
+                            </div>
+                                                        <div class="exam-tech-half">
+                                <span class="exam-tech-badge">G2</span>
+                                <div class="exam-tech-pct" data-target="80.76" data-suffix="%">0%</div>
+                            </div>
+                                                    </div>
+                    </div>
+                                    </div>
+            </div>
+                    </div>
+    </section>
+
+            <!-- Comparatif BAC (deux dernières sessions) -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle">Statistique comparative</span>
+                <h2 class="title">Résultats du BAC — 2024-2025 <span style="color: var(--accent);">vs</span> 2025-2026</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="bac-compare-wrap">
+                <div class="bac-compare-chart-col">
+                    <div class="bac-legend" id="bacLegend"></div>
+                    <div class="bac-chart-canvas-wrap">
+                        <canvas id="bacCompareChart"></canvas>
+                    </div>
+                </div>
+                <div class="bac-compare-progress-col">
+                    <h3 class="bac-progress-title">Évolution 24/25 &rarr; 25/26</h3>
+                    <div id="bacProgressList" class="bac-progress-list"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Données du comparatif, servies par la base (bac-compare.js les consomme).
+        window.BAC_COMPARE = {"annee_prec":"2024-2025","annee":"2025-2026","categories":[{"label":"National","v2425":40.15,"v2526":40.6},{"label":"Gén. Yopougon","v2425":74.27,"v2526":67.51},{"label":"Gén. Abobo","v2425":60.12,"v2526":68.11},{"label":"G1 Yopougon","v2425":88.23,"v2526":92.31},{"label":"G2 Yopougon","v2425":80.7,"v2526":80.76},{"label":"G1 Abobo","v2425":90.47,"v2526":91.42},{"label":"G2 Abobo","v2425":73.61,"v2526":97.53}]};
+    </script>
+    
+            <!-- Comparatif BEPC (deux dernières sessions) -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle">Statistique comparative</span>
+                <h2 class="title">Résultats du BEPC — 2024-2025 <span style="color: var(--accent);">vs</span> 2025-2026</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="bac-compare-wrap">
+                <div class="bac-compare-chart-col">
+                    <div class="bac-legend" id="bepcLegend"></div>
+                    <div class="bac-chart-canvas-wrap">
+                        <canvas id="bepcCompareChart"></canvas>
+                    </div>
+                </div>
+                <div class="bac-compare-progress-col">
+                    <h3 class="bac-progress-title">Évolution 24/25 &rarr; 25/26</h3>
+                    <div id="bepcProgressList" class="bac-progress-list"></div>
+                    <div id="bepcTotalCard" class="bac-total-card"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        window.BEPC_COMPARE = {"annee_prec":"2024-2025","annee":"2025-2026","categories":[{"label":"Yopougon","v2425":86.74,"v2526":90.17,"admis":661,"candidats":733},{"label":"Abobo","v2425":81.2,"v2526":86.65,"admis":813,"candidats":938}],"total":{"admis":1474,"presentes":1671}};
+    </script>
+    
+    <!-- Nos Prodiges Section — MASQUÉE temporairement (à retravailler plus tard) -->
+    <section id="prodiges" class="section-padding" style="display: none;">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle">Tableau d'Honneur</span>
+                <h2 class="title">Nos Prodiges</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="prodiges-grid">
+                                <div class="prodige-card">
+                    <div class="prodige-avatar"><i class="fa-solid fa-user-graduate"></i></div>
+                    <div class="prodige-info">
+                        <h3>Kouamé Marie-Ange</h3>
+                        <div class="prodige-stats">
+                            <div class="stat-item">
+                                <span class="label">Moyenne</span>
+                                <span class="value">18.75/20</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="label">Niveau</span>
+                                <span class="value" style="color: var(--accent);">3ème</span>
+                            </div>
+                        </div>
+                        <p class="ecole" style="font-size: 0.85rem; padding-top: 5px; color: var(--accent);"><i class="fa-solid fa-school"></i> Collège Anador Abobo</p>
+                    </div>
+                </div>
+                
+                                <div class="prodige-card">
+                    <div class="prodige-avatar" style="background: var(--accent);"><i class="fa-solid fa-star"></i></div>
+                    <div class="prodige-info">
+                        <h3>Candidat Prodige #2</h3>
+                        <div class="prodige-stats">
+                            <div class="stat-item">
+                                <span class="label">Moyenne</span>
+                                <span class="value">-- / 20</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="label">Niveau</span>
+                                <span class="value" style="color: var(--accent);">...</span>
+                            </div>
+                        </div>
+                        <p class="ecole" style="font-size: 0.85rem; padding-top: 5px; color: var(--accent);"><i class="fa-solid fa-school"></i> GS Anador</p>
+                    </div>
+                </div>
+                                <div class="prodige-card">
+                    <div class="prodige-avatar" style="background: var(--accent);"><i class="fa-solid fa-star"></i></div>
+                    <div class="prodige-info">
+                        <h3>Candidat Prodige #3</h3>
+                        <div class="prodige-stats">
+                            <div class="stat-item">
+                                <span class="label">Moyenne</span>
+                                <span class="value">-- / 20</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="label">Niveau</span>
+                                <span class="value" style="color: var(--accent);">...</span>
+                            </div>
+                        </div>
+                        <p class="ecole" style="font-size: 0.85rem; padding-top: 5px; color: var(--accent);"><i class="fa-solid fa-school"></i> GS Anador</p>
+                    </div>
+                </div>
+                                <div class="prodige-card">
+                    <div class="prodige-avatar" style="background: var(--accent);"><i class="fa-solid fa-star"></i></div>
+                    <div class="prodige-info">
+                        <h3>Candidat Prodige #4</h3>
+                        <div class="prodige-stats">
+                            <div class="stat-item">
+                                <span class="label">Moyenne</span>
+                                <span class="value">-- / 20</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="label">Niveau</span>
+                                <span class="value" style="color: var(--accent);">...</span>
+                            </div>
+                        </div>
+                        <p class="ecole" style="font-size: 0.85rem; padding-top: 5px; color: var(--accent);"><i class="fa-solid fa-school"></i> GS Anador</p>
+                    </div>
+                </div>
+                            </div>
+            
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="#" class="btn-primary"><i class="fa-solid fa-medal" style="margin-right: 8px;"></i> Consulter tous les cracks</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section « Nos Vidéos YouTube » retirée de l'accueil (les vidéos restent
+         accessibles via la page Médiathèque, menu Voir +). -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-light">
+        <div class="container" style="max-width: 1100px;">
+            <div class="contact-upper-grid">
+                <!-- Left Image -->
+                <div class="contact-img" style="background-image: url('assets/images/contact.jpg');"></div>
+                
+                <!-- Middle Info -->
+                <div class="contact-middle">
+                    <h2 class="contact-main-title">Collège Anador,<br>Bienvenue à vous</h2>
+                    <h4 class="contact-info-title">Contactez nous</h4>
+                    <h3 class="contact-phone" style="font-size: 1.3rem; margin-bottom: 5px;">M. DA - Directeur central</h3>
+                    <h4 class="contact-phone" style="font-size: 1.2rem; margin-bottom: 15px;"><i class="fa-solid fa-phone" style="margin-right: 8px;"></i>(+225) 07 07 99 81 79</h4>
+                    <p class="contact-intro">Notre population étudiante est répartie parmi le collège et l'école primaire entre les classes élémentaires et les classes d'examen.</p>
+
+                    <h4 class="contact-info-title">Nos directions</h4>
+                    <div class="dir-group">
+                        <h5 class="dir-group-title"><i class="fa-solid fa-location-dot"></i> Abobo</h5>
+                        <ul class="directions-list">
+                            <li>
+                                <div class="dir-row">
+                                    <span class="dir-name">Anador Junior</span>
+                                    <a class="dir-phone" href="tel:0777853936">07 77 85 39 36</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dir-row">
+                                    <span class="dir-name">Collège Anador</span>
+                                    <a class="dir-phone" href="tel:0747458212">07 47 45 82 12</a>
+                                </div>
+                                <span class="dir-code">
+                                    <span class="dir-code-part">Code établissement : 000216</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="dir-group">
+                        <h5 class="dir-group-title"><i class="fa-solid fa-location-dot"></i> Yopougon</h5>
+                        <ul class="directions-list">
+                            <li>
+                                <div class="dir-row">
+                                    <span class="dir-name">Anador Junior</span>
+                                    <a class="dir-phone" href="tel:0777494532">07 77 49 45 32</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dir-row">
+                                    <span class="dir-name">Collège Anador</span>
+                                    <a class="dir-phone" href="tel:0102096706">01 02 09 67 06</a>
+                                </div>
+                                <span class="dir-code">
+                                    <span class="dir-code-part">Code établissement : 009917</span>
+                                    <span class="dir-code-part">Technique : 054185</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Right Timing & Map -->
+                <div class="contact-right">
+                    <div class="timing-card">
+                        <h4>Horaires d'ouverture Collège :</h4>
+                        <div class="timing-row">
+                            <span>Lun-Vend (Matin)</span>
+                            <span>8:00 - 12:00</span>
+                        </div>
+                        <div class="timing-row">
+                            <span>Lun-Ven (Soir)</span>
+                            <span>13:30 - 16:30</span>
+                        </div>
+                        <div class="timing-row">
+                            <span>Sam-Dim</span>
+                            <span>Fermé</span>
+                        </div>
+                    </div>
+                    <div class="timing-card">
+                        <h4>Horaires d'ouverture Primaire :</h4>
+                        <div class="timing-row">
+                            <span>Lun-Vend (Matin)</span>
+                            <span>8:00 - 12:00</span>
+                        </div>
+                        <div class="timing-row">
+                            <span>Lun-Ven (Soir)</span>
+                            <span>13:30 - 16:30</span>
+                        </div>
+                        <div class="timing-row">
+                            <span>Sam-Dim</span>
+                            <span>Fermé</span>
+                        </div>
+                    </div>
+                    <h4 class="map-title"><i class="fa-solid fa-map-location-dot" style="margin-right: 8px; color: var(--accent);"></i>Position géographique ( Google Map )</h4>
+                    <div class="map-buttons-container" style="display: flex; flex-direction: column; gap: 10px;">
+                        <a href="https://maps.google.com/?q=College+Anador+Abobo" target="_blank" class="btn-outline w-100 text-left" style="font-size: 0.85rem; padding: 10px 15px; display: flex; align-items: center;"><i class="fa-solid fa-map-location-dot" style="margin-right: 10px; font-size: 1.2rem;"></i> Collège Anador Abobo</a>
+                        <a href="https://maps.google.com/?q=College+Anador+Yopougon" target="_blank" class="btn-outline w-100 text-left" style="font-size: 0.85rem; padding: 10px 15px; display: flex; align-items: center;"><i class="fa-solid fa-map-location-dot" style="margin-right: 10px; font-size: 1.2rem;"></i> Collège Anador Yopougon</a>
+                        <a href="https://maps.google.com/?q=Anador+Primaire+Abobo" target="_blank" class="btn-outline w-100 text-left" style="font-size: 0.85rem; padding: 10px 15px; display: flex; align-items: center;"><i class="fa-solid fa-map-location-dot" style="margin-right: 10px; font-size: 1.2rem;"></i> Anador Primaire Abobo</a>
+                        <a href="https://maps.google.com/?q=Anador+Primaire+Yopougon" target="_blank" class="btn-outline w-100 text-left" style="font-size: 0.85rem; padding: 10px 15px; display: flex; align-items: center;"><i class="fa-solid fa-map-location-dot" style="margin-right: 10px; font-size: 1.2rem;"></i> Anador Primaire Yopougon</a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="contact-divider">
+
+            <!-- Administration Row -->
+            <h3 class="admin-section-title">Responsable établissement</h3>
+            <div class="admin-grid">
+                <!-- Profile 1 -->
+                <div class="admin-profile admin-highlight">
+                    <div class="admin-avatar" style="background-image: url('assets/images/amandou-ouattara.png');"></div>
+                    <div class="admin-details">
+                        <h5>M. Amandou Ouattara</h5>
+                        <span class="admin-role">DIRECTEUR ABOBO</span>
+                        <span class="admin-level">6è, 5è, 4è + Technique</span>
+                    </div>
+                </div>
+                <!-- Profile 2 -->
+                <div class="admin-profile">
+                    <div class="admin-avatar" style="background-image: url('assets/images/koffi-eric-yao.png');"></div>
+                    <div class="admin-details">
+                        <h5 style="display: block;">M. Koffi Eric<br>Yao</h5>
+                        <span class="admin-role">DIRECTEUR YOPOUGON</span>
+                        <span class="admin-level">3è + 2nde, 1ère, Tle</span>
+                    </div>
+                </div>
+                <!-- Profile 3 -->
+                <div class="admin-profile">
+                    <div class="admin-avatar" style="background-image: url('assets/images/kouassi-armelle.png');"></div>
+                    <div class="admin-details">
+                        <h5>Mme Kouassi Armelle</h5>
+                        <span class="admin-role">DIRECTRICE PRIM. YOP</span>
+                        <span class="admin-level">Directrice</span>
+                    </div>
+                </div>
+                <!-- Profile 4 -->
+                <div class="admin-profile">
+                    <div class="admin-avatar" style="background-image: url('assets/images/ouattara-ali.png');"></div>
+                    <div class="admin-details">
+                        <h5>M. Ouattara Ali</h5>
+                        <span class="admin-role">DIRECTEUR JUNIOR ABOBO</span>
+                        <span class="admin-level">Directeur</span>
+                    </div>
+                </div>
+                <!-- Profile 5 -->
+                <div class="admin-profile">
+                    <div class="admin-avatar" style="background-image: url('assets/images/kouakoussui.png');"></div>
+                    <div class="admin-details">
+                        <h5>M. N'Guessan Kouakoussui Aser</h5>
+                        <span class="admin-role">DIRECTEUR ABOBO</span>
+                        <span class="admin-level">3è + 2nde, 1ère, Tle</span>
+                    </div>
+                </div>
+                <!-- Profile 6 -->
+                <div class="admin-profile">
+                    <div class="admin-avatar" style="background-image: url('assets/images/slide2.png');"></div>
+                    <div class="admin-details">
+                        <h5 style="display: block;">M. Hié Youkou<br>Réné</h5>
+                        <span class="admin-role">DIRECTEUR YOPOUGON</span>
+                        <span class="admin-level">6è, 5è, 4è + Technique</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo-foot">
+                    <img src="assets/images/logo-anador.png" alt="Lion Logo" style="height: 55px; border-radius: 8px; mix-blend-mode: screen;"> GS ANADOR
+                </div>
+                <p>Nourrir les esprits, forger l'avenir. Le Groupe Scolaire Anador s'engage pour une éducation de très haute qualité à Abobo et Yopougon.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#pourquoi-nous">Nos Atouts</a></li>
+                    <li><a href="#actualite">Actualités</a></li>
+                    <li><a href="simulateur-frais.php">Combien vais-je payer ?</a></li>
+                    <li><a href="#contact">Inscriptions</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Nos Écoles</h4>
+                <ul>
+                    <li><a href="#">Anador Primaire Abobo</a></li>
+                    <li><a href="#">Anador Primaire Yopougon</a></li>
+                    <li><a href="#">Collège Anador Abobo</a></li>
+                    <li><a href="#">Collège Anador Yopougon</a></li>
+                </ul>
+            </div>
+            <div class="footer-links footer-visites">
+                <h4>Fréquentation</h4>
+                <div class="visites-box">
+                    <i class="fa-solid fa-eye"></i>
+                    <div>
+                        <span class="visites-count">5 906</span>
+                        <span class="visites-label">visites</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p>&copy; 2026 Groupe Scolaire Anador. Tous droits réservés. Créé avec ❤️.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Settings Drawer -->
+    <div class="settings-overlay" id="settingsOverlay"></div>
+    <div class="settings-drawer" id="settingsDrawer">
+        <div class="settings-header">
+            <h3 style="color: var(--white);"><i class="fa-solid fa-gear"></i> Paramètres Administration</h3>
+            <button class="settings-close-btn" id="settingsCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="settings-content">
+            <p class="settings-desc">Menu de configuration et accès rapide sécurisé.</p>
+            <div class="settings-option" id="openValidationModalBtn">
+                <div class="opt-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--accent);"><i class="fa-solid fa-list-check"></i></div>
+                <div class="opt-text">
+                    <h4>Validations en Attente <span style="background: var(--accent); color: white; border-radius: 50%; padding: 2px 6px; font-size: 0.7rem; margin-left: 5px;">1</span></h4>
+                    <p>Approuver les modifications du site</p>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 20px 0;">
+            <h4 style="color: var(--primary); margin-bottom: 15px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-solid fa-pen-to-square" style="color: var(--accent); margin-right: 5px;"></i> Éditeur de Sections</h4>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 25px;">
+                <button class="btn-outline" style="font-size: 0.75rem; padding: 8px; text-align: left;" title="Modifier le Slider" onclick="openEditor('slider', 'Accueil (Slider)')"><i class="fa-solid fa-pen" style="margin-right: 5px; color: var(--primary);"></i> Accueil (Slider)</button>
+                <button class="btn-outline" style="font-size: 0.75rem; padding: 8px; text-align: left;" title="Modifier l'entête" onclick="openEditor('alertes', 'Bandeau Alertes')"><i class="fa-solid fa-pen" style="margin-right: 5px; color: var(--primary);"></i> Bandeau Alertes</button>
+                <button class="btn-outline" style="font-size: 0.75rem; padding: 8px; text-align: left;" title="Modifier les écoles" onclick="openEditor('academies', 'Académies')"><i class="fa-solid fa-pen" style="margin-right: 5px; color: var(--primary);"></i> Académies</button>
+                <button class="btn-outline" style="font-size: 0.75rem; padding: 8px; text-align: left;" title="Modifier les posts" onclick="openEditor('actualites', 'Actualités')"><i class="fa-solid fa-pen" style="margin-right: 5px; color: var(--primary);"></i> Actualités</button>
+                <button class="btn-outline" style="font-size: 0.75rem; padding: 8px; text-align: left;" title="Modifier les act. extra" onclick="openEditor('activites', 'Act. Extrascolaires')"><i class="fa-solid fa-pen" style="margin-right: 5px; color: var(--primary);"></i> Act. Extrascolaires</button>
+                <button class="btn-outline" style="font-size: 0.75rem; padding: 8px; text-align: left;" title="Gérer les clubs" onclick="openEditor('clubs', 'Nos Clubs')"><i class="fa-solid fa-pen" style="margin-right: 5px; color: var(--primary);"></i> Nos Clubs</button>
+                <button class="btn-outline" style="font-size: 0.75rem; padding: 8px; text-align: left;" title="Gérer la charte" onclick="openEditor('chartes', 'Chartes')"><i class="fa-solid fa-pen" style="margin-right: 5px; color: var(--primary);"></i> Chartes</button>
+                <button class="btn-outline" style="font-size: 0.75rem; padding: 8px; text-align: left;" title="Mettre à jour les élèves" onclick="openEditor('prodiges', 'Nos Prodiges')"><i class="fa-solid fa-pen" style="margin-right: 5px; color: var(--primary);"></i> Nos Prodiges</button>
+                <button class="btn-outline" style="font-size: 0.75rem; padding: 8px; text-align: left;" title="Ajouter URL de vidéos" onclick="openEditor('videos', 'Vidéos Youtube')"><i class="fa-solid fa-pen" style="margin-right: 5px; color: var(--primary);"></i> Vidéos Youtube</button>
+                <button class="btn-outline" style="font-size: 0.75rem; padding: 8px; text-align: left;" title="Modifier bas de page & contacts" onclick="openEditor('contact', 'Contact & Footer')"><i class="fa-solid fa-pen" style="margin-right: 5px; color: var(--primary);"></i> Contact & Footer</button>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 20px 0;">
+
+            <div class="settings-option" id="openUsersModalBtn">
+                <div class="opt-icon"><i class="fa-solid fa-users-gear"></i></div>
+                <div class="opt-text">
+                    <h4>Maintenance & Utilisateurs</h4>
+                    <p>Créer un compte ou suspendre le site</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 30px;">
+                <a href="dashboard/index.html" class="btn-primary w-100 text-center"><i class="fa-solid fa-gauge" style="margin-right: 8px;"></i> Ouvrir Dashboard Complet</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Validation Workflow Modal (Mockup) -->
+    <div class="modal-overlay" id="validationModal">
+        <div class="modal-box" style="max-width: 650px; background: var(--white); border-radius: 16px; margin: auto; position: relative; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.3);">
+            <div class="modal-header" style="background: var(--primary); padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; color: var(--white);">
+                <h3 style="margin: 0; color: var(--white);"><i class="fa-solid fa-clipboard-check" style="color: var(--accent); margin-right: 8px;"></i> Approbation de contenu</h3>
+                <button class="modal-close" onclick="closeValidationModal()" style="background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body" style="padding: 20px;">
+                <p style="color: var(--text-muted); margin-bottom: 20px;">Vous avez <strong>1</strong> modification en attente de publication sur le site public.</p>
+                
+                <div style="border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px;">
+                        <div>
+                            <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Auteur de la modification</span>
+                            <strong><i class="fa-solid fa-user" style="color: var(--primary); margin-right: 5px;"></i> M. Fofana (Directeur Yopougon)</strong>
+                        </div>
+                        <div style="text-align: right;">
+                            <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Élément ciblé</span>
+                            <span style="background: rgba(5, 30, 56, 0.1); color: var(--primary); padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Texte du Slider 1</span>
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div style="background: #fdf2f8; border: 1px solid #fbcfe8; padding: 15px; border-radius: 8px;">
+                            <span style="font-size: 0.75rem; color: #be185d; font-weight: bold; display: block; margin-bottom: 5px;">ANCIEN TEXTE (Actuel)</span>
+                            <p style="font-size: 0.9rem; color: var(--text-main); margin: 0;">Excellence académique et encadrement</p>
+                        </div>
+                        <div style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 15px; border-radius: 8px;">
+                            <span style="font-size: 0.75rem; color: #166534; font-weight: bold; display: block; margin-bottom: 5px;">NOUVEAU TEXTE (Proposé)</span>
+                            <p style="font-size: 0.9rem; color: var(--text-main); margin: 0;">Excellence académique, encadrement de qualité et discipline</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 15px; justify-content: flex-end;">
+                    <button class="btn-outline" style="border-color: #ef4444; color: #ef4444;" onclick="closeValidationModal()"><i class="fa-solid fa-ban" style="margin-right: 5px;"></i> Rejeter</button>
+                    <button class="btn-primary" style="background: #10b981; border-color: #10b981; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);" onclick="document.getElementById('validationModal').innerHTML='<div class=\'modal-box\' style=\'text-align:center; padding: 40px; display:flex; flex-direction:column; align-items:center;\'><i class=\'fa-solid fa-circle-check\' style=\'font-size: 3rem; color: #10b981; margin-bottom: 15px;\'></i><h3 style=\'margin-bottom:10px;\'>Modification approuvée !</h3><p style=\'color:gray; margin-bottom:20px;\'>Le site a été mis à jour avec succès.</p><button class=\'btn-primary\' onclick=\'closeValidationModal(); setTimeout(()=>location.reload(), 300); \'>Fermer</button></div>';"><i class="fa-solid fa-check" style="margin-right: 5px;"></i> Approuver et Publier</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Users & Maintenance Modal -->
+    <div class="modal-overlay" id="usersModal">
+        <div class="modal-box" style="max-width: 600px; background: var(--white); border-radius: 16px; margin: auto; position: relative; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.3);">
+            <div class="modal-header" style="background: var(--primary); padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; color: var(--white);">
+                <h3 style="margin: 0; color: var(--white);"><i class="fa-solid fa-users-gear" style="color: var(--accent); margin-right: 8px;"></i> Gestion Globale</h3>
+                <button class="modal-close" onclick="closeUsersModal()" style="background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="modal-body" style="padding: 20px;">
+                
+                <!-- Zone de Maintenance -->
+                <div style="background: rgba(220, 38, 38, 0.05); border: 1px solid rgba(220, 38, 38, 0.2); padding: 15px 20px; border-radius: 8px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h4 style="color: #dc2626; margin-bottom: 5px;"><i class="fa-solid fa-traffic-light"></i> État du site</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Activer pour bloquer l'accès au public (Redirection vers maintenance.html)</p>
+                    </div>
+                    <button class="btn-outline" style="border-color: #dc2626; color: #dc2626; padding: 8px 15px;" onclick="if(confirm('Voulez-vous vraiment passer le site en mode maintenance ? Tous les visiteurs seront redirigés.')) window.location.href='maintenance.html';"><i class="fa-solid fa-power-off" style="margin-right: 5px;"></i> Activer Maintenance</button>
+                </div>
+
+                <!-- Liste des Utilisateurs -->
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px;">
+                    <h4 style="color: var(--primary); margin: 0;"><i class="fa-solid fa-users"></i> Utilisateurs</h4>
+                    <button id="addUserBtn" class="btn-primary" style="padding: 6px 12px; font-size: 0.85rem;" onclick="document.getElementById('addUserModal').classList.add('active');"><i class="fa-solid fa-plus"></i> Ajouter</button>
+                </div>
+                
+                <div style="overflow-x: auto; margin-bottom: 20px;" id="usersListContainer">
+                    <table class="calendar-table" style="font-size: 0.85rem; width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr>
+                                <th style="padding: 10px; border-bottom: 2px solid #e2e8f0; text-align: left;">Nom & Prénoms</th>
+                                <th style="padding: 10px; border-bottom: 2px solid #e2e8f0; text-align: left;">Rôle</th>
+                                <th style="padding: 10px; border-bottom: 2px solid #e2e8f0; text-align: left;">Contact</th>
+                                <th style="padding: 10px; border-bottom: 2px solid #e2e8f0; text-align: right;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;"><strong>Cissé Jean</strong></td>
+                                <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;"><span style="background: rgba(5, 30, 56, 0.1); color: var(--primary); padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">Directeur</span></td>
+                                <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">07 48 96 47 00</td>
+                                <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; text-align: right;">
+                                    <button style="background: none; border: none; color: #3b82f6; cursor: pointer; margin-right: 10px;" title="Modifier"><i class="fa-solid fa-pen"></i></button>
+                                    <button style="background: none; border: none; color: #ef4444; cursor: pointer;" title="Supprimer"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;"><strong>Bamba Aminata</strong></td>
+                                <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;"><span style="background: rgba(245, 158, 11, 0.1); color: var(--accent); padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">Gestionnaire</span></td>
+                                <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">07 07 87 41 69</td>
+                                <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; text-align: right;">
+                                    <button style="background: none; border: none; color: #3b82f6; cursor: pointer; margin-right: 10px;" title="Modifier"><i class="fa-solid fa-pen"></i></button>
+                                    <button style="background: none; border: none; color: #ef4444; cursor: pointer;" title="Supprimer"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Add User Modal -->
+    <div class="modal-overlay" id="addUserModal">
+        <div class="modal-box" style="max-width: 500px; background: var(--white); border-radius: 16px; margin: auto; position: relative; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.3);">
+            <div class="modal-header" style="background: var(--primary); padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; color: var(--white);">
+                <h3 style="margin: 0; color: var(--white); font-size: 1.3rem;"><i class="fa-solid fa-user-plus" style="color: var(--accent); margin-right: 8px;"></i> Nouvel Utilisateur</h3>
+                <button class="modal-close" onclick="document.getElementById('addUserModal').classList.remove('active');" style="background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="modal-body" style="padding: 25px;">
+                <form id="createUserForm" onsubmit="event.preventDefault(); alert('Utilisateur créé avec succès !'); document.getElementById('addUserModal').classList.remove('active');">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                        <div class="form-group">
+                            <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 5px; display: block;">Nom *</label>
+                            <input type="text" style="width: 100%; padding: 10px; border: 1px solid #e2e8f0; border-radius: 5px;" required placeholder="Ex: Cissé">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 5px; display: block;">Prénoms *</label>
+                            <input type="text" style="width: 100%; padding: 10px; border: 1px solid #e2e8f0; border-radius: 5px;" required placeholder="Ex: Jean-Luc">
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                        <div class="form-group">
+                            <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 5px; display: block;">Contact *</label>
+                            <input type="tel" style="width: 100%; padding: 10px; border: 1px solid #e2e8f0; border-radius: 5px;" required placeholder="Ex: 07 48 96 47 00">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 5px; display: block;">Adresse Email</label>
+                            <input type="email" style="width: 100%; padding: 10px; border: 1px solid #e2e8f0; border-radius: 5px;" placeholder="exemple@anador.com">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" style="margin-bottom: 25px;">
+                        <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 5px; display: block;">Fonction (Rôle) *</label>
+                        <select style="width: 100%; padding: 10px; border: 1px solid #e2e8f0; border-radius: 5px; background: #fff;" required>
+                            <option value="">Sélectionner un rôle...</option>
+                            <option value="directeur">Directeur</option>
+                            <option value="gestionnaire">Gestionnaire</option>
+                            <option value="administrateur">Administrateur</option>
+                        </select>
+                    </div>
+                    
+                    <div style="text-align: right;">
+                        <button type="submit" class="btn-primary w-100" style="padding: 12px;"><i class="fa-solid fa-plus" style="margin-right: 5px;"></i> Créer le Compte</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openEditor(sectionId, title) {
+            document.getElementById('editorTitle').innerText = title;
+            const sections = document.querySelectorAll('.editor-form-section');
+            sections.forEach(sec => sec.style.display = 'none');
+            const targetSection = document.getElementById('edit-' + sectionId);
+            if (targetSection) targetSection.style.display = 'block';
+            
+            document.getElementById('editorModal').classList.add('active');
+        }
+    </script>
+
+    <!-- Global Section Editor Modal -->
+    <div class="modal-overlay" id="editorModal">
+        <div class="modal-box" style="max-width: 800px; width: 95%; background: var(--white); border-radius: 16px; margin: auto; position: relative; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.4); display: flex; flex-direction: column; max-height: 90vh;">
+            <div class="modal-header" style="background: var(--primary); padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; color: var(--white);">
+                <h3 style="margin: 0; color: var(--white); font-size: 1.3rem;"><i class="fa-solid fa-pen-to-square" style="color: var(--accent); margin-right: 8px;"></i> Éditeur : <span id="editorTitle">Section</span></h3>
+                <button class="modal-close" onclick="document.getElementById('editorModal').classList.remove('active');" style="background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="modal-body" style="padding: 25px; overflow-y: auto;">
+                
+                <!-- 1. Slider -->
+                <div id="edit-slider" class="editor-form-section" style="display: none;">
+                    <button class="btn-outline" style="font-size: 0.8rem; padding: 5px 10px; margin-bottom: 15px;"><i class="fa-solid fa-plus"></i> Ajouter un Slide</button>
+                    
+                                        <div class="slider-item-form" data-id="1" style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0; position: relative;">
+                        <h5 style="margin-bottom: 10px; color: var(--primary);">Slide 1</h5>
+                        <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 5px;">Titre principal</label>
+                        <input type="text" class="slide-title" value="La discipline, notre fierté" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                        <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 5px;">Texte descriptif</label>
+                        <textarea class="slide-desc" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px; margin-bottom: 10px;" rows="2">Cérémonie de levée des couleurs : nos élèves apprennent dès le plus jeune âge la rigueur, le civisme et le respect du drapeau national.</textarea>
+                        <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 5px;">Image de fond</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" class="slide-img" id="slide1-img" value="assets/images/slide-ceremonie.jpg" style="flex-grow: 1; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;" placeholder="URL ou chemin de l'image">
+                            <button type="button" class="btn-outline" style="padding: 8px 15px;" onclick="document.getElementById('slide1-file').click();"><i class="fa-solid fa-folder-open"></i></button>
+                            <input type="file" id="slide1-file" style="display: none;" accept="image/*" onchange="if(this.files[0]) document.getElementById('slide1-img').value = 'assets/images/' + this.files[0].name;">
+                        </div>
+                    </div>
+                                        <div class="slider-item-form" data-id="2" style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0; position: relative;">
+                        <h5 style="margin-bottom: 10px; color: var(--primary);">Slide 2</h5>
+                        <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 5px;">Titre principal</label>
+                        <input type="text" class="slide-title" value="Apprendre en s&#039;amusant" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                        <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 5px;">Texte descriptif</label>
+                        <textarea class="slide-desc" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px; margin-bottom: 10px;" rows="2">Journée des métiers en préscolaire : les tout-petits découvrent les professions dans un cadre ludique et bienveillant.</textarea>
+                        <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 5px;">Image de fond</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" class="slide-img" id="slide2-img" value="assets/images/slide-metiers.jpg" style="flex-grow: 1; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;" placeholder="URL ou chemin de l'image">
+                            <button type="button" class="btn-outline" style="padding: 8px 15px;" onclick="document.getElementById('slide2-file').click();"><i class="fa-solid fa-folder-open"></i></button>
+                            <input type="file" id="slide2-file" style="display: none;" accept="image/*" onchange="if(this.files[0]) document.getElementById('slide2-img').value = 'assets/images/' + this.files[0].name;">
+                        </div>
+                    </div>
+                                        <div class="slider-item-form" data-id="3" style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0; position: relative;">
+                        <h5 style="margin-bottom: 10px; color: var(--primary);">Slide 3</h5>
+                        <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 5px;">Titre principal</label>
+                        <input type="text" class="slide-title" value="Notre fanfare sur scène" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                        <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 5px;">Texte descriptif</label>
+                        <textarea class="slide-desc" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px; margin-bottom: 10px;" rows="2">La fanfare du Collège Anador brille au MASA, le Marché des Arts du Spectacle Africain d&#039;Abidjan.</textarea>
+                        <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 5px;">Image de fond</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" class="slide-img" id="slide3-img" value="assets/images/slide-fanfare.jpg" style="flex-grow: 1; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;" placeholder="URL ou chemin de l'image">
+                            <button type="button" class="btn-outline" style="padding: 8px 15px;" onclick="document.getElementById('slide3-file').click();"><i class="fa-solid fa-folder-open"></i></button>
+                            <input type="file" id="slide3-file" style="display: none;" accept="image/*" onchange="if(this.files[0]) document.getElementById('slide3-img').value = 'assets/images/' + this.files[0].name;">
+                        </div>
+                    </div>
+                                        <div class="slider-item-form" data-id="4" style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0; position: relative;">
+                        <h5 style="margin-bottom: 10px; color: var(--primary);">Slide 4</h5>
+                        <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 5px;">Titre principal</label>
+                        <input type="text" class="slide-title" value="La science par la pratique" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                        <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 5px;">Texte descriptif</label>
+                        <textarea class="slide-desc" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px; margin-bottom: 10px;" rows="2">Club agropastoral : les élèves découvrent l&#039;élevage et les sciences naturelles de manière concrète et vivante.</textarea>
+                        <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 5px;">Image de fond</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" class="slide-img" id="slide4-img" value="assets/images/slide-agropastoral.jpg" style="flex-grow: 1; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;" placeholder="URL ou chemin de l'image">
+                            <button type="button" class="btn-outline" style="padding: 8px 15px;" onclick="document.getElementById('slide4-file').click();"><i class="fa-solid fa-folder-open"></i></button>
+                            <input type="file" id="slide4-file" style="display: none;" accept="image/*" onchange="if(this.files[0]) document.getElementById('slide4-img').value = 'assets/images/' + this.files[0].name;">
+                        </div>
+                    </div>
+                                        <div class="slider-item-form" data-id="5" style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0; position: relative;">
+                        <h5 style="margin-bottom: 10px; color: var(--primary);">Slide 5</h5>
+                        <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 5px;">Titre principal</label>
+                        <input type="text" class="slide-title" value="Une grande famille unie" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                        <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 5px;">Texte descriptif</label>
+                        <textarea class="slide-desc" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px; margin-bottom: 10px;" rows="2">Élèves et encadreurs réunis : l&#039;esprit de solidarité et de fierté qui anime le Collège Anador au quotidien.</textarea>
+                        <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 5px;">Image de fond</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" class="slide-img" id="slide5-img" value="assets/images/slide-famille.jpg" style="flex-grow: 1; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;" placeholder="URL ou chemin de l'image">
+                            <button type="button" class="btn-outline" style="padding: 8px 15px;" onclick="document.getElementById('slide5-file').click();"><i class="fa-solid fa-folder-open"></i></button>
+                            <input type="file" id="slide5-file" style="display: none;" accept="image/*" onchange="if(this.files[0]) document.getElementById('slide5-img').value = 'assets/images/' + this.files[0].name;">
+                        </div>
+                    </div>
+                                    </div>
+
+                <!-- 2. Alertes -->
+                <div id="edit-alertes" class="editor-form-section" style="display: none;">
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 0.85rem; font-weight: 600;">Message d'alerte 1</label>
+                        <input type="text" id="alert_1" value="Les inscriptions pour la rentrée 2026-2027 sont ouvertes à partir du 15 Aout 2025" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 0.85rem; font-weight: 600;">Message d'alerte 2</label>
+                        <input type="text" id="alert_2" value="Les paiements &quot;wave&quot; sont désormais possible pour cette année scolaire 2025-2026." style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 0.85rem; font-weight: 600;">Message d'alerte 3</label>
+                        <input type="text" id="alert_3" value="Félicitations à nos élèves du technique pour leurs excellents résultats aux examen 2025-2026." style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                    </div>
+                </div>
+
+                <!-- Les autres sections sont dynamisées ci-dessous -->
+                <!-- 3. Academies -->
+                <div id="edit-academies" class="editor-form-section" style="display: none;">
+                                        <div class="academy-item-form" data-id="1" style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0;">
+                        <input type="text" class="academy-name" value="Collège Anador Abobo" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-weight: bold;">
+                        <textarea class="academy-desc" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px; margin-bottom: 10px;" rows="2">Implanté au cœur d&#039;Abobo, le Collège Anador conjugue exigence académique et encadrement de proximité. De la 6è à la Terminale, enseignants qualifiés, laboratoires modernes et discipline bienveillante préparent chaque élève à la réussite aux examens.</textarea>
+                        <input type="text" class="academy-img" value="assets/images/etab1-abobo.jpg" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                    </div>
+                                        <div class="academy-item-form" data-id="2" style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0;">
+                        <input type="text" class="academy-name" value="Collège Anador Yopougon" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-weight: bold;">
+                        <textarea class="academy-desc" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px; margin-bottom: 10px;" rows="2">À Yopougon, le Collège Anador allie excellence et innovation pédagogique. Sections générale et technique, salles équipées et suivi personnalisé offrent à nos élèves un cadre stimulant pour réussir, du premier cycle jusqu&#039;au baccalauréat.</textarea>
+                        <input type="text" class="academy-img" value="assets/images/etab2-yopougon.jpg" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                    </div>
+                                    </div>
+
+                <!-- 4. Actualites -->
+                <div id="edit-actualites" class="editor-form-section" style="display: none;">
+                                        <div class="news-item-form" data-id="7" style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0;">
+                         <input type="text" class="news-date" value="CONTENU: Le Groupe Scolaire Anador a le plaisir d&#039;" style="width: 150px; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                         <input type="text" class="news-title" value="Rentrée scolaire : le paiement par Wave arrive à Anador" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-weight: bold;">
+                         <textarea class="news-desc" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;" rows="2">Le Groupe Scolaire Anador a le plaisir d&#039;annoncer une nouveauté pour cette rentrée scolaire : le règlement des frais est désormais possible par Wave. Cette solution moderne offre aux familles de nos sites d&#039;Abobo et de Yopougon plus de simplicité et de sérénité dans leurs démarches. Fidèle à sa devise « Discipline · Émulation · Rigueur », notre établissement poursuit ainsi ses efforts pour vous accompagner au mieux tout au long de l&#039;année.</textarea>
+                    </div>
+                                        <div class="news-item-form" data-id="6" style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0;">
+                         <input type="text" class="news-date" value="01/01/2027" style="width: 150px; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                         <input type="text" class="news-title" value="Le Groupe Scolaire Anador distingué meilleur établissement" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-weight: bold;">
+                         <textarea class="news-desc" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;" rows="2">C&#039;est avec une immense fierté que le Groupe Scolaire Anador a été primé meilleur établissement scolaire, une distinction qui vient couronner l&#039;engagement quotidien de toute notre communauté éducative. Cette reconnaissance récompense les valeurs qui nous animent depuis toujours : Discipline, Émulation et Rigueur. Nous adressons nos plus chaleureux remerciements à nos élèves, à leurs familles et à l&#039;ensemble de notre personnel, dont le dévouement rend possible une telle réussite sur nos sites d&#039;Abobo et de Yopougon.</textarea>
+                    </div>
+                                        <div class="news-item-form" data-id="5" style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0;">
+                         <input type="text" class="news-date" value="01/05/2025" style="width: 150px; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                         <input type="text" class="news-title" value="La Fête du Travail célébrée ensemble par nos deux collèges" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-weight: bold;">
+                         <textarea class="news-desc" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;" rows="2">Le 1er mai dernier, le Groupe Scolaire Anador a vécu un moment de communion en réunissant ses deux collèges d&#039;Abobo et de Yopougon autour de la Fête du Travail. Cette célébration commune a été l&#039;occasion de renforcer les liens qui unissent notre communauté éducative et de partager, dans la joie et la fierté, les valeurs de discipline, d&#039;émulation et de rigueur qui nous rassemblent. Nous remercions chaleureusement l&#039;ensemble des personnels, élèves et familles ayant contribué à la réussite de cette belle journée.</textarea>
+                    </div>
+                                        <div class="news-item-form" data-id="4" style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0;">
+                         <input type="text" class="news-date" value="11/02/2026" style="width: 150px; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                         <input type="text" class="news-title" value="Une journée carrière réussie au Groupe Scolaire Anador" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-weight: bold;">
+                         <textarea class="news-desc" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;" rows="2">Le Groupe Scolaire Anador a eu le plaisir d&#039;organiser une journée carrière le 11 février 2026, offrant à ses élèves un moment privilégié de découverte et d&#039;orientation. Fidèle à sa devise « Discipline · Émulation · Rigueur », notre établissement s&#039;engage à préparer chaque apprenant à un avenir prometteur. Nous remercions chaleureusement toutes les personnes qui ont contribué à la réussite de cette belle initiative.</textarea>
+                    </div>
+                                        <div class="news-item-form" data-id="3" style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0;">
+                         <input type="text" class="news-date" value="01/05/2026" style="width: 150px; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                         <input type="text" class="news-title" value="Anador aux côtés des familles : un don de vivres solidaire" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-weight: bold;">
+                         <textarea class="news-desc" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;" rows="2">Fidèle à ses valeurs de solidarité et de partage, le Groupe Scolaire Anador a offert des vivres à des familles démunies le 1er mai 2026. À travers ce geste chaleureux, notre établissement réaffirme son engagement auprès de la communauté et son attachement à l&#039;entraide. Nous adressons nos remerciements à toutes les personnes qui ont rendu cette belle action possible.</textarea>
+                    </div>
+                                        <div class="news-item-form" data-id="2" style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0;">
+                         <input type="text" class="news-date" value="07/10/2026" style="width: 150px; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                         <input type="text" class="news-title" value="Madame la Ministre honore de sa présence le collège Anador Abobo" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-weight: bold;">
+                         <textarea class="news-desc" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;" rows="2">C&#039;est avec une immense fierté que le Groupe Scolaire Anador a accueilli Madame la Ministre au sein de son collège d&#039;Abobo. Cette visite distinguée témoigne de la reconnaissance portée à notre établissement et à l&#039;engagement quotidien de l&#039;ensemble de notre communauté éducative. Fidèles à notre devise « Discipline · Émulation · Rigueur », nous avons été honorés de présenter le fruit du travail de nos élèves et de nos équipes pédagogiques. Nous adressons nos sincères remerciements à Madame la Ministre pour cet encouragement précieux qui nous conforte dans notre mission d&#039;excellence.</textarea>
+                    </div>
+                                    </div>
+
+                <!-- 5. Activites -->
+                <div id="edit-activites" class="editor-form-section" style="display: none;">
+                                        <div class="activity-item-form" data-id="1" style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0;">
+                         <input type="text" class="act-name" value="Fanfare" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-weight: bold;">
+                         <input type="text" class="act-icon" value="fa-solid fa-music" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                         <textarea class="act-desc" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;" rows="2">Découvrez la passion de la musique d&#039;ensemble...</textarea>
+                    </div>
+                                        <div class="activity-item-form" data-id="2" style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0;">
+                         <input type="text" class="act-name" value="Marionnette" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-weight: bold;">
+                         <input type="text" class="act-icon" value="fa-solid fa-masks-theater" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                         <textarea class="act-desc" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;" rows="2">Développez la créativité et l&#039;expression pure...</textarea>
+                    </div>
+                                    </div>
+
+                <!-- 6. Clubs -->
+                <div id="edit-clubs" class="editor-form-section" style="display: none;">
+                                        <div class="club-item-form" data-id="1" style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0;">
+                         <input type="text" class="club-name" value="Club Journal" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-weight: bold;">
+                         <textarea class="club-desc" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px; margin-bottom: 10px;" rows="2">Développez vos talents de rédacteur...</textarea>
+                         <input type="text" class="club-img" value="assets/images/slide2.png" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                    </div>
+                                        <div class="club-item-form" data-id="2" style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0;">
+                         <input type="text" class="club-name" value="Club d&#039;Anglais" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-weight: bold;">
+                         <textarea class="club-desc" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px; margin-bottom: 10px;" rows="2">Plongez dans le English speaking environment...</textarea>
+                         <input type="text" class="club-img" value="assets/images/slide3.png" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                    </div>
+                                    </div>
+
+                <!-- 7. Chartes -->
+                <div id="edit-chartes" class="editor-form-section" style="display: none;">
+                    <button class="btn-outline" onclick="addCharterItem()" style="margin-bottom: 15px; font-size: 0.8rem; padding: 5px 10px;">
+                        <i class="fa-solid fa-plus"></i> Ajouter un point à la charte
+                    </button>
+                    <div id="charter-items-container">
+                                            </div>
+                </div>
+
+                <script>
+                    function addCharterItem() {
+                        const container = document.getElementById('charter-items-container');
+                        const newKey = Date.now(); // Unique key
+                        const div = document.createElement('div');
+                        div.className = 'charte-item-form';
+                        div.dataset.key = newKey;
+                        div.style = "background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0; position: relative;";
+                        div.innerHTML = `
+                            <button onclick="this.parentElement.remove()" style="position: absolute; top: 10px; right: 10px; background: none; border: none; color: #ef4444; cursor: pointer;"><i class="fa-solid fa-trash"></i></button>
+                            <input type="text" class="charte-title" placeholder="Nouveau titre" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-weight: bold;">
+                            <textarea class="charte-desc" placeholder="Nouvelle description" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;" rows="2"></textarea>
+                        `;
+                        container.appendChild(div);
+                    }
+                </script>
+
+                <!-- 8. Prodiges -->
+                <div id="edit-prodiges" class="editor-form-section" style="display: none;">
+                                        <div class="prodige-item-form" data-id="1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <input type="text" class="prod-name" value="Kouamé Marie-Ange" style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                        <input type="text" class="prod-avg" value="18.75/20" placeholder="Moyenne" style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                        <input type="text" class="prod-grade" value="3ème" style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                        <input type="text" class="prod-school" value="Collège Anador Abobo" style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                    </div>
+                                    </div>
+
+                <!-- 9. Videos -->
+                <div id="edit-videos" class="editor-form-section" style="display: none;">
+                                        <div class="video-item-form" data-id="2" style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0;">
+                        <input type="text" class="vid-title" value="Apprendre l IA." style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-weight: bold;">
+                        <input type="url" class="vid-url" value="https://www.youtube.com/watch?v=5CVHjghdcRI&amp;list=PLS5oABTsLceo&amp;index=1" placeholder="Lien YouTube" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                    </div>
+                                    </div>
+
+                <!-- 10. Contact -->
+                <div id="edit-contact" class="editor-form-section" style="display: none;">
+                    <h5 style="margin-bottom: 10px; color: var(--primary);">Directeur Central</h5>
+                    <label style="font-size: 0.85rem;">Nom complet</label>
+                    <input type="text" id="director_name" value="M. DA - Directeur central" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                    <label style="font-size: 0.85rem;">Numéro de téléphone</label>
+                    <input type="text" id="director_phone" value="(+225) 07 07 99 81 79" style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                </div>
+
+                <div style="text-align: right; margin-top: 20px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                    <button class="btn-primary" id="saveButton" onclick="saveSection()"><i class="fa-solid fa-save" style="margin-right: 5px;"></i> Enregistrer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentEditingSection = '';
+
+        function openEditor(sectionId, title) {
+            currentEditingSection = sectionId;
+            document.getElementById('editorTitle').innerText = title;
+            const sections = document.querySelectorAll('.editor-form-section');
+            sections.forEach(sec => sec.style.display = 'none');
+            const targetSection = document.getElementById('edit-' + sectionId);
+            if (targetSection) targetSection.style.display = 'block';
+            
+            document.getElementById('editorModal').classList.add('active');
+        }
+
+        async function saveSection() {
+            const btn = document.getElementById('saveButton');
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Traitement...';
+            btn.disabled = true;
+
+            let data = {
+                section: currentEditingSection,
+                values: {}
+            };
+
+            try {
+                // Collecte des données selon la section
+                if (currentEditingSection === 'slider') {
+                    data.values = [];
+                    const forms = document.querySelectorAll('#edit-slider .slider-item-form');
+                    
+                    for (const form of forms) {
+                        const fileInput = form.querySelector('input[type="file"]');
+                        let imagePath = form.querySelector('.slide-img').value;
+
+                        // Si un nouveau fichier est sélectionné, on le télécharge d'abord
+                        if (fileInput.files.length > 0) {
+                            const formData = new FormData();
+                            formData.append('image', fileInput.files[0]);
+                            
+                            const uploadRes = await fetch('upload.php', {
+                                method: 'POST',
+                                body: formData
+                            });
+                            const uploadData = await uploadRes.json();
+                            if (uploadData.success) {
+                                imagePath = uploadData.path;
+                            } else {
+                                throw new Error("Erreur upload image : " + uploadData.message);
+                            }
+                        }
+
+                        data.values.push({
+                            id: form.dataset.id,
+                            title: form.querySelector('.slide-title').value,
+                            description: form.querySelector('.slide-desc').value,
+                            image_path: imagePath
+                        });
+                    }
+                } else if (currentEditingSection === 'alertes') {
+                    data.section = 'settings';
+                    data.values = {
+                        'alert_message_1': document.getElementById('alert_1').value,
+                        'alert_message_2': document.getElementById('alert_2').value,
+                        'alert_message_3': document.getElementById('alert_3').value
+                    };
+                } else if (currentEditingSection === 'academies') {
+                    data.values = [];
+                    document.querySelectorAll('.academy-item-form').forEach(form => {
+                        data.values.push({
+                            id: form.dataset.id,
+                            name: form.querySelector('.academy-name').value,
+                            description: form.querySelector('.academy-desc').value,
+                            image_path: form.querySelector('.academy-img').value
+                        });
+                    });
+                } else if (currentEditingSection === 'actualites') {
+                    data.section = 'news';
+                    data.values = [];
+                    document.querySelectorAll('.news-item-form').forEach(form => {
+                        data.values.push({
+                            id: form.dataset.id,
+                            news_date: form.querySelector('.news-date').value,
+                            title: form.querySelector('.news-title').value,
+                            description: form.querySelector('.news-desc').value
+                        });
+                    });
+                } else if (currentEditingSection === 'activites') {
+                    data.values = [];
+                    document.querySelectorAll('.activity-item-form').forEach(form => {
+                        data.values.push({
+                            id: form.dataset.id,
+                            name: form.querySelector('.act-name').value,
+                            icon_class: form.querySelector('.act-icon').value,
+                            description: form.querySelector('.act-desc').value
+                        });
+                    });
+                } else if (currentEditingSection === 'clubs') {
+                    data.values = [];
+                    document.querySelectorAll('.club-item-form').forEach(form => {
+                        data.values.push({
+                            id: form.dataset.id,
+                            name: form.querySelector('.club-name').value,
+                            description: form.querySelector('.club-desc').value,
+                            image_path: form.querySelector('.club-img').value
+                        });
+                    });
+                } else if (currentEditingSection === 'chartes') {
+                    data.section = 'chartes_special';
+                    data.values = {};
+                    document.querySelectorAll('.charte-item-form').forEach((form, index) => {
+                        const k = index + 1; // On réindexe proprement
+                        data.values['charte_title_' + k] = form.querySelector('.charte-title').value;
+                        data.values['charte_desc_' + k] = form.querySelector('.charte-desc').value;
+                    });
+                } else if (currentEditingSection === 'prodiges') {
+                    data.values = [];
+                    document.querySelectorAll('.prodige-item-form').forEach(form => {
+                        data.values.push({
+                            id: form.dataset.id,
+                            name: form.querySelector('.prod-name').value,
+                            average: form.querySelector('.prod-avg').value,
+                            grade: form.querySelector('.prod-grade').value,
+                            school: form.querySelector('.prod-school').value
+                        });
+                    });
+                } else if (currentEditingSection === 'videos') {
+                    data.values = [];
+                    document.querySelectorAll('.video-item-form').forEach(form => {
+                        data.values.push({
+                            id: form.dataset.id,
+                            title: form.querySelector('.vid-title').value,
+                            youtube_url: form.querySelector('.vid-url').value
+                        });
+                    });
+                } else if (currentEditingSection === 'contact') {
+                    data.section = 'settings';
+                    data.values = {
+                        'contact_director_phone': document.getElementById('director_phone').value,
+                        'contact_director_name': document.getElementById('director_name').value
+                    };
+                }
+
+                const response = await fetch('api.php?action=save_section', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert('Les modifications ont été enregistrées avec succès !');
+                    location.reload(); 
+                } else {
+                    alert('Erreur : ' + (result.message || 'Une erreur est survenue.'));
+                }
+            } catch (error) {
+                alert('Erreur : ' + error.message);
+                console.error(error);
+            } finally {
+                btn.innerHTML = originalContent;
+                btn.disabled = false;
+            }
+        }
+    </script>
+
+    <!-- Modal Actualité (Lire la suite) -->
+    <div class="news-modal-overlay" id="newsModal" onclick="if(event.target===this)closeNewsModal()">
+        <div class="news-modal">
+            <button class="news-modal-close" onclick="closeNewsModal()" aria-label="Fermer">&times;</button>
+            <div class="news-modal-img" id="newsModalImg"></div>
+            <div class="news-modal-body">
+                <span class="news-modal-date" id="newsModalDate"></span>
+                <h2 id="newsModalTitle"></h2>
+                <p id="newsModalDesc"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js?v=1787810984"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="bac-compare.js?v=1784051636"></script>
+    <script src="bepc-compare.js?v=1784051642"></script>
+</body>
+</html>
